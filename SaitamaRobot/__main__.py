@@ -85,6 +85,7 @@ Hi There! I'm TECHLOCK ROBOT, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴ�
 ❍ ɪ ʜᴀᴠᴇ ᴀ ɴᴏᴛᴇ ᴋᴇᴇᴘɪɴɢ ꜱʏꜱᴛᴇᴍ, ʙʟᴀᴄᴋʟɪꜱᴛꜱ, ᴀɴᴅ ᴇᴠᴇɴ ᴘʀᴇᴅᴇᴛᴇʀᴍɪɴᴇᴅ ʀᴇᴘʟɪᴇꜱ ᴏɴ ᴄᴇʀᴛᴀɪɴ ᴋᴇʏᴡᴏʀᴅꜱ.
                  
 ❍ ɪ ᴄʜᴇᴄᴋ ꜰᴏʀ ᴀᴅᴍɪɴꜱ' ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ ʙᴇꜰᴏʀᴇ ᴇxᴇᴄᴜᴛɪɴɢ ᴀɴʏ ᴄᴏᴍᴍᴀɴᴅ ᴀɴᴅ ᴍᴏʀᴇ ꜱᴛᴜꜰꜰꜱ .
+
 Hit the Commands Button below to get list of modules """
 
 buttons = [
@@ -234,36 +235,24 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="➕ Add Eren Jaeger to your group!",
-                                url="t.me/{}?startgroup=true".format(
+                                text="➕ Throw me to your group!",
+                                url="t.me/techlock_bot?startgroup=true".format(
                                     context.bot.username,
                                 ),
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="🗣️ Support",
-                                url=f"https://t.me/{SUPPORT_CHAT}",
+                                text=" CHANNEL",
+                                url=f"https://t.me/techlockofficial",
                             ),
-                            InlineKeyboardButton(
-                                text="🔔 Updates",
-                                url="https://t.me/foundingtitanupdates/",
-                            ),
+                            
                         ],
-                        [
-                            InlineKeyboardButton(
-                                text="📋 Getting Started",
-                                url="https://t.me/foundingtitanupdates/4",
-                            ),
-                            InlineKeyboardButton(
-                                text="🌐 Nexus Network™",
-                                url="https://t.me/Nexus_Network/",
-                            ),
-                        ],
+                        
                         [
                             InlineKeyboardButton(
                                 text="⚙️ Help and Commands ",
-                                url="https://t.me/FoundingTitanRobot?start=help",
+                                callback_data="help_back",
                             ),
                         ],
                     ],
