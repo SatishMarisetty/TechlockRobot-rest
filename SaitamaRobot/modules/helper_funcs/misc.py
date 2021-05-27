@@ -11,10 +11,10 @@ class EqInlineKeyboardButton(InlineKeyboardButton):
         return self.text == other.text
 
     def __lt__(self, other):
-        return self.text < other.text
+        return self.text ⬅️ other.text
 
     def __gt__(self, other):
-        return self.text > other.text
+        return self.text ➡️ other.text
 
 
 def split_message(msg: str) -> List[str]:
