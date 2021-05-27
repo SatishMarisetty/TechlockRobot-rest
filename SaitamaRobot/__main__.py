@@ -72,30 +72,50 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- Hi {}, I'm {}!
-I am an Attack on Titan anime themed group management bot,
-Built by weebs for weebs, I specialize in managing anime eccentric communities.
-"""
+Hi There! I'm TECHLOCK ROBOT, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ.
+                 
+❍ ɪ ᴄᴀɴ ʀᴇꜱᴛʀɪᴄᴛ ᴜꜱᴇʀꜱ.
+                 
+❍ ɪ ᴄᴀɴ ɢʀᴇᴇᴛ ᴜꜱᴇʀꜱ ᴡɪᴛʜ ᴄᴜꜱᴛᴏᴍɪᴢᴀʙʟᴇ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇꜱꜱᴀɢᴇꜱ ᴀɴᴅ ᴇᴠᴇɴ ꜱᴇᴛ ᴀ ɢʀᴏᴜᴘ'ꜱ ʀᴜʟᴇꜱ.
+                 
+❍ ɪ ʜᴀᴠᴇ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴛɪ-ꜰʟᴏᴏᴅ ꜱʏꜱᴛᴇᴍ.
+                 
+❍ ɪ ᴄᴀɴ ᴡᴀʀɴ ᴜꜱᴇʀꜱ ᴜɴᴛɪʟ ᴛʜᴇʏ ʀᴇᴀᴄʜ ᴍᴀx ᴡᴀʀɴꜱ, ᴡɪᴛʜ ᴇᴀᴄʜ ᴘʀᴇᴅᴇꜰɪɴᴇᴅ ᴀᴄᴛɪᴏɴꜱ ꜱᴜᴄʜ ᴀꜱ ʙᴀɴ, ᴍᴜᴛᴇ, ᴋɪᴄᴋ, ᴇᴛᴄ.
+                 
+❍ ɪ ʜᴀᴠᴇ ᴀ ɴᴏᴛᴇ ᴋᴇᴇᴘɪɴɢ ꜱʏꜱᴛᴇᴍ, ʙʟᴀᴄᴋʟɪꜱᴛꜱ, ᴀɴᴅ ᴇᴠᴇɴ ᴘʀᴇᴅᴇᴛᴇʀᴍɪɴᴇᴅ ʀᴇᴘʟɪᴇꜱ ᴏɴ ᴄᴇʀᴛᴀɪɴ ᴋᴇʏᴡᴏʀᴅꜱ.
+                 
+❍ ɪ ᴄʜᴇᴄᴋ ꜰᴏʀ ᴀᴅᴍɪɴꜱ' ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ ʙᴇꜰᴏʀᴇ ᴇxᴇᴄᴜᴛɪɴɢ ᴀɴʏ ᴄᴏᴍᴍᴀɴᴅ ᴀɴᴅ ᴍᴏʀᴇ ꜱᴛᴜꜰꜰꜱ .
+Hit the Commands Button below to get list of modules """
+
+buttons = [
+    [
+        InlineKeyboardButton(
+            text="Throw Me to your Group!", url="t.me/techlock_bot?startgroup=true"),
+    ],
+    [
+        InlineKeyboardButton(text="Commands📑", callback_data="help_back"),
+        InlineKeyboardButton(
+            text="CHANNEL", url="https://t.me/techlockofficial"
+        ),
+    ],
+]
 
 HELP_STRINGS = """
-Hey there, I'm Eren Jaeger!
-To make me functional, make sure that i have enough rights in your group.
-
+Hey There! I'm [TECHLOCK](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg)
+To make me functional, make sure that I have enough rights in your group.
 Helpful commands:
 - /start: Starts me! You've probably already used this.
 - /help: Sends this message; I'll tell you more about myself!
-- /donate: Gives you info on how to support me and my creator.
-
-If you want to report bugs or have any questions on how to use me then feel free to reach out: @FoundingTitanSupport.
-
+Give a look at the following for an idea of some of the things I can help you with.
 All commands can be used with the following: / !
 List of all the Modules:
+
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.",
 )
 
-EREN_IMG = "https://telegra.ph/file/06355bb1cd9d0c53d1171.jpg"
+EREN_IMG = "https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg"
 
 DONATE_STRING = """Plant a tree and give water to birds, that's your donation.."""
 
