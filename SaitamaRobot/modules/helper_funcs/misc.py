@@ -11,10 +11,10 @@ class EqInlineKeyboardButton(InlineKeyboardButton):
         return self.text == other.text
 
     def __lt__(self, other):
-        return self.text ⬅️ other.text
+        return self.text < other.text
 
     def __gt__(self, other):
-        return self.text ➡️ other.text
+        return self.text > other.text
 
 
 def split_message(msg: str) -> List[str]:
@@ -66,9 +66,9 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     # can only have a certain amount of buttons side by side
     if len(pairs) > 8:
         pairs = pairs[modulo_page * 8:8 * (modulo_page + 1)] + [
-            (EqInlineKeyboardButton("<", callback_data="{}_prev({})".format(prefix, modulo_page)),
+            (EqInlineKeyboardButton("⬅️", callback_data="{}_prev({})".format(prefix, modulo_page)),
              EqInlineKeyboardButton("Back", url="https://t.me/FoundingTitanRobot?start="),
-             EqInlineKeyboardButton(">", callback_data="{}_next({})".format(prefix, modulo_page)))]
+             EqInlineKeyboardButton("➡️", callback_data="{}_next({})".format(prefix, modulo_page)))]
 
     else:
         pairs += [[EqInlineKeyboardButton("Back", callback_data="saitama_back")]]
