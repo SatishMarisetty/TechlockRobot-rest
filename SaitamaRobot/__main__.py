@@ -102,13 +102,17 @@ buttons = [
 ]
 
 HELP_STRINGS = """
-Hey There! I'm [TECHLOCK](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg)
+Hey There! I'm TECHLOCK
 To make me functional, make sure that I have enough rights in your group.
+
 Helpful commands:
 - /start: Starts me! You've probably already used this.
 - /help: Sends this message; I'll tell you more about myself!
+
 Give a look at the following for an idea of some of the things I can help you with.
+
 All commands can be used with the following: / !
+
 List of all the Modules:
 
 """.format(
