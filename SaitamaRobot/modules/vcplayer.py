@@ -18,17 +18,15 @@
 
 __mod_name__ = "VC PLAYER"
 __help__ = """
-          》EREN VC PLAYER《
+          》VC PLAYER《
             
-Eren Jaeger can also play music in your group's voice chat
- 
-Assistant username:- @FoundingTitanVCRobot
+I can also play music in your group's voice chat
  
  Setting up 
 1) Make bot admin
 2) Start a voice chat
 3) Try `/play [song name]` for the first time by an admin
-) If userbot joined enjoy music, If not add @FoundingTitanVCRobot to your group manually and retry
+) If userbot joined enjoy music.
  Commands:
  
 • Song Playing 🎶
@@ -47,7 +45,7 @@ Assistant username:- @FoundingTitanVCRobot
   `/playlist`: Shows playlist
 • More tools 📲
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
-  `/userbotjoin`: Invite @FoundingTitanVCRobot to your chat
+
 Player cmd and all other cmds except /play, /current and /playlist are only for admins with manage group
  PLEASE NOTE THIS SERVICE IS UNSTABLE AND CAN BE STOPPED ANYTIME 
 """
