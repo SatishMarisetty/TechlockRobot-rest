@@ -117,4 +117,4 @@ __help__ = """
   • `/zombies` :- searches deleted accounts
   • `/zombies clean` :- removes deleted accounts from the group.
 """
-__mod_name__ = "Zombies"
+__mod_name__ = "Ghosts"
