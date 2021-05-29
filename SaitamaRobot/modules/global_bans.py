@@ -525,7 +525,7 @@ def __user_info__(user_id):
         user = sql.get_gbanned_user(user_id)
         if user.reason:
             text += f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
-        text += f"\n<b>Appeal Chat:</b> @{SUPPORT_CHAT}"
+        text += f"\n<b>Appeal Chat:</b> @techlockgram_bot"
     else:
         text = text.format("???")
     return text
@@ -545,7 +545,7 @@ __help__ = f"""
 
 Anti-Spam, used by bot devs to ban spammers across all groups. This helps protect \
 you and your groups by removing spam flooders as quickly as possible.
-*Note:* Users can appeal gbans or report spammers at @techlockgram_bot
+*Note:* Users can appeal gbans or report spammers at @techlockgram_bot.
 
 This also integrates @Spamwatch API to remove Spammers as much as possible from your chatroom!
 *What is SpamWatch?*
