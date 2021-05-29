@@ -48,4 +48,4 @@ __handlers__ = [
 __help__ = """
   • `/texttospeech <text>` :- Converts a text message to a voice message.
 """
-__mod_name__ = "TextToSpeech"
+__mod_name__ = "TTS"
