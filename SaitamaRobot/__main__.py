@@ -239,7 +239,7 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="➕ Throw me to your group!",
+                                text="➕ Throw me to your group! ➕",
                                 url="t.me/techlock_bot?startgroup=true".format(
                                     context.bot.username,
                                 ),
