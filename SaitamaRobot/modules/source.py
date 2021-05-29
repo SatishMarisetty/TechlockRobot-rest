@@ -1,4 +1,4 @@
 from SaitamaRobot import dispatcher
 
-dispatcher.CommandHandler(commands=["source"])
+dispatcher.add_handler(["source"])
 def sendmessage(message): bot.reply_to(message, "🖕")
