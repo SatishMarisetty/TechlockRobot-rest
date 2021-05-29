@@ -11,7 +11,6 @@ import aiohttp
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from SaitamaRobot import BOT_ID
 from SaitamaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from SaitamaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from SaitamaRobot import pbot as Yone
