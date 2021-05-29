@@ -114,7 +114,7 @@ __help__ = """
 • `/kayo`*:* Find anime from animekayo website.
 """
     
-__mod_name__ = "Anime Site Search"
+__mod_name__ = "ANIME SEARCH"
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo)
 ANIMESPOT_SEARCH_HANDLER = DisableAbleCommandHandler("animespot", animespot)
 ANIMETM_SEARCH_HANDLER = DisableAbleCommandHandler("animetm", animetm)
