@@ -639,7 +639,6 @@ Group admins/group owners do not need these commands.
  ╠ `/ungban`*:* Ungbans the user, same usage as gban
  ╚ `/gbanlist`*:* Outputs a list of gbanned users
 
-Visit @{SUPPORT_CHAT} for more information.
 """
 
 SUDO_HANDLER = CommandHandler(("addsudo", "addtitanshifter"), addsudo)
