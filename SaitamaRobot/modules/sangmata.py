@@ -98,4 +98,4 @@ __help__ = """
  • `/sg` <reply to an user>:- Get Name history of an User.
 """
 
-__mod_name__ = "SangMata"
+__mod_name__ = "SANGMATA"
