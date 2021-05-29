@@ -150,4 +150,4 @@ __help__ = """
 You saw a good anime video, photo, gif but dont know what is that anime's name?
 This is where whatanime comes in, just reply to that media with /whatanime and it will search the anime name for you from anilist.
 """
-__mod_name__ = "WhatAnime"
+__mod_name__ = "WHATANIME"
