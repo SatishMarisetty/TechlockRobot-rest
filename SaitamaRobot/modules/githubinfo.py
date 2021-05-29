@@ -51,4 +51,4 @@ __help__ = """
  /gitinfo :- <github profile username>
 Get info of any github profile.
 """
-__mod_name__ = "Github"
+__mod_name__ = "GITHUB"
