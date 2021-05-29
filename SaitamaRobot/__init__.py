@@ -141,6 +141,7 @@ else:
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
     NO_LOAD = Config.NO_LOAD
+    BOT_ID = Config.BOT_ID
     DEL_CMDS = Config.DEL_CMDS
     STRICT_GBAN = Config.STRICT_GBAN
     WORKERS = Config.WORKERS
