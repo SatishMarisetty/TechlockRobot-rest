@@ -6,6 +6,7 @@ import random
 from datetime import datetime
 
 
+# 
 # Date and time
 def dt():
     now = datetime.now()
@@ -25,7 +26,6 @@ tomorrow = str(dt_tom())
 
 
 @app.on_message(filters.command("couples") & ~filters.edited)
-@capture_err
 async def couple(_, message):
     if message.chat.type == "private":
         await message.reply_text("This command only works in groups.")
@@ -75,12 +75,11 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
             )
     except Exception as e:
         print(e)
-        message.reply_text(e)
+        await message.reply_text(e)
 
 
 
 __help__ = """
-  /couples - To Choose Couple Of The Day
-
+ ❍ /couples - To Choose Couple Of The Day
  """
 __mod_name__ = "COUPLES"
