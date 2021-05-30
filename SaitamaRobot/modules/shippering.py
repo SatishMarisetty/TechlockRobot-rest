@@ -6,7 +6,6 @@ import random
 from datetime import datetime
 
 
-# 
 # Date and time
 def dt():
     now = datetime.now()
