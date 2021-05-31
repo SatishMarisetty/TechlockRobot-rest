@@ -34,6 +34,7 @@ ujson
 wikipedia
 zalgo-text
 fontTools
+pykeyboard
 pyrogram
 nekos.py
 telegraph
