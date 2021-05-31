@@ -1,4 +1,4 @@
-aiohttp>=2.2.5
+ 
 alphabet_detector
 beautifulsoup4
 bleach
@@ -52,6 +52,10 @@ wget
 tswift
 lyricsgenius
 envparse
-aiohttp[speedups]
 cryptg
 cryptography
+python-arq
+aiogram
+aioredis
+odmantic
+aiohttp
