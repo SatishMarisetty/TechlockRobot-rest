@@ -1,6 +1,6 @@
 {
-      "name": "FoundingTitanRobot",
-      "description": "An Anime themed Telegram group management bot.",
+      "name": "TECHLOCK ROBOT",
+      "description": "🖕.",
       "keywords": [
          "telegram",
          "anime",
@@ -8,8 +8,8 @@
          "manager",
          "Eren"
       ],   
-  "logo":    "https://telegra.ph/file/ed5b77b9aa323a3abd08e.jpg",
- "repository": "https://github.com/sasukeuchiha912/ErenJaegerRobot",
+  "logo":    "https://telegra.ph/file/42d23d9341fa2332ec640.jpg",
+ "repository": "https://github.com/SatishMarisetty/SAITAMABOT",
    "addons": [
       {
          "options": {
@@ -42,26 +42,26 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1352499461"
+         "value": "1060459378"
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "ihaveenoughhate"
+         "value": "satishmarisettytg"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah.",
          "required": true,
-         "value": "foundingtitansupport"
+         "value": ""
       },
       "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": "-1001445585494"
+         "value": "-1234567"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "-1001445585494"
+         "value": "-1234567"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
@@ -77,7 +77,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Eren support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": "1755728237"
+         "value": "1060459378"
       },
       "sw_api": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
@@ -107,7 +107,7 @@
       "WOLVES": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": "1606221784"
+         "value": "1060459378"
       },
       "ENV": {
          "description": "Setting this to ANYTHING will enable environment variables. Leave it as it is",
@@ -165,11 +165,36 @@
          "description": "Your Mongo Database Url, create it from https://cloud.mongodb.com/",
          "required": true,
          "value": ""
-       }
+       }, 
+       "REDIS_URI": {
+         "description": "Redis Url create one from redislabs.com.",
+         "required": true,
+         "value": ""
+       }, 
+       "APP_ID": {
+         "description": "API ID of 2nd telegram account if you dont have two accounts then use the same accounts API ID, but i recommend using 2nd accounts API ID",
+         "required": true,
+         "value": ""
+      }, 
+      "APP_HASH": {
+         "description": " API HASH of 2nd telegram account if you dont two accounts then use the same accounts API HASH, but i recommend using 2nd accounts API HASH.",
+         "required": true,
+         "value": ""
+       }, 
+       "STRING_SESSION": {
+         "description": "Telethon String Session, create it from https://repl.it/@SpEcHiDe/GenerateStringSession .",
+         "required": true,
+         "value": ""
+      }
       
    }
-}
+} 
+
+     
+
+      
+   
+
 
  
-
 
