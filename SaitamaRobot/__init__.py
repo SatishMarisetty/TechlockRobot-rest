@@ -222,7 +222,7 @@ print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 # Bot client
 print("[INFO]: INITIALIZING BOT CLIENT")
-app = Client("SaitamaRobot", bot_token=TOKEN, api_id=APP_ID, api_hash=APP_HASH)
+app = Client("SaitamaRobot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH)
 
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
