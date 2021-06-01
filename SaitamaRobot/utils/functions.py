@@ -34,8 +34,8 @@ from carbonnow import Carbon
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from wget import download
 
-from wbb.utils import aiodownloader
-from wbb.utils.fetch import fetch
+from SaitamaRobot.utils import aiodownloader
+from SaitamaRobot.utils.fetch import fetch
 
 """
 Just import 'downloader' anywhere and do downloader.download() to
