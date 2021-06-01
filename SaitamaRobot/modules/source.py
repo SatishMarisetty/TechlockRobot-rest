@@ -1,4 +1,4 @@
-from SaitamaRobot.utils.pluginhelpers import admins_only
+from SaitamaRobot.utils.pluginhelp import admins_only
 from SaitamaRobot.utils.pyrogram import pbot
 
 @pbot.on_message(filters.command("source") & ~filters.edited & ~filters.bot)
