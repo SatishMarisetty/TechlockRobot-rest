@@ -3,6 +3,7 @@
 import sys
 import traceback
 from functools import wraps
+from pyrogram import filters
 
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
