@@ -37,7 +37,7 @@ from SaitamaRobot.utils.formatter import convert_seconds_to_minutes as timeForma
 from SaitamaRobot.utils.functions import downloader
 
 __MODULE__ = "YOUTUBE"
-__HELP__ = "/ytdl [VIDEO_LINK] - Download a youtube video."
+__HELP__ = """/ytdl [VIDEO_LINK] - Download a youtube video."""
 
 
 VIDEO_DATA = {}
