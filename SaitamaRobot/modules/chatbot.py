@@ -154,13 +154,13 @@ async def chatbot_function(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("eren", "Aco")
-        test = test.replace("Eren", "Aco")
+        test = test.replace("bot", "Aco")
+        test = test.replace("bot", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "Eren")
-        response = response.replace("aco", "Eren")
+        response = response.replace("Aco", "bot")
+        response = response.replace("aco", "bot")
 
         pro = response
         try:
@@ -210,13 +210,13 @@ async def chatbot_function(client, message):
                 return
         # test = emoji.demojize(test.strip())
 
-        test = test.replace("Eren", "Aco")
-        test = test.replace("eren", "Aco")
+        test = test.replace("bot", "Aco")
+        test = test.replace("bot", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "eren")
-        response = response.replace("aco", "Eren")
+        response = response.replace("Aco", "bot")
+        response = response.replace("aco", "bot")
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -279,12 +279,12 @@ async def sasuke(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("Eren", "Aco")
-    test = test.replace("eren", "Aco")
+    test = test.replace("bot", "Aco")
+    test = test.replace("bot", "Aco")
 
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Eren")
-    response = response.replace("aco", "eren")
+    response = response.replace("Aco", "bot")
+    response = response.replace("aco", "bot")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -297,7 +297,7 @@ async def sasuke(client, message):
 
 
 @eren.on_message(
-    filters.regex("Techlock Bot|Techlock Robot|Techlock|Bot")
+    filters.regex("Techlock Bot|Techlock Robot|Techlock|bot")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -350,11 +350,11 @@ async def sasuke(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("eren", "Aco")
-    test = test.replace("Eren", "Aco")
+    test = test.replace("bot", "Aco")
+    test = test.replace("bot", "Aco")
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Eren")
-    response = response.replace("aco", "eren")
+    response = response.replace("Aco", "bot")
+    response = response.replace("aco", "bot")
 
     pro = response
     if not "en" in lan and not lan == "":
