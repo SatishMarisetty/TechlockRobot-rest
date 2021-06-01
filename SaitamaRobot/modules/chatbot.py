@@ -130,7 +130,7 @@ async def chatbot_status(_, message):
 
 @eren.on_message(
     filters.text
-    & filters.reply
+    & ~filters.reply
     & ~filters.bot
     & ~filters.edited
     & ~filters.via_bot
@@ -296,7 +296,7 @@ async def sasuke(client, message):
         return
 
 @eren.on_message(
-    filters.regex("Eren|eren|TECHLOCK|ROBOT|Bot|techlock")
+    filters.regex("bot|TECHLOCK|ROBOT|Bot|techlock")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
