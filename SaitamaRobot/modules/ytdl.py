@@ -30,8 +30,8 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
-from SaitamaRobot import app, arq
-from SaitamaRobot.core.decorators.errors import capture_err
+from SaitamaRobot import arq
+from SaitamaRobot.utils.errors import capture_err
 from SaitamaRobot.utils.formatter import convert_seconds_to_minutes as timeFormat
 from SaitamaRobot.utils.functions import downloader
 
