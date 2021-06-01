@@ -220,6 +220,10 @@ aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+# Bot client
+print("[INFO]: INITIALIZING BOT CLIENT")
+app = Client("SaitamaRobot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
+
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
