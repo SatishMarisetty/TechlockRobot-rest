@@ -297,7 +297,7 @@ async def sasuke(client, message):
 
 
 @eren.on_message(
-    filters.regex("Eren|eren|Eren Jaeger|eren jaeger|eren yeager|Eren Yeager")
+    filters.regex("Bot|techlock|robot|TECHLOCK|Techlock")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
