@@ -295,9 +295,8 @@ async def sasuke(client, message):
     except CFError:
         return
 
-
 @eren.on_message(
-    filters.regex("Techlock Bot|Techlock Robot|Techlock|bot")
+    filters.regex("Eren|eren|TECHLOCK|ROBOT|Bot|techlock")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
