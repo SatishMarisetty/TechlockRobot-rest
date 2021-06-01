@@ -60,3 +60,5 @@ aiogram
 aioredis
 odmantic
 aiohttp
+aiofiles
+carbonnow
