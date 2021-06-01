@@ -100,6 +100,7 @@ if ENV:
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     ARQ_API_URL =  "https://thearq.tech"
     ARQ_API_KEY = ARQ_API
+    LOG_GROUP_ID = LOG_GROUP_ID
     
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
