@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi There! I'm TECHLOCK ROBOT, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ.
+Hi There! I'm [🤖](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg) TECHLOCK ROBOT, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ.
                  
 ❍ ɪ ᴄᴀɴ ʀᴇꜱᴛʀɪᴄᴛ ᴜꜱᴇʀꜱ.
                  
@@ -98,7 +98,8 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="CHANNEL", url="https://t.me/techlockofficial"),
+            text="CHANNEL", url="https://t.me/techlockofficial",
+           ),
     ],
   ]
 ]
@@ -123,6 +124,7 @@ List of all the Modules:
 )
 
 EREN_IMG = "https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg"
+
 
 DONATE_STRING = """Plant a tree and give water to birds, that's your donation.."""
 
@@ -229,14 +231,12 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
-                EREN_IMG,PM_START_TEXT,
+            update.effective_message.reply_text(
+                PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
-            )
-                
+            )                                
     else:
         update.effective_message.reply_text(
             "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
