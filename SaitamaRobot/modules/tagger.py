@@ -9,7 +9,7 @@
 
 from pyrogram import filters
 
-from SaitamaRobot.pyrogramee.pluginshelper import admins_only, get_text
+from SaitamaRobot.utils.pluginhelp import admins_only, get_text
 from SaitamaRobot import pbot
 
 
@@ -30,8 +30,8 @@ async def tagall(client, message):
         await client.send_message(message.chat.id, j, parse_mode="html")
 
 
-__mod_name__ = "TAGGER"
+__mod_name__ = "TAGALL"
 __help__ = """
-Only for admin
+Only for admins 
 - /tagall : Tag everyone in a chat
 """
