@@ -102,7 +102,7 @@ buttons = [
            ),
     ],
 ]
-]
+
 
 HELP_STRINGS = """
 Hey There! I'm TECHLOCK
