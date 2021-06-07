@@ -91,14 +91,16 @@ Hit the Commands Button below to get list of modules """
 buttons = [
     [
         InlineKeyboardButton(
-            text="Throw Me to your Group!", url="t.me/techlock_bot?startgroup=true"),
+            text="➕Throw Me to your Group!➕", url="t.me/techlock_bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="Commands📑", callback_data="help_back"),
-        InlineKeyboardButton(
-            text="CHANNEL", url="https://t.me/techlockofficial"
-        ),
+        InlineKeyboardButton(text="⚙ Help & Commands", callback_data="help_back"),
     ],
+    [
+        InlineKeyboardButton(
+            text="CHANNEL", url="https://t.me/techlockofficial"),
+    ],
+  ]
 ]
 
 HELP_STRINGS = """
@@ -229,36 +231,12 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                EREN_IMG,
-                PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name),
-                ),
+                EREN_IMG,PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="➕ Throw me to your group! ➕",
-                                url="t.me/techlock_bot?startgroup=true".format(
-                                    context.bot.username,
-                                ),
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text=" CHANNEL",
-                                url=f"https://t.me/techlockofficial",
-                            ),
-                            
-                        ],
-                        
-                        [
-                            InlineKeyboardButton(text="⚙ Help & Commands",  url="https://t.me/techlock_bot?start=help"),
-                        ],
-                    ],
-                ),
+                timeout=60,
             )
+                
     else:
         update.effective_message.reply_text(
             "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
@@ -415,7 +393,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]],
+                [[InlineKeyboardButton(text="🔙", callback_data="help_back")]],
             ),
         )
 
