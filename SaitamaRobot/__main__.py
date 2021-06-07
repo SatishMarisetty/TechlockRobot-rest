@@ -101,7 +101,7 @@ buttons = [
             text="CHANNEL", url="https://t.me/techlockofficial",
            ),
     ],
-  ]
+]
 ]
 
 HELP_STRINGS = """
@@ -393,7 +393,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙", callback_data="help_back")]],
+                [[InlineKeyboardButton(text="Back", callback_data="help_back")]],
             ),
         )
 
