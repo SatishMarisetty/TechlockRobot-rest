@@ -9,7 +9,7 @@
 
 from pyrogram import filters
 
-from SaitamaRobot.utils.pluginhelp import admins_only, get_text
+from SaitamaRobot.pluginhelper import admins_only, get_text
 from SaitamaRobot import pbot
 
 
