@@ -325,7 +325,7 @@ def export_data(update, context):
         },
     }
     baccinfo = json.dumps(backup, indent=4)
-    with open("SaitamaRobot{}.backup".format(chat_id), "w") as f:
+    with open("TECHLOCK{}.backup".format(chat_id), "w") as f:
         f.write(str(baccinfo))
     context.bot.sendChatAction(current_chat_id, "upload_document")
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
@@ -341,7 +341,7 @@ def export_data(update, context):
         pass
     context.bot.sendDocument(
         current_chat_id,
-        document=open("SaitamaRobot{}.backup".format(chat_id), "rb"),
+        document=open("TECHLOCK{}.backup".format(chat_id), "rb"),
         caption="*Successfully Exported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This `SaitamaRobot-Backup` was specially made for notes.".format(
             chat.title, chat_id, tgl,
         ),
@@ -349,7 +349,7 @@ def export_data(update, context):
         reply_to_message_id=msg.message_id,
         parse_mode=ParseMode.MARKDOWN,
     )
-    os.remove("SaitamaRobot{}.backup".format(chat_id))  # Cleaning file
+    os.remove("TECHLOCK{}.backup".format(chat_id))  # Cleaning file
 
 
 # Temporary data
