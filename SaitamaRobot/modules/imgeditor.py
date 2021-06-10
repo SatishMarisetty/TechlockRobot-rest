@@ -449,7 +449,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "rmbgsticker":
             await removebg_sticker(client, query.message)
 
-
+__mod_name__ = "IMAGE EDITOR"
 __help__ = """
  *IMAGE EDITOR* has some advanced image editing tools inbuilt
 Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
@@ -457,5 +457,5 @@ Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
 - /edit [reply to image]: Open the image editor
 - /rmbg [REPLY]: Revove BG of replied image/sticker.
 
- Special credits to TroJanzHEX 
+Credits: Eren
 """
