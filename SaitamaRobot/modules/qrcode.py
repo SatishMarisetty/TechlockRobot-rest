@@ -136,4 +136,3 @@ Commands
 - /getqr - Get text in qr.
 - /makeqr - Make a qr code.
  """
-__mod_name__ = "QRCODE"
