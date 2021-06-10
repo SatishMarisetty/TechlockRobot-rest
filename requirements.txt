@@ -1,9 +1,7 @@
- 
 alphabet_detector
 beautifulsoup4
 bleach
 cachetools
-coffeehouse
 CurrencyConverter
 emoji
 feedparser
@@ -34,7 +32,6 @@ ujson
 wikipedia
 zalgo-text
 fontTools
-pykeyboard
 pyrogram
 nekos.py
 telegraph
@@ -56,9 +53,18 @@ envparse
 cryptg
 cryptography
 python-arq
-aiogram
 aioredis
 odmantic
 aiohttp
+pykeyboard
 aiofiles
 carbonnow
+bing_image_downloader
+search_engine_parser
+pytz
+html2text
+glitch_this
+NumPy
+opencv-python-headless
+coffeehouse
+aiogram
