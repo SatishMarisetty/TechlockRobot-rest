@@ -178,7 +178,7 @@ DEFAULT_GOODBYE_MESSAGES = [
     "Nice knowing ya, {first}!",
     "It was a fun time {first}.",
     "We hope to see you again soon, {first}.",
-    "I donut want to say goodbye, {first}.",
+    "I donot want to say goodbye, {first}.",
     "Goodbye {first}! Guess who's gonna miss you :')",
     "Goodbye {first}! It's gonna be lonely without ya.",
     "Please don't leave me alone in this place, {first}!",
