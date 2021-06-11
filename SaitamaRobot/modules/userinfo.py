@@ -28,7 +28,7 @@ from SaitamaRobot.__main__ import STATS, TOKEN, USER_INFO
 import SaitamaRobot.modules.sql.userinfo_sql as sql
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.modules.sql.global_bans_sql import is_user_gbanned
-from SaitamaRobot.modules.sql.afk_sql import is_afk, check_afk_status
+from SaitamaRobot.modules.redis.afk_redis import is_user_afk, afk_reason
 from SaitamaRobot.modules.sql.users_sql import get_user_num_chats
 from SaitamaRobot.modules.helper_funcs.chat_status import sudo_plus
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
@@ -79,11 +79,11 @@ def hpmanager(user):
         if not sql.get_user_bio(user.id):
             new_hp -= no_by_per(total_hp, 10)
 
-        if is_afk(user.id):
-            afkst = check_afk_status(user.id)
+        if is_user_afk(user.id):
+            afkst = afk_reason(user.id)
             # if user is afk and no reason then decrease 7%
             # else if reason exist decrease 5%
-            if not afkst.reason:
+            if not afkst:
                 new_hp -= no_by_per(total_hp, 7)
             else:
                 new_hp -= no_by_per(total_hp, 5)
@@ -257,7 +257,7 @@ def info(update: Update, context: CallbackContext):
     if chat.type != "private" and user_id != bot.id:
         _stext = "\nPresence: <code>{}</code>"
 
-        afk_st = is_afk(user.id)
+        afk_st = is_user_afk(user.id)
         if afk_st:
             text += _stext.format("AFK")
         else:
@@ -306,7 +306,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://telegra.ph/DISASTER-LEVELS-05-25">?</a>]'.format(
+        text += ' [<a href="https://t.me/foundingtitanupdates/12">?</a>]'.format(
             bot.username,
         )
 
@@ -542,7 +542,7 @@ Examples:
  • `/info`*:* get information about a user.
 
 *What is that health thingy?*
- Come and see [HP System explained](https://telegra.ph/What-is-that-health-bar-displays-on-info-05-25)
+ Come and see [HP System explained](https://t.me/foundingtitanupdates/19)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
