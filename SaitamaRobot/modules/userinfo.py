@@ -306,7 +306,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/foundingtitanupdates/12">?</a>]'.format(
+        text += ' [<a href="https://telegra.ph/DISASTER-LEVELS-05-25">?</a>]'.format(
             bot.username,
         )
 
@@ -542,7 +542,7 @@ Examples:
  • `/info`*:* get information about a user.
 
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/foundingtitanupdates/19)
+ Come and see [HP System explained](https://telegra.ph/What-is-that-health-bar-displays-on-info-05-25)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
