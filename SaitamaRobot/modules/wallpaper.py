@@ -36,7 +36,7 @@ def wall(update: Update, context: CallbackContext):
             else:
                 index = randint(0, len(wallpapers) - 1)  # Choose random index
                 wallpaper = wallpapers[index]
-                wallpaper = wallpaper.get("pageURL")
+                wallpaper = wallpaper.get("largeImageURL")
                 bot.send_photo(
                     chat_id,
                     photo=wallpaper,
