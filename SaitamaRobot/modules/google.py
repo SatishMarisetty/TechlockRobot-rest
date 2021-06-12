@@ -178,8 +178,8 @@ __help__ = """
  • `/google <text>` :- Perform a google search
  • `/img <text>` :- Search Google for images and returns them\nFor greater no. of results specify lim, For eg: `/img hello lim=10`
  • `/app <appname>` :- Searches for an app in Play Store and returns its details.
- • '/getqr' - Scans the replied QR CODE
- • '/makeqr' <url or text> - Generates QR CODE
+ • `/getqr` - Scans the replied QR CODE
+ • `/makeqr` <url or text> - Generates QR CODE
  • `/reverse` :- reply to a sticker, or an image to search it!
 Do you know that you can search an image with a link too? /reverse picturelink <amount>.
 """
