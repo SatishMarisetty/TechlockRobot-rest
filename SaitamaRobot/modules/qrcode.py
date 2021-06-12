@@ -116,7 +116,7 @@ size=200x200&charset-source=UTF-8&charset-target=UTF-8\
 &margin=1&qzone=0&format=jpg"
 
     resp = get(url.format(message), stream=True)
-    required_file_name = "temp_qr.webp"
+    required_file_name = "temp_qr.png"
     with open(required_file_name, "w+b") as file:
         for chunk in resp.iter_content(chunk_size=128):
             file.write(chunk)
