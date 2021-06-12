@@ -22,18 +22,22 @@ def wall(update: Update, context: CallbackContext):
         return
     else:
         caption = query
-        term = query.replace(" ", "+")
+        term = query.replace(" ", "%20")
         json_rep = r.get(
-            f"https://pixabay.com/api/?key=22046498-754caf17e3ab2ce976b598882&q={term}&image_type=photo&pretty=true",
+            f"https://wall.alphacoders.com/api2.0/get.php?auth={WALL_API}&method=search&term={term}",
         ).json()
-            wallpapers = json_rep.get("largeImageURL")
+        if not json_rep.get("success"):
+            msg.reply_text(f"An error occurred! Report this @{SUPPORT_CHAT}")
+        else:
+            wallpapers = json_rep.get("wallpapers")
             if not wallpapers:
                 msg.reply_text("No results found! Refine your search.")
                 return
             else:
                 index = randint(0, len(wallpapers) - 1)  # Choose random index
                 wallpaper = wallpapers[index]
-                wallpaper = wallpaper.get("largeImageURL")
+                wallpaper = wallpaper.get("url_image")
+                wallpaper = wallpaper.replace("\\", "")
                 bot.send_photo(
                     chat_id,
                     photo=wallpaper,
