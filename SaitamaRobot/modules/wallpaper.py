@@ -26,9 +26,6 @@ def wall(update: Update, context: CallbackContext):
         json_rep = r.get(
             f"https://pixabay.com/api/?key=22046498-754caf17e3ab2ce976b598882&q={term}&image_type=photo&pretty=true",
         ).json()
-        if not json_rep.get("largeImageURL"):
-            msg.reply_text(f"An error occurred! Report this @{SUPPORT_CHAT}")
-        else:
             wallpapers = json_rep.get("largeImageURL")
             if not wallpapers:
                 msg.reply_text("No results found! Refine your search.")
