@@ -23,4 +23,4 @@ Eren is a simple bot for making your group management easier and cool.
 *<a href="http://t.me/FoundingTitanRobot" alt="FoundingtitanRobot"> <img src="https://img.shields.io/badge/-FoundingTitanRobot-red" /> </a>
 
 ## Deploy 
-<a href="https://dashboard.heroku.com/new?template=https://github.com/SatishMarisetty/SAITAMABOT"> <img src="https://img.shields.io/badge/-Deploy%20To%20Heroku-blueviolet" /> </a>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/SatishMarisetty/SAITAMABOT#Sheiken"> <img src="https://img.shields.io/badge/-Deploy%20To%20Heroku-blueviolet" /> </a>
