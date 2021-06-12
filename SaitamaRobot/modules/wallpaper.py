@@ -29,7 +29,7 @@ def wall(update: Update, context: CallbackContext):
         if not json_rep.get("largeImageURL"):
             msg.reply_text(f"An error occurred! Report this @{SUPPORT_CHAT}")
         else:
-            wallpapers = json_rep.get("wallpapers")
+            wallpapers = json_rep.get("largeImageURL")
             if not wallpapers:
                 msg.reply_text("No results found! Refine your search.")
                 return
