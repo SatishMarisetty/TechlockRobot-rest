@@ -20,7 +20,7 @@ Eren is a simple bot for making your group management easier and cool.
 * Support Group : <a href="https://t.me/foundingtitansupport/" alt="foundingtitansupport"> <img src="https://img.shields.io/badge/!-Support%20Group-blue" /> </a>
 
 ## Credits 
-* Goes To Sawada And All Other SaitamaRobot Helpers
+*<a href="http://t.me/FoundingTitanRobot" alt="FoundingtitanRobot"> <img src="https://img.shields.io/badge/-FoundingTitanRobot-red" /> </a>
 
 ## Deploy 
 <a href="https://dashboard.heroku.com/new?template=https://github.com/SatishMarisetty/SAITAMABOT"> <img src="https://img.shields.io/badge/-Deploy%20To%20Heroku-blueviolet" /> </a>
