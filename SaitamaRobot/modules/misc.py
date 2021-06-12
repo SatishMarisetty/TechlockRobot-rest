@@ -94,7 +94,7 @@ __help__ = """
 *Wikipedia:*
  • `/wiki <query>`*:* wikipedia your query
 *Wallpapers:*
- • `/wall <query>`*:* get a wallpaper from wall.alphacoders.com
+ • `/wall <query>`*:* get a wallpaper.
 *Currency converter:*
  • `/cash`*:* currency converter
 Example:
