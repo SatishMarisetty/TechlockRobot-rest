@@ -1,26 +1,10 @@
-#    Copyright (C) 2020-2021 by @InukaAsith
-#    This programme is a part of Daisy TG bot project
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
+# credits @InukaAsith, @Mr_dark_prince
 
 import logging
 import time
 
 from pyrogram import filters
-from pyrogram.errors import RPCError
 from pyrogram.errors.exceptions.bad_request_400 import (
-    ChannelPrivate,
     ChatAdminRequired,
     PeerIdInvalid,
     UsernameNotOccupied,
@@ -28,9 +12,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from SaitamaRobot import BOT_ID
-
-# from DaisyX import OWNER_ID as SUDO_USERS
+from SaitamaRobot import OWNER_ID as SUDO_USERS
 from SaitamaRobot import pbot
 from SaitamaRobot.modules.sql import forceSubscribe_sql as sql
 
@@ -43,20 +25,14 @@ static_data_filter = filters.create(
 
 @pbot.on_callback_query(static_data_filter)
 def _onUnMuteRequest(client, cb):
-    try:
-        user_id = cb.from_user.id
-        chat_id = cb.message.chat.id
-    except:
-        return
+    user_id = cb.from_user.id
+    chat_id = cb.message.chat.id
     chat_db = sql.fs_settings(chat_id)
     if chat_db:
         channel = chat_db.channel
-        try:
-            chat_member = client.get_chat_member(chat_id, user_id)
-        except:
-            return
+        chat_member = client.get_chat_member(chat_id, user_id)
         if chat_member.restricted_by:
-            if chat_member.restricted_by.id == BOT_ID:
+            if chat_member.restricted_by.id == (client.get_me()).id:
                 try:
                     client.get_chat_member(channel, user_id)
                     client.unban_chat_member(chat_id, user_id)
@@ -69,10 +45,6 @@ def _onUnMuteRequest(client, cb):
                         text=f"❗ Join our @{channel} channel and press 'UnMute Me' button.",
                         show_alert=True,
                     )
-                except ChannelPrivate:
-                    client.unban_chat_member(chat_id, user_id)
-                    cb.message.delete()
-
             else:
                 client.answer_callback_query(
                     cb.id,
@@ -80,7 +52,10 @@ def _onUnMuteRequest(client, cb):
                     show_alert=True,
                 )
         else:
-            if not client.get_chat_member(chat_id, BOT_ID).status == "administrator":
+            if (
+                not client.get_chat_member(chat_id, (client.get_me()).id).status
+                == "administrator"
+            ):
                 client.send_message(
                     chat_id,
                     f"❗ **{cb.from_user.mention} is trying to UnMute himself but i can't unmute him because i am not an admin in this chat add me as admin again.**\n__#Leaving this chat...__",
@@ -99,67 +74,57 @@ def _check_member(client, message):
     chat_id = message.chat.id
     chat_db = sql.fs_settings(chat_id)
     if chat_db:
-        try:
-            user_id = message.from_user.id
-        except:
-            return
-        try:
-            if (
-                not client.get_chat_member(chat_id, user_id).status
-                in ("administrator", "creator")
-                and not user_id == 1141839926
-            ):
-                channel = chat_db.channel
+        user_id = message.from_user.id
+        if (
+            not client.get_chat_member(chat_id, user_id).status
+            in ("administrator", "creator")
+            and not user_id in SUDO_USERS
+        ):
+            channel = chat_db.channel
+            try:
+                client.get_chat_member(channel, user_id)
+            except UserNotParticipant:
                 try:
-                    client.get_chat_member(channel, user_id)
-                except UserNotParticipant:
-                    try:
-                        sent_message = message.reply_text(
-                            "Welcome {} 🙏 \n **You havent joined our @{} Channel yet** 😭 \n \nPlease Join [Our Channel](https://t.me/{}) and hit the **UNMUTE ME** Button. \n \n ".format(
-                                message.from_user.mention, channel, channel
-                            ),
-                            disable_web_page_preview=True,
-                            reply_markup=InlineKeyboardMarkup(
+                    sent_message = message.reply_text(
+                        "Welcome {} 🙏 \n **You havent joined our @{} Channel yet** 😭 \n \nPlease Join [Our Channel](https://t.me/{}) and hit the **UNMUTE ME** Button. \n \n ".format(
+                            message.from_user.mention, channel, channel
+                        ),
+                        disable_web_page_preview=True,
+                        reply_markup=InlineKeyboardMarkup(
+                            [
                                 [
-                                    [
-                                        InlineKeyboardButton(
-                                            "Join Channel",
-                                            url="https://t.me/{}".format(channel),
-                                        )
-                                    ],
-                                    [
-                                        InlineKeyboardButton(
-                                            "UnMute Me", callback_data="onUnMuteRequest"
-                                        )
-                                    ],
-                                ]
-                            ),
-                        )
-                        client.restrict_chat_member(
-                            chat_id, user_id, ChatPermissions(can_send_messages=False)
-                        )
-                    except ChatAdminRequired:
-                        sent_message.edit(
-                            "❗ **Eren is not an admin here..**\n__Give me ban permissions and retry.. \n#Ending FSub...__"
-                        )
-                    except RPCError:
-                        return
-
-                except ChatAdminRequired:
-                    client.send_message(
-                        chat_id,
-                        text=f"❗ **I not an admin of @{channel} channel.**\n__Give me admin of that channel and retry.\n#Ending FSub...__",
+                                    InlineKeyboardButton(
+                                        "Join Channel",
+                                        url="https://t.me/{}".format(channel),
+                                    )
+                                ],
+                                [
+                                    InlineKeyboardButton(
+                                        "UnMute Me", callback_data="onUnMuteRequest"
+                                    )
+                                ],
+                            ]
+                        ),
                     )
-                except ChannelPrivate:
-                    return
-        except:
-            return
+                    client.restrict_chat_member(
+                        chat_id, user_id, ChatPermissions(can_send_messages=False)
+                    )
+                except ChatAdminRequired:
+                    sent_message.edit(
+                        "❗ **I'm not admin here..**\n__Give me ban permissions and retry.. \n#Ending FSub...__"
+                    )
+
+            except ChatAdminRequired:
+                client.send_message(
+                    chat_id,
+                    text=f"❗ **I not an admin of @{channel} channel.**\n__Give me admin of that channel and retry.\n#Ending FSub...__",
+                )
 
 
-@pbot.on_message(filters.command(["forcesubscribe", "forcesub"]) & ~filters.private)
+@pbot.on_message(filters.command(["forcesubscribe", "fsub"]) & ~filters.private)
 def config(client, message):
     user = client.get_chat_member(message.chat.id, message.from_user.id)
-    if user.status is "creator" or user.user.id == 1141839926:
+    if user.status is "creator" or user.user.id in SUDO_USERS:
         chat_id = message.chat.id
         if len(message.command) > 1:
             input_str = message.command[1]
@@ -175,7 +140,7 @@ def config(client, message):
                     for chat_member in client.get_chat_members(
                         message.chat.id, filter="restricted"
                     ):
-                        if chat_member.restricted_by.id == BOT_ID:
+                        if chat_member.restricted_by.id == (client.get_me()).id:
                             client.unban_chat_member(chat_id, chat_member.user.id)
                             time.sleep(1)
                     sent_message.edit("✅ **UnMuted all members who are muted by me.**")
@@ -215,19 +180,20 @@ def config(client, message):
 
 
 __help__ = """
-<b>ForceSubscribe:</b>
-- Eren can mute members who are not subscribed your channel until they subscribe
-- When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
-<b>Setup</b>
-1) First of all add me in the group as admin with ban users permission and in the channel as admin.
-Note: Only creator of the group can setup me and i will not allow force subscribe again if not done so.
+*Force Subscribe:*
+❍ I can mute members who are not subscribed your channel until they subscribe
+❍ When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
+*Setup*
+*Only creator*
+❍ Add me in your group as admin
+❍ Add me in your channel as admin 
  
-<b>Commmands</b>
- - /forcesubscribe - To get the current settings.
- - /forcesubscribe no/off/disable - To turn of ForceSubscribe.
- - /forcesubscribe {channel username} - To turn on and setup the channel.
- - /forcesubscribe clear - To unmute all members who muted by me.
-Note: /forcesub is an alias of /forcesubscribe
- 
+*Commmands*
+ ❍ /fsub {channel username} - To turn on and setup the channel.
+  💡Do this first...
+ ❍ /fsub - To get the current settings.
+ ❍ /fsub disable - To turn of ForceSubscribe..
+  💡If you disable fsub, you need to set again for working.. /fsub {channel username} 
+ ❍ /fsub clear - To unmute all members who muted by me.
 """
 __mod_name__ = "FORCE SUB"
