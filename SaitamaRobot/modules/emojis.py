@@ -6,10 +6,10 @@ from typing import List
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
 
-from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import is_user_admin, user_admin
-from tg_bot.modules.helper_funcs.extraction import extract_user
+from SaitamaRobot import dispatcher
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from SaitamaRobot.modules.helper_funcs.chat_status import is_user_admin, user_admin
+from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 
 #sleep how many times after each edit in 'love' 
 EDIT_SLEEP = 1
