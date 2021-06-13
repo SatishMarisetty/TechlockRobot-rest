@@ -404,16 +404,6 @@ __help__ = """
  • `/dice` or /dice 1 to 6 any value
  • `/ball` or /ball 1 to 5 any value
  • `/dart` or /dart 1 to 6 any value
-
- *ANIMATIONS*
- • `/love`
- • `/hack`
- • `/clock`
- • `/moon`
- • `/earth`
- • `/bombs`
- • `/kill`
- • `/block`
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
