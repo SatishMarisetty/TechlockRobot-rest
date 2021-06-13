@@ -413,6 +413,7 @@ __help__ = """
  • `/earth`
  • `/bombs`
  • `/kill`
+ • `/block`
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
