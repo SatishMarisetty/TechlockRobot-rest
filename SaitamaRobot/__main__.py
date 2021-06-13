@@ -72,30 +72,59 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- Hi {}, I'm {}!
-I am an Attack on Titan anime themed group management bot,
-Built by weebs for weebs, I specialize in managing anime eccentric communities.
-"""
+Hi There! I'm [🤖](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg) TECHLOCK ROBOT, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ.
+                 
+❍ ɪ ᴄᴀɴ ʀᴇꜱᴛʀɪᴄᴛ ᴜꜱᴇʀꜱ.
+                 
+❍ ɪ ᴄᴀɴ ɢʀᴇᴇᴛ ᴜꜱᴇʀꜱ ᴡɪᴛʜ ᴄᴜꜱᴛᴏᴍɪᴢᴀʙʟᴇ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇꜱꜱᴀɢᴇꜱ ᴀɴᴅ ᴇᴠᴇɴ ꜱᴇᴛ ᴀ ɢʀᴏᴜᴘ'ꜱ ʀᴜʟᴇꜱ.
+                 
+❍ ɪ ʜᴀᴠᴇ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴛɪ-ꜰʟᴏᴏᴅ ꜱʏꜱᴛᴇᴍ.
+                 
+❍ ɪ ᴄᴀɴ ᴡᴀʀɴ ᴜꜱᴇʀꜱ ᴜɴᴛɪʟ ᴛʜᴇʏ ʀᴇᴀᴄʜ ᴍᴀx ᴡᴀʀɴꜱ, ᴡɪᴛʜ ᴇᴀᴄʜ ᴘʀᴇᴅᴇꜰɪɴᴇᴅ ᴀᴄᴛɪᴏɴꜱ ꜱᴜᴄʜ ᴀꜱ ʙᴀɴ, ᴍᴜᴛᴇ, ᴋɪᴄᴋ, ᴇᴛᴄ.
+                 
+❍ ɪ ʜᴀᴠᴇ ᴀ ɴᴏᴛᴇ ᴋᴇᴇᴘɪɴɢ ꜱʏꜱᴛᴇᴍ, ʙʟᴀᴄᴋʟɪꜱᴛꜱ, ᴀɴᴅ ᴇᴠᴇɴ ᴘʀᴇᴅᴇᴛᴇʀᴍɪɴᴇᴅ ʀᴇᴘʟɪᴇꜱ ᴏɴ ᴄᴇʀᴛᴀɪɴ ᴋᴇʏᴡᴏʀᴅꜱ.
+                 
+❍ ɪ ᴄʜᴇᴄᴋ ꜰᴏʀ ᴀᴅᴍɪɴꜱ' ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ ʙᴇꜰᴏʀᴇ ᴇxᴇᴄᴜᴛɪɴɢ ᴀɴʏ ᴄᴏᴍᴍᴀɴᴅ ᴀɴᴅ ᴍᴏʀᴇ ꜱᴛᴜꜰꜰꜱ .
+
+Hit the Commands Button below to get list of modules """
+
+buttons = [
+    [
+        InlineKeyboardButton(
+            text="➕Throw Me to your Group!➕", url="t.me/techlock_bot?startgroup=true"),
+    ],
+    [
+        InlineKeyboardButton(text="⚙ Help & Commands", callback_data="help_back"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="CHANNEL", url="https://t.me/techlockofficial",
+           ),
+    ],
+]
+
 
 HELP_STRINGS = """
-Hey there, I'm Eren Jaeger!
-To make me functional, make sure that i have enough rights in your group.
+Hey There! I'm TECHLOCK
+To make me functional, make sure that I have enough rights in your group.
 
 Helpful commands:
 - /start: Starts me! You've probably already used this.
 - /help: Sends this message; I'll tell you more about myself!
-- /donate: Gives you info on how to support me and my creator.
 
-If you want to report bugs or have any questions on how to use me then feel free to reach out: @FoundingTitanSupport.
+Give a look at the following for an idea of some of the things I can help you with.
 
 All commands can be used with the following: / !
+
 List of all the Modules:
+
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.",
 )
 
-EREN_IMG = "https://telegra.ph/file/06355bb1cd9d0c53d1171.jpg"
+EREN_IMG = "https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg"
+
 
 DONATE_STRING = """Plant a tree and give water to birds, that's your donation.."""
 
@@ -202,53 +231,12 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
-                EREN_IMG,
-                PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name),
-                ),
+            update.effective_message.reply_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="➕ Add Eren Jaeger to your group!",
-                                url="t.me/{}?startgroup=true".format(
-                                    context.bot.username,
-                                ),
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="🗣️ Support",
-                                url=f"https://t.me/{SUPPORT_CHAT}",
-                            ),
-                            InlineKeyboardButton(
-                                text="🔔 Updates",
-                                url="https://t.me/foundingtitanupdates/",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="📋 Getting Started",
-                                url="https://t.me/foundingtitanupdates/4",
-                            ),
-                            InlineKeyboardButton(
-                                text="🌐 Nexus Network™",
-                                url="https://t.me/Nexus_Network/",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="⚙️ Help and Commands ",
-                                url="https://t.me/FoundingTitanRobot?start=help",
-                            ),
-                        ],
-                    ],
-                ),
-            )
+                timeout=60,
+            )                                
     else:
         update.effective_message.reply_text(
             "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
@@ -302,7 +290,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Here is the help for the *{}* module:\n".format(
+                "⚊❮❮❮❮ ｢  Help  for  *{}*  module 」❯❯❯❯⚊\n".format(
                     HELPABLE[module].__mod_name__,
                 )
                 + HELPABLE[module].__help__
@@ -312,7 +300,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]],
+                    [[InlineKeyboardButton(text="🔙", callback_data="help_back")]],
                 ),
             )
 
@@ -628,7 +616,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[I am now online!](https://telegra.ph/file/69db8d7439cd6413bc3a7.mp4)", parse_mode=ParseMode.MARKDOWN)
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I'M ALIVE NOW [🤟](https://telegra.ph/file/e651185aee3a200f19e6b.mp4)", parse_mode=ParseMode.MARKDOWN)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
@@ -669,7 +657,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Eren Jaeger is deployed successfully!")
+        LOGGER.info("TECHLOCK is deployed successfully!")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
