@@ -12,7 +12,7 @@ DEFAULT_GOODBYE = "Nice knowing ya!"
 DEFAULT_WELCOME_MESSAGES = [
     "{first} is here!",  # Discord welcome messages copied
     "Ready player {first}",
-    "Armin, {first} is here.",
+    "Admin, {first} is here.",
     "A wild {first} appeared.",
     "{first} came in like a Lion!",
     "{first} has joined your party.",
@@ -24,6 +24,7 @@ DEFAULT_WELCOME_MESSAGES = [
     "Welcome, {first}. We hope you brought pizza.",
     "Welcome, {first}. Leave your weapons by the door.",
     "Swoooosh. {first} just landed.",
+    "Satish, do you know {first}.",
     "Brace yourselves. {first} just joined the chat.",
     "{first} just joined. Hide your bananas.",
     "{first} just arrived. Seems OP - please nerf.",
