@@ -102,7 +102,6 @@ buttons = [
            ),
     ],
 ]
-]
 
 
 HELP_STRINGS = """
