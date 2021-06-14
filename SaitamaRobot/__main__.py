@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-HEY, HELLO MYSELF *TECHLOCK ROBOT*
+HEY, {user.first_name} MYSELF *TECHLOCK ROBOT*
 
 I'M A POWERFUL GROUP MANAGER BOT [🤖](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg) BUILT TO HELP YOU MANAGE YOUR GROUP EASILY.
 
