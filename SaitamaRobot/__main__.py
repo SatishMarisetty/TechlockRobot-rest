@@ -78,7 +78,7 @@ I'M A POWERFUL GROUP MANAGER BOT [🤖](https://telegra.ph/file/d0af5e3e0304e1b3
 
 HIT THE HELP BUTTON BELOW TO EXPLORE MORE.
 
-I ALSO CAN PLAY SONGS ON EITHER GROUP OR CHANNEL USE `/vchelp` FOR MUSIC PLAYER COMMANDS. """
+I ALSO CAN PLAY SONGS ON EITHER GROUP OR CHANNEL USE `/VCHELP` FOR MUSIC PLAYER COMMANDS. """
 
 buttons = [
     [
@@ -97,18 +97,19 @@ buttons = [
 
 
 HELP_STRINGS = """
-Hey There! I'm TECHLOCK
-To make me functional, make sure that I have enough rights in your group.
+HEY THERE! I'M TECHLOCK
+TO MAKE ME FUNCTIONAL, MAKE SURE THAT I HAVE ENOUGH RIGHTS IN YOUR GROUP.
 
-Helpful commands:
-- /start: Starts me! You've probably already used this.
-- /help: Sends this message; I'll tell you more about myself!
+*HELPFUL COMMANDS*:
+- /START: STARTS ME! YOU'VE PROBABLY ALREADY USED THIS.
+- /HELP: SENDS THIS MESSAGE; I'LL TELL YOU MORE ABOUT MYSELF!
+  /VCHELP: SHOWS YOU VC MUSIC PLAYER COMMANDS.
 
-Give a look at the following for an idea of some of the things I can help you with.
+GIVE A LOOK AT THE FOLLOWING FOR AN IDEA OF SOME OF THE THINGS I CAN HELP YOU WITH.
 
-All commands can be used with the following: / !
+ALL COMMANDS CAN BE USED WITH THE FOLLOWING: / !
 
-List of all the Modules:
+LIST OF ALL THE MODULES:
 
 """.format(
     dispatcher.bot.first_name,
