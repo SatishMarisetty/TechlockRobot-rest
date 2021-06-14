@@ -83,14 +83,10 @@ I ALSO CAN PLAY SONGS ON EITHER GROUP OR CHANNEL USE `/vchelp` FOR MUSIC PLAYER 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕Throw Me to your Group!➕", url="t.me/techlock_bot?startgroup=true"),
+            text="➕Add Me to your Group!➕", url="t.me/techlock_bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="⚙ Help & Commands", callback_data="help_back"),
-    ],
-    [
-        InlineKeyboardButton(
-            text="CHANNEL", url="https://t.me/techlockofficial",
+        InlineKeyboardButton(text="⚙ Help & Commands", callback_data="help_back",
            ),
     ],
 ]
