@@ -100,6 +100,12 @@ buttons = [
         InlineKeyboardButton(
             text="CHANNEL", url="https://t.me/techlockofficial",
            ),
+    [
+            Button.switch_inline(
+                "Go Inline",
+                query=" ",
+                same_peer=True,
+            ),
     ],
 ]
 
