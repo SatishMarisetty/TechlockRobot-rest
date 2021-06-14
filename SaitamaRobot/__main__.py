@@ -100,8 +100,8 @@ buttons = [
         InlineKeyboardButton(
             text="CHANNEL", url="https://t.me/techlockofficial",
            ),
-    [
     ],
+]
 ]
 
 
