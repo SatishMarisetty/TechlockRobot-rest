@@ -115,7 +115,7 @@ async def get_all_admin_chats(event):
 
 async def is_admin(event, user):
     try:
-        sed = await event.client.get_permissions((client.get_me()).id, user)
+        sed = await event.client.get_permissions(BOT_ID, user)
         if sed.is_admin:
             is_mod = True
         else:
