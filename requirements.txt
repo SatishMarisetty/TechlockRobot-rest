@@ -1,4 +1,5 @@
 alphabet_detector
+google_trans_new
 beautifulsoup4
 bleach
 cachetools
@@ -46,6 +47,10 @@ dnspython
 redis
 gtts
 cloudscraper
+better_profanity
+emoji
+nudepy
+nude
 wget
 tswift
 lyricsgenius
