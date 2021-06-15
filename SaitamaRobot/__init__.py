@@ -95,7 +95,7 @@ if ENV:
     MONGO_DB = os.environ.get("MONGO_DB", None)
     REDIS_URL = os.environ.get("REDIS_URL", None)
     ARQ_API = os.environ.get("ARQ_API", None)
-    BOT_ID = bot_info.id
+    BOT_ID = int(os.environ.get("BOT_ID", None))
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
@@ -152,6 +152,7 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
+    BOT_ID = Config.BOT_ID
 
     DB_URI = Config.DATABASE_URL
     DONATION_LINK = Config.DONATION_LINK
