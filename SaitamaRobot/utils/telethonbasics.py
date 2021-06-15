@@ -2,7 +2,7 @@ import os
 
 from telethon.tl.types import *
 
-from SaitamaRobot.utils.pluginhelp import runcmd
+from SaitamaRobot.utils.pluginshelp import runcmd
 
 
 async def convert_to_image(event, borg):
