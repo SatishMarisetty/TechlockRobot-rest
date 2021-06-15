@@ -31,7 +31,7 @@ from SaitamaRobot.conf import get_int_key, get_str_key
 # from SaitamaRobot.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
 from SaitamaRobot.utils.telethonbasics import is_admin
 from SaitamaRobot.events import register
-from SaitamaRobot import MONGO_DB_URI 
+from SaitamaRobot import MONGO_URI 
 from pymongo import MongoClient
 from SaitamaRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
