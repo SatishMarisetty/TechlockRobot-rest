@@ -44,10 +44,10 @@ from SaitamaRobot import telethn as tbot
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
-MONGO_URI = get_str_key("MONGO_DB_URI")
+MONGO_URI = get_str_key("MONGO_URI")
 
 client = MongoClient()
-client = MongoClient(MONGO_DB_URI)
+client = MongoClient(MONGO_URI)
 db = client["yonerobot"]
 
 async def is_nsfw(event):
