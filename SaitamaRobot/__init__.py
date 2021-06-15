@@ -152,7 +152,6 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
-    BOT_ID = Config.BOT_ID
 
     DB_URI = Config.DATABASE_URL
     DONATION_LINK = Config.DONATION_LINK
@@ -167,6 +166,7 @@ else:
     TIME_API_KEY = Config.TIME_API_KEY
     AI_API_KEY = Config.AI_API_KEY
     WALL_API = Config.WALL_API
+    BOT_ID = Config.BOT_ID
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
