@@ -50,7 +50,6 @@ cloudscraper
 better_profanity
 emoji
 nudepy
-nude
 wget
 tswift
 lyricsgenius
