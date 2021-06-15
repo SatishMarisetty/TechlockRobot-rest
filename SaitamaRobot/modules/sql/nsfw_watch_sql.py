@@ -13,7 +13,7 @@
 
 from sqlalchemy import Column, String
 
-from YoneRobot.modules.sql import BASE, SESSION
+from SaitamaRobot.modules.sql import BASE, SESSION
 
 
 class Nsfwatch(BASE):
