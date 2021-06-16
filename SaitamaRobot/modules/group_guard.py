@@ -30,7 +30,7 @@ from SaitamaRobot import BOT_ID
 # from DaisyX.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
 from SaitamaRobot.utils.telethonbasics import is_admin
 from SaitamaRobot.events import register
-from SaitamaRobot.utils.mongo import mongodb as db
+from SaitamaRobot import db
 from SaitamaRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
     get_all_nsfw_enabled_chat,
