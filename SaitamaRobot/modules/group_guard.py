@@ -228,6 +228,10 @@ async def nsfw_watch(client, message):
 # This hardwork was completely done by MissJuliaRobot
 # Full Credits goes to MissJuliaRobot
 
+approved_users = db.approve
+spammers = db.spammer
+globalchat = db.globchat
+
 
 CMD_STARTERS = "/"
 profanity.load_censor_words_from_file("./profanity_wordlist.txt")
