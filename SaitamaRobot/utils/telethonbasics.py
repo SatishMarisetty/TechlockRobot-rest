@@ -120,9 +120,9 @@ async def is_admin(event, user):
         if sed.is_admin:
             is_mod = True
         else:
-            is_mod = True
+            is_mod = False
     except:
-        is_mod = True
+        is_mod = False
     return is_mod
 
 
