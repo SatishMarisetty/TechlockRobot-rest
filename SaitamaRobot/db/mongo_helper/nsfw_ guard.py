@@ -1,4 +1,4 @@
-from SaitamaRobot.utils.mongo2 import db
+from SaitamaRobot.utils.mongo import db
 
 nsfwdb = db.nsfw
 
