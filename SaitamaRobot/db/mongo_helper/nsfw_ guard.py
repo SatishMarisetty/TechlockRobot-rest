@@ -1,4 +1,4 @@
-from DaisyX.services.mongo import mongodb as db_x
+from SaitamaRobot import mongodb as db_x
 
 nsfw = db_x["NSFW_WATCH"]
 
