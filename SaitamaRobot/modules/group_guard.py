@@ -28,8 +28,8 @@ from telethon.tl.types import ChatBannedRights
 from SaitamaRobot import BOT_ID
 
 # from DaisyX.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
-from SaitamaRobot.function.telethonbasics import is_admin
-from SaitamaRobot.services.events import register
+from SaitamaRobot.utils.telethonbasics import is_admin
+from SaitamaRobot.events import register
 from SaitamaRobot.utils.mongo import mongodb as db
 from SaitamaRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
@@ -440,8 +440,7 @@ async def del_profanity(event):
 
 __help__ = """
 <b> Group Guardian: </b>
-✪ Daisy can protect your group from NSFW senders, Slag word users and also can force members to use English
-
+✪ I can protect your group from NSFW senders, Slag word users and also can force members to use English
 <b>Commmands</b>
  - /nsfwguardian <i>on/off</i> - Enable|Disable Porn cleaning
  - /globalmode <i>on/off</i> - Enable|Disable English only mode
@@ -450,4 +449,4 @@ __help__ = """
 Note: Special credits goes to Julia project and Friday Userbot
  
 """
-__mod_name__ = "Group Guardian"
+__mod_name__ = "GUARD"
