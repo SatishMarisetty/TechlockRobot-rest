@@ -15,8 +15,8 @@ MONGO_DB = get_str_key("MONGO_DB")
 
 
 client = MongoClient()
-client = MongoClient(MONGO_DB_URI, MONGO_PORT)[MONGO_DB]
-motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URI, MONGO_PORT)
+client = MongoClient(MONGO_DURI, MONGO_PORT)[MONGO_DB]
+motor = motor_asyncio.AsyncIOMotorClient(MONGO_URI, MONGO_PORT)
 db = motor[MONGO_DB]
 db = client["yonerobot"]
 try:
