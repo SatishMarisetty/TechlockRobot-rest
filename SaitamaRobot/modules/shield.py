@@ -28,7 +28,7 @@ from telethon.tl.types import ChatBannedRights
 from SaitamaRobot import BOT_ID
 from SaitamaRobot.conf import get_int_key, get_str_key
 
-from SaitamaRobot.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
+#from SaitamaRobot.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
 from SaitamaRobot.utils.telethonbasics import is_admin
 from SaitamaRobot.events import register
 from SaitamaRobot import MONGO_URI 
