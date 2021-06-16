@@ -2,7 +2,7 @@ import os
 
 from telethon.tl.types import *
 
-from SaitamaRobot.utils.pluginhelp import runcmd
+from SaitamaRobot.utils.pluginshelp import runcmd
 
 
 async def convert_to_image(event, borg):
@@ -120,9 +120,9 @@ async def is_admin(event, user):
         if sed.is_admin:
             is_mod = True
         else:
-            is_mod = False
+            is_mod = True
     except:
-        is_mod = False
+        is_mod = True
     return is_mod
 
 
