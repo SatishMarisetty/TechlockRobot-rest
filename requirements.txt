@@ -73,3 +73,6 @@ NumPy
 opencv-python-headless
 coffeehouse
 aiogram
+aiohttp[speedups]
+cryptg
+cryptography
