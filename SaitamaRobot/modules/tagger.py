@@ -13,7 +13,7 @@ from SaitamaRobot.pluginhelper import admins_only, get_text
 from SaitamaRobot import pbot
 
 
-@pbot.on_message(filters.command("tagall") & ~filters.edited & ~filters.bot)
+@pbot.on_message(filters.command("tagger") & ~filters.edited & ~filters.bot)
 @admins_only
 async def tagall(client, message):
     await message.reply("`Processing.....`")
