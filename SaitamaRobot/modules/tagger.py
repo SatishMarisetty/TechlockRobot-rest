@@ -33,5 +33,7 @@ async def tagall(client, message):
 __mod_name__ = "TAGALL"
 __help__ = """
 Only for admins 
-- /tagall : Tag everyone in a chat
+- /tagger : Tag everyone in a chat (not stable for big groups)
+💡 Suggestion : Pin the msg you want to tag all check the notify all members
+
 """
