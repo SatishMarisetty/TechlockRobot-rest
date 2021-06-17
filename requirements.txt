@@ -4,6 +4,7 @@ beautifulsoup4
 bleach
 cachetools
 CurrencyConverter
+textwrap
 emoji
 feedparser
 future
