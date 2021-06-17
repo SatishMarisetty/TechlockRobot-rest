@@ -90,7 +90,7 @@ async def is_nsfw(event):
         os.remove(img)
 
     r = requests.post("https://starkapi.herokuapp.com/nsfw/", files=f).json()
-    # if r.get("success") is False:
+     if r.get("success") is False:
 
 
     is_nsfw = False
