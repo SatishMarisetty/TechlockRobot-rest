@@ -79,7 +79,7 @@ async def is_nsfw(event):
         except:
             return False
     img = starkstark
-    # f = {"file": (img, open(img, "rb"))}
+    f = {"file": (img, open(img, "rb"))}
     if nude.is_nude(img):
         is_nsfw = True
         return is_nsfw
@@ -89,16 +89,16 @@ async def is_nsfw(event):
         return is_nsfw
         os.remove(img)
 
-    # r = requests.post("https://starkapi.herokuapp.com/nsfw/", files=f).json()
+    r = requests.post("https://starkapi.herokuapp.com/nsfw/", files=f).json()
     # if r.get("success") is False:
 
 
-#     is_nsfw = False
-# elif r.get("is_nsfw") is True:
-#     is_nsfw = True
-# elif r.get("is_nsfw") is False:
-#     is_nsfw = False
-# return is_nsfw
+    is_nsfw = False
+elif r.get("is_nsfw") is True:
+    is_nsfw = True
+elif r.get("is_nsfw") is False:
+    is_nsfw = False
+ return is_nsfw
 
 
 @tbot.on(events.NewMessage(pattern="/nsfwguardian (.*)"))
@@ -169,7 +169,7 @@ async def ws(event):
         dev = await event.respond(final)
         await asyncio.sleep(30)
         await dev.delete()
-        # os.remove("nudes.jpg")
+         os.remove("nudes.jpg")
 
 
 """
@@ -364,7 +364,7 @@ async def del_profanity(event):
         return
     msg = str(event.text)
     sender = await event.get_sender()
-    # let = sender.username
+     let = sender.username
     if await is_admin(event, event.message.sender_id):
         return
     chats = spammers.find({})
@@ -406,7 +406,7 @@ async def del_profanity(event):
         return
     msg = str(event.text)
     sender = await event.get_sender()
-    # sender.username
+    sender.username
     if await is_admin(event, event.message.sender_id):
         return
     chats = globalchat.find({})
@@ -438,7 +438,7 @@ async def del_profanity(event):
                     rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
                 else:
                     rm = msg
-                # print (rm)
+                 print (rm)
                 b = translator.detect(rm)
                 if not "en" in b and not b == "":
                     await event.delete()
