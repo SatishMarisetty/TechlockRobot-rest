@@ -26,6 +26,7 @@ from telethon import events
 from telethon.tl.types import ChatBannedRights
 
 from SaitamaRobot import BOT_ID
+from SaitamaRobot import mongodb as db
 from SaitamaRobot.conf import get_int_key, get_str_key
 from SaitamaRobot import MONGO_DB_URI 
 from pymongo import MongoClient
@@ -36,9 +37,9 @@ from SaitamaRobot.events import register
 
 MONGO_URI = get_str_key("MONGO_DB_URI")
 
-client = MongoClient()
-client = MongoClient(MONGO_DB_URI)
-db = client["yonerobot"]
+#client = MongoClient()
+#client = MongoClient(MONGO_DB_URI)
+#db = client["yonerobot"]
 
 from SaitamaRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
