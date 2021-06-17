@@ -464,4 +464,4 @@ __help__ = """
 Note: Special credits goes to Julia project and Friday Userbot
  
 """
-__mod_name__ = "Group Guardian"
+__mod_name__ = "AI SHIELD"
