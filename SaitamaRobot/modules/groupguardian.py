@@ -38,7 +38,7 @@ MONGO_URI = get_str_key("MONGO_DB_URI")
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
-db = client["daisyx"]
+db = client["yonerobot"]
 
 from SaitamaRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
