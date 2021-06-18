@@ -26,7 +26,6 @@ from telethon import events
 from telethon.tl.types import ChatBannedRights
 
 from SaitamaRobot import BOT_ID
-#from SaitamaRobot import mongodb as db
 from SaitamaRobot.conf import get_int_key, get_str_key
 from SaitamaRobot import MONGO_DB_URI 
 from pymongo import MongoClient
