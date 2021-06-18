@@ -89,6 +89,7 @@ if ENV:
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
+    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     MONGO_URI = os.environ.get("MONGO_DB_URI", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     MONGO_PORT = int(os.environ.get("MONGO_PORT", None))
