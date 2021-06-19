@@ -76,3 +76,7 @@ aiogram
 aiohttp[speedups]
 cryptg
 cryptography
+aiofiles
+aiocron
+uvloop
+python-dotenv
