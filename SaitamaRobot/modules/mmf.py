@@ -12,6 +12,8 @@ from SaitamaRobot import TEMP_DOWNLOAD_DIRECTORY
 
 from SaitamaRobot import telethn as bot
 
+Credit = "This Plugin Made by Kittu (@A_viyu), if you're using this code in your bot. there is no issue but don't remove this line" 
+
 
 
 @register(pattern="^/mmf ?(.*)")
@@ -39,6 +41,10 @@ async def handler(event):
     file = await bot.download_media(reply_message)
 
     msg = await event.reply("```Memifying this image!```")
+
+
+    if "Kittu" in Credit:
+       pass
 
 
     text = str(event.pattern_match.group(1)).strip()
