@@ -23,6 +23,8 @@ from datetime import datetime
 import requests
 from gtts import gTTS, gTTSError
 from telethon.tl import functions, types
+from telegram.ext import CommandHandler, run_async, Filters
+from SaitamaRobot import dispatcher
 
 from SaitamaRobot.conf import get_str_key
 from SaitamaRobot.events import register
@@ -146,12 +148,15 @@ async def _(event):
         await event.reply("Reply to a voice message, to get the text out of it.")
 
 TTS_HANDLER = DisableAbleCommandHandler("t2s", tts)
+STT_HANDLER = DisableAbleCommandHandler("s2t", stt)
 
 dispatcher.add_handler(TTS_HANDLER)
+dispatcher.add_handler(STT_HANDLER)
 
 __handlers__ = [
     TTS_HANDLER
 ]
+   [ STT_HANDLER ]
 
 
 __mod_name__ = "T2S/S2T"
