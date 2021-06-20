@@ -38,7 +38,7 @@ def tts(update, context):
         update.message.reply_voice(speech, quote=False)     
 
 
-TTS_HANDLER = DisableAbleCommandHandler("texttospeech", tts)
+TTS_HANDLER = DisableAbleCommandHandler("t2s", tts)
 
 dispatcher.add_handler(TTS_HANDLER)
 
