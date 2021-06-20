@@ -47,7 +47,7 @@ async def _(event):
         if await is_register_admin(event.input_chat, event.message.sender_id):
             pass
         else:
-            return
+            pass
     if not event.reply_to_msg_id:
 
         await event.reply("```Reply to any user message.```")
