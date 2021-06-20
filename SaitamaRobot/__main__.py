@@ -333,6 +333,34 @@ def help_button(update, context):
     except BadRequest:
         pass
 
+@run_async
+def eren_data_callback(update, context):
+    query = update.callback_query
+    if query.data == "eren_":
+        query.message.edit_text(
+            text="""CallBackQueriesData Here""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="eren_back")
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "eren_back":
+        query.message.edit_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
+
+
+
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
