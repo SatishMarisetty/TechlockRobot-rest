@@ -117,7 +117,7 @@ async def _(event):
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
             pass
         else:
-            return
+            pass
     start = datetime.now()
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
