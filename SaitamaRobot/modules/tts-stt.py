@@ -28,8 +28,9 @@ from SaitamaRobot.conf import get_str_key
 from SaitamaRobot.events import register
 from SaitamaRobot.utils.telethon import tbot
 
-IBM_WATSON_CRED_PASSWORD = get_str_key("IBM_WATSON_CRED_PASSWORD", required=False)
-IBM_WATSON_CRED_URL = get_str_key("IBM_WATSON_CRED_URL", required=False)
+IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
+IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
+
 TEMP_DOWNLOAD_DIRECTORY = "./"
 
 
