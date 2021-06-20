@@ -145,10 +145,18 @@ async def _(event):
     else:
         await event.reply("Reply to a voice message, to get the text out of it.")
 
+TTS_HANDLER = DisableAbleCommandHandler("t2s", tts)
 
-_mod_name_ = "T2S/S2T"
+dispatcher.add_handler(TTS_HANDLER)
 
-_help_ = """
+__handlers__ = [
+    TTS_HANDLER
+]
+
+
+__mod_name__ = "T2S/S2T"
+
+__help__ = """
  - /t2s: Reply to any message to get text to speech output
  - /s2t: Type in reply to a voice message(english only) to extract text from it.
 """
