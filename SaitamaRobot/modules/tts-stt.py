@@ -29,7 +29,7 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 
 from SaitamaRobot.conf import get_str_key
 from SaitamaRobot.events import register
-from SaitamaRobot telethn import tbot
+from SaitamaRobot.utils.telethon import tbot
 
 IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
 IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
