@@ -37,12 +37,27 @@ IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
 TEMP_DOWNLOAD_DIRECTORY = "./"
 
 
+async def is_register_admin(chat, user):
+    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
+        return isinstance(
+            (
+                await tbot(functions.channels.GetParticipantRequest(chat, user))
+            ).participant,
+            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
+        )
+    if isinstance(chat, types.InputPeerUser):
+        return True
+
+
 @register(pattern="^/tts (.*)")
 async def _(event):
     if event.fwd_from:
         return
     if event.is_group:
-        return
+        if await is_register_admin(event.input_chat, event.message.sender_id):
+            pass
+        else:
+            return
     input_str = event.pattern_match.group(1)
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -92,7 +107,10 @@ async def _(event):
     if event.fwd_from:
         return
     if event.is_group:
-        return
+        if await is_register_admin(event.input_chat, event.message.sender_id):
+            pass
+        else:
+            return
     start = datetime.now()
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -149,9 +167,11 @@ async def _(event):
         await event.reply("Reply to a voice message, to get the text out of it.")
 
 
+
 __mod_name__ = "TTS/STT"
 
 __help__ = """
+Admin only or bot's PM
  - /tts: Reply to any message to get text to speech output
  - /stt: Type in reply to a voice message(english only) to extract text from it.
 """
