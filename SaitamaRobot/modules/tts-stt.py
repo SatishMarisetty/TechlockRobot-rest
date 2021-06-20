@@ -155,9 +155,7 @@ dispatcher.add_handler(TTS_HANDLER)
 dispatcher.add_handler(STT_HANDLER)
 
 __handlers__ = [
-    TTS_HANDLER
-]
-   [ STT_HANDLER ]
+    TTS_HANDLER STT_HANDLER ]
 
 
 __mod_name__ = "T2S/S2T"
