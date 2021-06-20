@@ -64,7 +64,7 @@ async def _(event):
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
             pass
         else:
-            return
+            pass
     input_str = event.pattern_match.group(1)
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
