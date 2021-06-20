@@ -29,7 +29,7 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 
 from SaitamaRobot.conf import get_str_key
 from SaitamaRobot.events import register
-from SaitamaRobot.utils.telethon import tbot
+from SaitamaRobot telethn import tbot
 
 IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
 IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
@@ -107,7 +107,7 @@ async def _(event):
                 "You need to set the required ENV variables for this module. \nModule stopping"
             )
         else:
-            # await event.reply("Starting analysis")
+            await event.reply("Starting analysis")
             headers = {
                 "Content-Type": previous_message.media.document.mime_type,
             }
@@ -120,7 +120,7 @@ async def _(event):
             )
             r = response.json()
             if "results" in r:
-                # process the json to appropriate string format
+                process the json to appropriate string format
                 results = r["results"]
                 transcript_response = ""
                 transcript_confidence = ""
@@ -143,7 +143,7 @@ async def _(event):
                 await event.reply(string_to_show)
             else:
                 await event.reply(r["error"])
-            # now, remove the temporary file
+            now, remove the temporary file
             os.remove(required_file_name)
     else:
         await event.reply("Reply to a voice message, to get the text out of it.")
