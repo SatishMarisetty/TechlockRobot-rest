@@ -25,6 +25,7 @@ from gtts import gTTS, gTTSError
 from telethon.tl import functions, types
 from telegram.ext import CommandHandler, run_async, Filters
 from SaitamaRobot import dispatcher
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 
 from SaitamaRobot.conf import get_str_key
 from SaitamaRobot.events import register
