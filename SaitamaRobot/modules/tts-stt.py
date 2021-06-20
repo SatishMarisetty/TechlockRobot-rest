@@ -16,8 +16,15 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 import os
+import urllib.request
+from datetime import datetime
+from typing import List
+from typing import Optional
+import requests
+from telethon import *
+from telethon import events
+from telethon.tl.types import *
 from datetime import datetime
 
 import requests
