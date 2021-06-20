@@ -34,19 +34,7 @@ IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
 TEMP_DOWNLOAD_DIRECTORY = "./"
 
 
-async def is_register_admin(chat, user):
-    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
-        return isinstance(
-            (
-                await tbot(functions.channels.GetParticipantRequest(chat, user))
-            ).participant,
-            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
-        )
-    if isinstance(chat, types.InputPeerUser):
-        return True
-
-
-@register(pattern="^/t2s (.*)")
+@register(pattern="^/tts (.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -96,7 +84,7 @@ async def _(event):
 # ------ THANKS TO LONAMI ------#
 
 
-@register(pattern="^/s2t$")
+@register(pattern="^/stt$")
 async def _(event):
     if event.fwd_from:
         return
