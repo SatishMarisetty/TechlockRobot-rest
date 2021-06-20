@@ -138,7 +138,7 @@ async def _(event):
             )
             r = response.json()
             if "results" in r:
-                process the json to appropriate string format
+               # process the json to appropriate string format
                 results = r["results"]
                 transcript_response = ""
                 transcript_confidence = ""
@@ -161,7 +161,7 @@ async def _(event):
                 await event.reply(string_to_show)
             else:
                 await event.reply(r["error"])
-            now, remove the temporary file
+           # now, remove the temporary file
             os.remove(required_file_name)
     else:
         await event.reply("Reply to a voice message, to get the text out of it.")
