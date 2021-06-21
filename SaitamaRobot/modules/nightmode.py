@@ -21,8 +21,13 @@ from telethon import *
 from telethon.tl.types import ChatBannedRights
 
 from SaitamaRobot.events import register
-from SaitamaRobot import db
+from SaitamaRobot import MONGO_URI 
+from pymongo import MongoClient
 from SaitamaRobot import telethn as tbot
+
+client = MongoClient()
+client = MongoClient(MONGO_URI)
+db = client["yonerobot"]
 
 nightmod = db.nightmode
 
