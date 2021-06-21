@@ -20,6 +20,7 @@ pretty_errors
 psutil
 psycopg2-binary
 pynewtonmath
+dateparser
 pyrate-limiter
 python-telegram-bot==12.8
 regex
