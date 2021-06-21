@@ -449,7 +449,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "rmbgsticker":
             await removebg_sticker(client, query.message)
 
-__mod_name__ = "IMAGE EDITOR"
+__mod_name__ = "IMG EDITOR"
 __help__ = """
  *IMAGE EDITOR* has some advanced image editing tools inbuilt
 Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
