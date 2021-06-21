@@ -107,14 +107,6 @@ def animespot(update: Update, context: CallbackContext):
 def animetm(update: Update, context: CallbackContext):
     site_search(update, context, "animetm")
 
-
-__help__ = """
-• `/animetm`*:* Find anime from animetm dubbers website.
-• `/animespot`*:* Find anime from animespot website.
-• `/kayo`*:* Find anime from animekayo website.
-"""
-    
-__mod_name__ = "ANIME SEARCH"
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo)
 ANIMESPOT_SEARCH_HANDLER = DisableAbleCommandHandler("animespot", animespot)
 ANIMETM_SEARCH_HANDLER = DisableAbleCommandHandler("animetm", animetm)
