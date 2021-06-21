@@ -216,10 +216,10 @@ else:
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 print("[INFO]: TELETHON CLIENT STARTING")
-telethn = TelegramClient("eren", API_ID, API_HASH)
+telethn = TelegramClient("eren", APP_ID, APP_HASH)
 dispatcher = updater.dispatcher
 print("[INFO]: PYROGRAM CLIENT STARTING")
-pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("ErenPyro", api_id=APP_ID, api_hash=APP_HASH, bot_token=TOKEN)
 print("[INFO]: CONNECTING TO MONGO DATABASE")
 mongodb = MongoClient(MONGO_URI, MONGO_PORT)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_URI)
