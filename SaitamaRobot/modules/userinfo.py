@@ -24,7 +24,7 @@ from SaitamaRobot import (
     dispatcher,
     sw,
 )
-from SaitamaRobot.__main__ import STATS, TOKEN, USER_INFO, INFOPIC
+from SaitamaRobot.__main__ import STATS, TOKEN, USER_INFO
 import SaitamaRobot.modules.sql.userinfo_sql as sql
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.modules.sql.global_bans_sql import is_user_gbanned
