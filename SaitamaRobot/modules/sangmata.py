@@ -62,7 +62,7 @@ async def _(event):
 
         return
 
-    chat = "Sangmatainfo_bot"
+    chat = "@DetectiveInfoBot"
     uid = reply_message.sender_id
     reply_message.sender
 
@@ -88,7 +88,7 @@ async def _(event):
             responses = await silently_send_message(conv, f"/search_id {uid}")
         except YouBlockedUserError:
 
-            await event.reply("```Please unblock @Sangmatainfo_bot and try again```")
+            await event.reply("```Report this error @techlockgram_bot```")
 
             return
         await lol.edit(f"{responses.text}")
