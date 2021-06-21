@@ -34,8 +34,6 @@ from SaitamaRobot.db.mongohelper.nsfw import add_chat, get_all_nsfw_chats, is_ch
 from SaitamaRobot.utils.telethonbasics import is_admin
 from SaitamaRobot.events import register
 
-MONGO_URI = get_str_key("MONGO_DB_URI")
-
 client = MongoClient()
 client = MongoClient(MONGO_URI)
 db = client["yonerobot"]
@@ -46,7 +44,7 @@ from SaitamaRobot.modules.sql.nsfw_watch_sql import (
     is_nsfwatch_indb,
     rmnsfwatch,
 )
-from SaitamaRobot.utils.telethon import tbot
+from SaitamaRobot import telethn as tbot
 
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
