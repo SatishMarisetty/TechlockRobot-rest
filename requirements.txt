@@ -5,6 +5,7 @@ bleach
 cachetools
 CurrencyConverter
 emoji
+apscheduler
 feedparser
 future
 geopy
