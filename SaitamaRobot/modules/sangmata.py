@@ -62,7 +62,7 @@ async def _(event):
 
         return
 
-    chat = "@DetectiveInfoBot"
+    chat = "Sangmatainfo_bot"
     uid = reply_message.sender_id
     reply_message.sender
 
@@ -82,17 +82,16 @@ async def _(event):
             #   events.NewMessage(incoming=True, from_users=1706537835)
             # )
 
-            await silently_send_message(conv, f"/detect_id {uid}")
+            await silently_send_message(conv, f"/search_id {uid}")
 
-            # response = await response
-            responses = await silently_send_message(conv, f"/detect_id {uid}")
+             # response = await response
+            responses = await silently_send_message(conv, f"/search_id {uid}")
         except YouBlockedUserError:
 
-            await event.reply("```Report this error @techlockgram_bot```")
+            await event.reply("```Please unblock @Sangmatainfo_bot and try again```")
 
             return
-        await lol.edit(f"{responses.text}")
-        # await lol.edit(f"{response.message.message}")
+        await lol.edit(f"{responses.message.message}")
 
 __help__ = """
  • `/sg` <reply to an user>:- Get Name history of an User.
