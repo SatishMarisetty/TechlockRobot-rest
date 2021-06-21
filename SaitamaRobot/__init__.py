@@ -85,27 +85,23 @@ if ENV:
     WORKERS = int(os.environ.get("WORKERS", 8))
     BAN_STICKER = os.environ.get("BAN_STICKER", "CAADAgADOwADPPEcAXkko5EB3YGYAg")
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
+    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
-    AI_API_KEY = os.environ.get("AI_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
-    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     MONGO_URI = os.environ.get("MONGO_DB_URI", None)
-    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     MONGO_PORT = int(os.environ.get("MONGO_PORT", None))
     MONGO_DB = os.environ.get("MONGO_DB", None)
     REDIS_URL = os.environ.get("REDIS_URL", None)
     ARQ_API = os.environ.get("ARQ_API", None)
-    BOT_ID = int(os.environ.get("BOT_ID", "1476311937"))
+    BOT_ID = int(os.environ.get("BOT_ID", None))
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     ARQ_API_URL =  "https://thearq.tech"
     ARQ_API_KEY = ARQ_API
-    LOG_GROUP_ID = int(os.environ.get("LOG_GROUP_ID", None))
-
-
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
+    
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
@@ -165,13 +161,19 @@ else:
     ALLOW_EXCL = Config.ALLOW_EXCL
     CASH_API_KEY = Config.CASH_API_KEY
     TIME_API_KEY = Config.TIME_API_KEY
-    AI_API_KEY = Config.AI_API_KEY
+    REDIS_URL = Config.REDIS_URL
     WALL_API = Config.WALL_API
-    BOT_ID = Config.BOT_ID
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
+    APP_ID = Config.APP_ID
+    APP_HASH = Config.APP_HASH
+    MONGO_URI = Config.MONGO_DB_URI
+    MONGO_PORT = Config.MONGO_PORT
+    MONGO_DB = Config.MONGO_DB
+    ARQ_API = Config.ARQ_API
+    BOT_ID = Config.BOT_ID
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
 
     try:
@@ -189,7 +191,7 @@ try:
 
     REDIS.ping()
 
-    LOGGER.info("Your redis server is now alive!")
+    LOGGER.info("Connecting to the Redis Database!")
 
 except BaseException:
 
@@ -199,7 +201,7 @@ finally:
 
    REDIS.ping()
 
-   LOGGER.info("Your redis server is now alive!")
+   LOGGER.info("Connection to the Redis Database Established Successfully!")
     
 
 if not SPAMWATCH_API:
@@ -213,9 +215,12 @@ else:
         LOGGER.warning("Can't connect to SpamWatch!")
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
+print("[INFO]: TELETHON CLIENT STARTING")
 telethn = TelegramClient("eren", API_ID, API_HASH)
 dispatcher = updater.dispatcher
+print("[INFO]: PYROGRAM CLIENT STARTING")
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+print("[INFO]: CONNECTING TO MONGO DATABASE")
 mongodb = MongoClient(MONGO_URI, MONGO_PORT)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_URI)
 db = motor[MONGO_DB]
@@ -225,10 +230,7 @@ aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-# Bot client
-print("[INFO]: INITIALIZING BOT CLIENT")
-app = Client("SaitamaRobot", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH)
-
+print("[INFO]: CONNECTING TO ELEPHANT SQL DATABASE")
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
