@@ -21,6 +21,11 @@ __help__ = """
           》VC PLAYER《
             
 Techlock can also play music in your group's voice chat
+
+- `/vchelp` : Gives you music player commands
+
+*TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE *
+- `/musicplayer' on/off 
  
 Assistant username:- @TechlockVCmusicassistant
  
