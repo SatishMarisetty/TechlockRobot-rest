@@ -112,7 +112,7 @@ async def job_close():
 
 
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
-scheduler.add_job(job_close, trigger="cron", hour=23, minute=55)
+scheduler.add_job(job_close, trigger="cron", hour=24, minute=00)
 scheduler.start()
 
 
@@ -137,7 +137,7 @@ async def job_open():
 
 # Run everyday at 06
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
-scheduler.add_job(job_open, trigger="cron", hour=6, minute=10)
+scheduler.add_job(job_open, trigger="cron", hour=6, minute=00)
 scheduler.start()
 
 __mod_name__ = "SLEEPMODE"
