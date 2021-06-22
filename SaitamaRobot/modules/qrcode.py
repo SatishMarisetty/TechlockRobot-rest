@@ -131,3 +131,9 @@ size=200x200&charset-source=UTF-8&charset-target=UTF-8\
     await qrcode.reply("Created QRCode in {} seconds".format(duration))
     await sleep(5)
 
+__help__ = """
+Commands
+- /getqr - Get text in qr.
+- /makeqr - Make a qr code.
+ """
+__mod_name__ = "QRCODE"
