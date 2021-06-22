@@ -94,7 +94,7 @@ async def job_close():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                "`12:00 Am, Group Is Closing Till 6 Am. Night Mode Started !` \n**Powered By Techlock**",
+                "`12:00 Am, Group Is Closing Till 6 Am. Sleep Mode Started !` \n**Powered By Techlock**",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
