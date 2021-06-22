@@ -15,7 +15,7 @@ Assistant username:- @TechlockVCmusicassistant
 4) Or manually add @TechlockVCmusicassistant
 5) After userbot joined group use `/play [song name]`
 6) Userbot joins Voice Chat enjoy music.
-  *note* : This process is required for first time only
+  *note* : This all process is required for first time only
 
  Commands:
 
@@ -30,4 +30,5 @@ Assistant username:- @TechlockVCmusicassistant
 
 • More tools 📲
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
-  `/userbotjoin`: Invites @TechlockVCmusicassistant to your chat """
+  `/userbotjoin`: Invites @TechlockVCmusicassistant to your chat.
+ """
