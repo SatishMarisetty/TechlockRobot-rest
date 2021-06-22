@@ -1,8 +1,9 @@
 __mod_name__ = "VC PLAYER"
-__help__ = """*Techlock can also play music in your group's voice chat*
+__help__ = """
+*Techlock can also play music in your group's voice chat*
 - `/vchelp` : Gives you music player commands
 
-*TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE *
+*TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE*
 - `/musicplayer' on/off 
  
 Assistant username:- @TechlockVCmusicassistant
@@ -29,7 +30,4 @@ Assistant username:- @TechlockVCmusicassistant
 
 • More tools 📲
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
-  `/userbotjoin`: Invites @TechlockVCmusicassistant to your chat
-
-Player cmd and all other cmds except /play, /current and /playlist are only for admins.
-"""
+  `/userbotjoin`: Invites @TechlockVCmusicassistant to your chat """
