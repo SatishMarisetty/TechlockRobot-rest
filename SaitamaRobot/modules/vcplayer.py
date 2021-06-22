@@ -1,5 +1,7 @@
 __mod_name__ = "VC PLAYER"
 __help__ = """
+          》VC PLAYER《
+            
 *Techlock can also play music in your group's voice chat*
 - `/vchelp` : Gives you music player commands
 
@@ -28,6 +30,14 @@ Assistant username:- @TechlockVCmusicassistant
   `/dplay`: Play song via deezer
   `/splay`: Play song via jio saavn
 
+• Playback ⏯
+  `/player`: Open Settings menu of player
+  `/skip`: Skips the current track
+  `/pause`: Pause track
+  `/resume`: Resumes the paused track
+  `/end`: Stops media playback
+  `/current`: Shows the current Playing track
+  `/playlist`: Shows playlist
 • More tools 📲
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
   `/userbotjoin`: Invite @TechlockVCmusicassistant to your chat
