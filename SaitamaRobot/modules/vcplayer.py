@@ -21,6 +21,7 @@ __help__ = """
 *TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE*
 - `/musicplayer` on/off
 - `/vchelp` to get all VC commands
+
 Assistant username:- @TechlockVCmusicassistant
  
  Setting up 
@@ -43,8 +44,10 @@ Assistant username:- @TechlockVCmusicassistant
   `/end`: Stops media playback
   `/current`: Shows the current Playing track
   `/playlist`: Shows playlist
+
 • More tools 📲
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
   `/userbotjoin`: Invite @TechlockVCmusicassistant to your chat
+
 Player cmd and all other cmds except /play, /current and /playlist are only for admins with manage group
 """
