@@ -180,6 +180,8 @@ __mod_name__ = "TTS/STT"
 __help__ = """
  - /tts <lang code>: Reply to any message to get text to speech output
  - /stt: Type in reply to a voice message(english only) to extract text from it.
+    
+            [all available language codes](https://developers.google.com/admin-sdk/directory/v1/languages)
 
 *Language Codes*
 `af,am,ar,az,be,bg,bn,bs,ca,ceb,co,cs,cy,da,de,el,en,eo,es,
