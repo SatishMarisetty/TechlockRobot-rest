@@ -1,21 +1,3 @@
-# Copyright (C) 2021 TeamDaisyX
-
-
-# This file is part of Daisy (Telegram Bot)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 import os
 import urllib.request
 from datetime import datetime
@@ -181,7 +163,7 @@ __help__ = """
  - /tts <lang code>: Reply to any message to get text to speech output
  - /stt: Type in reply to a voice message(english only) to extract text from it.
     
-            [all available language codes](https://developers.google.com/admin-sdk/directory/v1/languages)
+                [all available language codes](https://developers.google.com/admin-sdk/directory/v1/languages)
 
 *Language Codes*
 `af,am,ar,az,be,bg,bn,bs,ca,ceb,co,cs,cy,da,de,el,en,eo,es,
