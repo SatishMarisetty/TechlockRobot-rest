@@ -95,6 +95,7 @@ __help__ = """
 *Example:*
   `/tr en`*:* translates something to english
   `/tr hi-en`*:* translates hindi to english
+      [all available language codes](https://developers.google.com/admin-sdk/directory/v1/languages)
 """
 
 TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], totranslate)
