@@ -12,7 +12,7 @@ from SaitamaRobot import TEMP_DOWNLOAD_DIRECTORY
 
 from SaitamaRobot import telethn as bot
 
-Credit = "This Plugin Made by Kittu (@A_viyu), if you're using this code in your bot. there is no issue but don't remove this line" 
+Credit = "This Plugin Made by Eren , if you're using this code in your bot. there is no issue but don't remove this line" 
 
 
 
@@ -43,7 +43,7 @@ async def handler(event):
     msg = await event.reply("```Memifying this image!```")
 
 
-    if "Kittu" in Credit:
+    if "Eren" in Credit:
        pass
 
 
