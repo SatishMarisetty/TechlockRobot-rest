@@ -19,7 +19,7 @@
 __mod_name__ = "VC PLAYER"
 __help__ = """
 *TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE*
-- `/musicplayer' on/off
+- `/musicplayer` on/off
 - `/vchelp` to get all VC commands
 Assistant username:- @TechlockVCmusicassistant
  
