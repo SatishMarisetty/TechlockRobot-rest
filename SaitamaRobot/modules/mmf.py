@@ -53,7 +53,7 @@ async def handler(event):
 
         return await msg.reply("You might want to try `/mmf text`")
 
-    meme = await drawText(file, text)
+    meme = await drawtext(file, text)
 
     await bot.send_file(event.chat_id, file=meme, force_document=False)
     
