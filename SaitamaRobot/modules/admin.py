@@ -103,7 +103,6 @@ def promote(update: Update, context: CallbackContext) -> str:
 
 
 
-@run_async
 @connection_status
 @bot_admin
 @can_promote
@@ -119,8 +118,10 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     promoter = chat.get_member(user.id)
 
-    if not (promoter.can_promote_members or
-            promoter.status == "creator") and not user.id in DRAGONS:
+    if (
+        not (promoter.can_promote_members or promoter.status == "creator")
+        and user.id not in DRAGONS
+    ):
         message.reply_text("You don't have the necessary rights to do that!")
         return
 
@@ -128,7 +129,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "You don't seem to be referring to a user or the ID specified is incorrect..",
         )
         return
 
@@ -137,14 +138,12 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
     except:
         return
 
-    if user_member.status == 'administrator' or user_member.status == 'creator':
-        message.reply_text(
-            "How am I meant to promote someone that's already an admin?")
+    if user_member.status == "administrator" or user_member.status == "creator":
+        message.reply_text("How am I meant to promote someone that's already an admin?")
         return
 
     if user_id == bot.id:
-        message.reply_text(
-            "I can't promote myself! Get an admin to do it for me.")
+        message.reply_text("I can't promote myself! Get an admin to do it for me.")
         return
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -166,20 +165,20 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
         )
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
-            message.reply_text(
-                "I can't promote someone who isn't in the group.")
+            message.reply_text("I can't promote someone who isn't in the group.")
         else:
             message.reply_text("An error occured while promoting.")
         return
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully promoted <b>{user_member.user.first_name or user_id}</b> with all rights!",
-        parse_mode=ParseMode.HTML)
+        f"Sucessfully promoted <b>{user_member.user.first_name or user_id}</b> with full rights!",
+        parse_mode=ParseMode.HTML,
+    )
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#FULLYPROMOTED\n"
+        f"#FULLPROMOTED\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
