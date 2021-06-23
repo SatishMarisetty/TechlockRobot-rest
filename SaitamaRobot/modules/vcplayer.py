@@ -18,10 +18,9 @@
 
 __mod_name__ = "VC PLAYER"
 __help__ = """
-*Techlock can also play music in your group's voice chat*
- - `/vchelp`: get all VC commands
 *TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE*
-- `/musicplayer' on/off 
+- `/musicplayer' on/off
+- `/vchelp` to get all VC commands
 Assistant username:- @TechlockVCmusicassistant
  
  Setting up 
