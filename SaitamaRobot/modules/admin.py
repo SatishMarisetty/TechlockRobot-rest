@@ -163,7 +163,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
             can_restrict_members=bot_member.can_restrict_members,
             can_pin_messages=bot_member.can_pin_messages,
             can_manage_voice_chats=bot_member.can_manage_voice_chats,
-)
+        )
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
             message.reply_text(
