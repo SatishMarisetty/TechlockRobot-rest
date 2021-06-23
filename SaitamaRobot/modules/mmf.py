@@ -12,8 +12,8 @@ from SaitamaRobot import TEMP_DOWNLOAD_DIRECTORY
 
 from SaitamaRobot import telethn as bot
 
-Credit = "This Plugin Made by Eren , if you're using this code in your bot. there is no issue but don't remove this line" 
 
+Credit = "This Plugin Made by Kittu (@A_viyu), if you're using this code in your bot. there is no issue but don't remove this line" 
 
 
 @register(pattern="^/mmf ?(.*)")
@@ -42,9 +42,11 @@ async def handler(event):
 
     msg = await event.reply("```Memifying this image!```")
 
-
-    if "Eren" in Credit:
+    if "Kittu" in Credit:
        pass
+
+    else: 
+       await event.reply("You removed credit line from code")
 
 
     text = str(event.pattern_match.group(1)).strip()
@@ -53,7 +55,7 @@ async def handler(event):
 
         return await msg.reply("You might want to try `/mmf text`")
 
-    meme = await drawtext(file, text)
+    meme = await drawText(file, text)
 
     await bot.send_file(event.chat_id, file=meme, force_document=False)
     
@@ -61,55 +63,148 @@ async def handler(event):
     
     os.remove(meme)
 
-async def drawtext(image_path, text):
+
+
+# Taken from https://github.com/UsergeTeam/Userge-Plugins/blob/master/plugins/memify.py#L64
+# Maybe replyed to suit the needs of this module
+
+
+
+
+
+async def drawText(image_path, text):
+
     img = Image.open(image_path)
+
     os.remove(image_path)
+
+    shadowcolor = "black"
+
     i_width, i_height = img.size
-    m_font = ImageFont.truetype("./SaitamaRobot/fonts/ArmWrestler.ttf", int((70 / 640) * i_width))
-    if ";" in text:
-        upper_text, lower_text = text.split(";")
+
+    if os.name == "nt":
+
+        fnt = "ariel.ttf"
+
     else:
+
+        fnt = "./SaitamaRobot/fonts/ArmWrestler.ttf"
+
+    m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
+
+    if ";" in text:
+
+        upper_text, lower_text = text.split(";")
+
+    else:
+
         upper_text = text
+
         lower_text = ''
+
     draw = ImageDraw.Draw(img)
+
     current_h, pad = 10, 5
+
     if upper_text:
+
         for u_text in textwrap.wrap(upper_text, width=15):
+
             u_width, u_height = draw.textsize(u_text, font=m_font)
 
-            draw.text(xy=(((i_width - u_width) / 2) - 1, int((current_h / 640)*i_width)),
-                      text=u_text, font=m_font, fill=(0, 0, 0))
-            draw.text(xy=(((i_width - u_width) / 2) + 1, int((current_h / 640)*i_width)),
-                      text=u_text, font=m_font, fill=(0, 0, 0))
-            draw.text(xy=((i_width - u_width) / 2, int(((current_h / 640)*i_width)) - 1),
-                      text=u_text, font=m_font, fill=(0, 0, 0))
-            draw.text(xy=(((i_width - u_width) / 2), int(((current_h / 640)*i_width)) + 1),
-                      text=u_text, font=m_font, fill=(0, 0, 0))
+            draw.text(xy=(((i_width - u_width) / 2) - 2, int((current_h / 640)
 
-            draw.text(xy=((i_width - u_width) / 2, int((current_h / 640)*i_width)),
-                      text=u_text, font=m_font, fill=(255, 255, 255))
+                                                             * i_width)), text=u_text, font=m_font, fill=(0, 0, 0))
+
+            draw.text(xy=(((i_width - u_width) / 2) + 2, int((current_h / 640)
+
+                                                             * i_width)), text=u_text, font=m_font, fill=(0, 0, 0))
+
+            draw.text(xy=((i_width - u_width) / 2,
+
+                          int(((current_h / 640) * i_width)) - 2),
+
+                      text=u_text,
+
+                      font=m_font,
+
+                      fill=(0,
+
+                            0,
+
+                            0))
+
+            draw.text(xy=(((i_width - u_width) / 2),
+
+                          int(((current_h / 640) * i_width)) + 2),
+
+                      text=u_text,
+
+                      font=m_font,
+
+                      fill=(0,
+
+                            0,
+
+                            0))
+
+
+
+            draw.text(xy=((i_width - u_width) / 2, int((current_h / 640)
+
+                                                       * i_width)), text=u_text, font=m_font, fill=(255, 255, 255))
+
             current_h += u_height + pad
+
     if lower_text:
+
         for l_text in textwrap.wrap(lower_text, width=15):
+
             u_width, u_height = draw.textsize(l_text, font=m_font)
 
             draw.text(
-                xy=(((i_width - u_width) / 2) - 1, i_height - u_height - int((20 / 640)*i_width)),
-                text=l_text, font=m_font, fill=(0, 0, 0))
-            draw.text(
-                xy=(((i_width - u_width) / 2) + 1, i_height - u_height - int((20 / 640)*i_width)),
-                text=l_text, font=m_font, fill=(0, 0, 0))
-            draw.text(
-                xy=((i_width - u_width) / 2, (i_height - u_height - int((20 / 640)*i_width)) - 1),
-                text=l_text, font=m_font, fill=(0, 0, 0))
-            draw.text(
-                xy=((i_width - u_width) / 2, (i_height - u_height - int((20 / 640)*i_width)) + 1),
+
+                xy=(((i_width - u_width) / 2) - 2, i_height -
+
+                    u_height - int((20 / 640) * i_width)),
+
                 text=l_text, font=m_font, fill=(0, 0, 0))
 
             draw.text(
-                xy=((i_width - u_width) / 2, i_height - u_height - int((20 / 640)*i_width)),
+
+                xy=(((i_width - u_width) / 2) + 2, i_height -
+
+                    u_height - int((20 / 640) * i_width)),
+
+                text=l_text, font=m_font, fill=(0, 0, 0))
+
+            draw.text(
+
+                xy=((i_width - u_width) / 2, (i_height -
+
+                                              u_height - int((20 / 640) * i_width)) - 2),
+
+                text=l_text, font=m_font, fill=(0, 0, 0))
+
+            draw.text(
+
+                xy=((i_width - u_width) / 2, (i_height -
+
+                                              u_height - int((20 / 640) * i_width)) + 2),
+
+                text=l_text, font=m_font, fill=(0, 0, 0))
+
+
+
+            draw.text(
+
+                xy=((i_width - u_width) / 2, i_height -
+
+                    u_height - int((20 / 640) * i_width)),
+
                 text=l_text, font=m_font, fill=(255, 255, 255))
-            current_h += u_height + pad
+
+            current_h += u_height + pad          
 
     image_name = "memify.webp"
 
@@ -118,3 +213,7 @@ async def drawtext(image_path, text):
     img.save(webp_file, "webp")
 
     return webp_file
+
+
+
+   
