@@ -20,14 +20,15 @@ __mod_name__ = "VC PLAYER"
 __help__ = """
 *Techlock can also play music in your group's voice chat*
  - `/vchelp`: get all VC commands
+*TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE*
+- `/musicplayer' on/off 
 Assistant username:- @TechlockVCmusicassistant
  
  Setting up 
 1) Make bot admin
 2) Start a voice chat
-3) Try `/play [song name]` for the first time by an admin
-) If userbot joined enjoy music, If not add @TechlockVCmusicassistant to your group manually and retry
- Commands:
+3) Use `/userbotjoin` for the first time by an admin
+4) Userbot joins group enjoy music.
  
 • Song Playing 🎶
   `/play`: Play song using youtube music
@@ -47,5 +48,4 @@ Assistant username:- @TechlockVCmusicassistant
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
   `/userbotjoin`: Invite @TechlockVCmusicassistant to your chat
 Player cmd and all other cmds except /play, /current and /playlist are only for admins with manage group
- PLEASE NOTE THIS SERVICE IS UNSTABLE AND CAN BE STOPPED ANYTIME 
 """
