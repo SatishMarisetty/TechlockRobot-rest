@@ -23,7 +23,7 @@ psycopg2-binary
 pynewtonmath
 dateparser
 pyrate-limiter
-python-telegram-bot==12.8
+python-telegram-bot==13.6
 regex
 requests
 spamwatch
