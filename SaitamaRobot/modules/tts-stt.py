@@ -43,7 +43,7 @@ async def _(event):
     if event.fwd_from:
         return
     if event.is_group:
-        if not (await is_register_admin(event.input_chat, event.message.sender_id)):
+        if not await is_register_admin(event.input_chat, event.message.sender_id):
             pass
         else:
             pass
@@ -96,7 +96,7 @@ async def _(event):
     if event.fwd_from:
         return
     if event.is_group:
-        if not (await is_register_admin(event.input_chat, event.message.sender_id)):
+        if not await is_register_admin(event.input_chat, event.message.sender_id):
             pass
         else:
             pass
