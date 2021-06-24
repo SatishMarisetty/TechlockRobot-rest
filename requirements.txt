@@ -1,4 +1,5 @@
 alphabet_detector
+countryinfo
 google_trans_new
 beautifulsoup4
 bleach
@@ -14,6 +15,7 @@ git+https://github.com/starry69/python-markdown2.git
 google_trans_new
 humanize
 jikanpy
+bs4
 lxml
 nltk
 Pillow>=4.2.0
