@@ -89,6 +89,10 @@ __help__ = """
  • `/mmf` <text> : memefiy replied sticker or image.
 *Paste:*
  • `/paste`*:* Saves replied content to `nekobin.com` and replies with a url
+*Country:*
+ • `/country` <name> : Give you information about mentioned country.
+*Cricket Score:*
+ • `/cs` : Get the scores of Cricket Matches.
 *React:*
  • `/react`*:* Reacts with a random reaction
 *Urban Dictonary:*
