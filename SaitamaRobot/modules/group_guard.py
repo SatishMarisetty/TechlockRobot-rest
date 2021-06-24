@@ -140,7 +140,7 @@ async def ws(event):
     elif r.get("is_nsfw") is False:
         is_nsfw = False
     return is_nsfw
-    if is_nsfw == True:
+    if is_nsfw is True:
         await event.delete()
         st = sender.first_name
         hh = sender.id
