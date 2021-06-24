@@ -122,7 +122,7 @@ async def ws(event):
         return
     if not is_nsfwatch_indb(str(event.chat_id)):
         return
-    if not (event.photo):
+    if not event.photo:
         return
     if not await is_admin(event, BOT_ID):
         return
