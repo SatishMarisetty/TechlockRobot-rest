@@ -20,7 +20,10 @@ from SaitamaRobot.db.mongohelper.nsfw import add_chat, get_all_nsfw_chats, is_ch
 from SaitamaRobot.utils.telethonbasics import is_admin
 from SaitamaRobot.events import register
 
-from SaitamaRobot.helper_extra.mongo import db
+client = MongoClient()
+client = MongoClient(MONGO_URI)
+db = client["yonerobot"]
+
 from SaitamaRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
     get_all_nsfw_enabled_chat,
