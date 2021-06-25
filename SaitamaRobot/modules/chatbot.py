@@ -1,15 +1,10 @@
 # CREDITS GOES TO @daisyx and Daisyx's Developers
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-import re
+
 
 import emoji
-
-IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
-IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
-url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 import re
-
 import aiohttp
 from google_trans_new import google_translator
 from pyrogram import filters
@@ -21,7 +16,10 @@ from SaitamaRobot.utils.pluginhelp import admins_only, edit_or_reply
 from SaitamaRobot import pbot as eren
 
 translator = google_translator()
+IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
+IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
 
+url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
 async def lunaQuery(query: str, user_id: int):
     luna = await arq.luna(query, user_id)
@@ -48,38 +46,6 @@ async def fetch(url):
 
 eren_chats = []
 en_chats = []
-# AI Chat (C) 2020-2021 by @InukaAsith
-"""
-@eren.on_message(
-    filters.voice & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
-    group=2,
-)
-async def hmm(client, message):
-    if not get_session(int(message.chat.id)):
-        message.continue_propagation()
-    if message.reply_to_message.from_user.id != BOT_ID:
-        message.continue_propagation()
-    previous_message = message
-    required_file_name = message.download()
-    if IBM_WATSON_CRED_URL is None or IBM_WATSON_CRED_PASSWORD is None:
-        await message.reply(
-            "You need to set the required ENV variables for this module. \nModule stopping"
-        )
-    else:
-        headers = {
-            "Content-Type": previous_message.voice.mime_type,
-        }
-        data = open(required_file_name, "rb").read()
-        response = requests.post(
-            IBM_WATSON_CRED_URL + "/v1/recognize",
-            headers=headers,
-            data=data,
-            auth=("apikey", IBM_WATSON_CRED_PASSWORD),
-        )
-        r = response.json()
-        print(r)
-        await client.send_message(message, r)
-"""
 
 
 @eren.on_message(
@@ -90,7 +56,7 @@ async def chatbot_status(_, message):
     global eren_chats
     if len(message.command) != 2:
         await message.reply_text(
-            "I only recognize `/chatbot on` and /chatbot `off only`"
+            "I only recognize `/chatbot on` and `/chatbot off` only"
         )
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
@@ -99,28 +65,28 @@ async def chatbot_status(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("Chat Bot Already Activated In This Chat")
+            await lel.edit("AI is Already enabled In This Chat")
             return
         await lel.edit(
-            f"Techlock Successfully Added ChatBot For Users In The Chat {message.chat.id}"
+            f"AI Successfully Enabled For this Chat"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("Chat Bot Was Not Activated In This Chat")
+            await lel.edit("AI Was Not Yet Enabled In This Chat")
             return
         await lel.edit(
-            f"Chat Bot Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f" Successfully Disabled AI For This Chat"
         )
 
     elif status == "EN" or status == "en" or status == "english":
         if not chat_id in en_chats:
             en_chats.append(chat_id)
-            await message.reply_text("English Only chat bot Enabled!")
+            await message.reply_text("English Only AI Enabled!")
             return
-        await message.reply_text("Chat Bot Is Already Disabled.")
+        await message.reply_text("English Only AI Is Already Enabled in this chat.")
         message.continue_propagation()
     else:
         await message.reply_text(
@@ -154,13 +120,16 @@ async def chatbot_function(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("eren", "Aco")
-        test = test.replace("Eren", "Aco")
+        test = test.replace("Aco", "Techlock")
+        test = test.replace("aco", "Techlock")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "Eren")
-        response = response.replace("aco", "Eren")
+        response = response.replace("aco", "Techlock")
+        response = response.replace("Aco", "Techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("female", "Robot")
 
         pro = response
         try:
@@ -210,13 +179,18 @@ async def chatbot_function(client, message):
                 return
         # test = emoji.demojize(test.strip())
 
-        test = test.replace("Eren", "Aco")
-        test = test.replace("eren", "Aco")
+        test = test.replace("Techlock", "aco")
+        test = test.replace("Techlock", "aco")
+        
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "eren")
-        response = response.replace("aco", "Eren")
+        response = response.replace("aco", "Techlock")
+        response = response.replace("Aco", "Techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("female", "Robot")
+
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -279,12 +253,15 @@ async def sasuke(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("Eren", "Aco")
-    test = test.replace("eren", "Aco")
-
+    test = test.replace("aco", "Techlock")
+    test = test.replace("aco", "Techlock")    
+    
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Eren")
-    response = response.replace("aco", "eren")
+    response = response.replace("Aco", "Techlock")
+    response = response.replace("aco", "Techlock")
+    response = response.replace("Luna", "Techlock")
+    response = response.replace("Luna", "Techlock")
+    response = response.replace("female", "Robot")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -350,11 +327,14 @@ async def sasuke(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("eren", "Aco")
-    test = test.replace("Eren", "Aco")
+    test = test.replace("Aco", "Techlock")
+    test = test.replace("aco", "Techlock")
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Eren")
-    response = response.replace("aco", "eren")
+    response = response.replace("Aco", "Techlock")
+    response = response.replace("aco", "Techlock")
+    response = response.replace("Luna", "Techlock")
+    response = response.replace("Luna", "Techlock")
+    response = response.replace("female", "Robot")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -375,10 +355,6 @@ __help__ = """
  • `/chatbot [ON/OFF]`: Enables and disables Chatbot mode in the chat.
  • `/chatbot EN` : Enables English only Chatbot mode in the chat.
  *Powered by Brainshop* (brainshop.ai)
- 
- 
- 
- 
 """
 
 __mod_name__ = "CHATBOT"
