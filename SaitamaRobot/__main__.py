@@ -82,14 +82,14 @@ I CAN ALSO PLAY SONGS ON EITHER GROUP OR CHANNEL USE `/VCHELP` FOR MUSIC PLAYER 
 
 buttons = [
     [
-        InlineKeyboardButton( text="➕Add Me!", url="t.me/techlock_bot?startgroup=true"),
+        InlineKeyboardButton( text="➕Add Me to Your Group!", url="t.me/techlock_bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton( text="👑Owner", url="t.me/satishmarisettyTG"),
-        InlineKeyboardButton( text="🔔Channel", url="https://t.me/joinchat/Uyn68IozS5hKyWPg"),
+        InlineKeyboardButton( text="👑 Owner", url="t.me/satishmarisettyTG"),
+        InlineKeyboardButton( text="🔔 Channel", url="https://t.me/joinchat/Uyn68IozS5hKyWPg"),
     ],
     [
-        InlineKeyboardButton( text="🗣Group", url="https://t.me/joinchat/SCYeWy4pj_EDGcYP"),
+        InlineKeyboardButton( text="👥 Group", url="https://t.me/joinchat/SCYeWy4pj_EDGcYP"),
         InlineKeyboardButton( text="📖 Quick Setup", url="https://telegra.ph/New-to-TECHLOCK-06-14"),
     ],
     [
