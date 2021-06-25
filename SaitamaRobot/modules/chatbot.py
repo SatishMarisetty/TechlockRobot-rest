@@ -129,7 +129,7 @@ async def chatbot_function(client, message):
         response = response.replace("Aco", "Techlock")
         response = response.replace("Luna", "Techlock")
         response = response.replace("Luna", "Techlock")
-        response = response.replace("female", "Robot")
+        response = response.replace("female", "")
 
         pro = response
         try:
@@ -189,7 +189,7 @@ async def chatbot_function(client, message):
         response = response.replace("Aco", "Techlock")
         response = response.replace("Luna", "Techlock")
         response = response.replace("Luna", "Techlock")
-        response = response.replace("female", "Robot")
+        response = response.replace("female", "")
 
         pro = response
         if not "en" in lan and not lan == "":
@@ -261,7 +261,7 @@ async def sasuke(client, message):
     response = response.replace("aco", "Techlock")
     response = response.replace("Luna", "Techlock")
     response = response.replace("Luna", "Techlock")
-    response = response.replace("female", "Robot")
+    response = response.replace("female", "")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -334,7 +334,7 @@ async def sasuke(client, message):
     response = response.replace("aco", "Techlock")
     response = response.replace("Luna", "Techlock")
     response = response.replace("Luna", "Techlock")
-    response = response.replace("female", "Robot")
+    response = response.replace("female", "")
 
     pro = response
     if not "en" in lan and not lan == "":
