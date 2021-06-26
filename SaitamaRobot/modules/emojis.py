@@ -234,7 +234,7 @@ earth_ani = [
 
 @user_admin
 @run_async
-def block(bot: Bot, update: Update):
+def blockanimation(bot: Bot, update: Update):
     msg = update.effective_message.reply_text('⬜') 
     for x in range(EDIT_TIMES):
         msg.edit_text(block_chain[x%18])
@@ -246,8 +246,9 @@ def block(bot: Bot, update: Update):
 
 @user_admin
 @run_async
-def clock(bot: Bot, update: Update):
-    msg = update.effective_message.reply_text('🕛') 
+def clockanimation(bot: Bot, update: Update):
+    msg = update.effective_message
+    reply_text = msg.reply_to_message.reply_text if msg.reply_to_message else msg.reply_text
     for x in range(EDIT_TIMES):
         msg.edit_text(clock_ani[x%11])
         time.sleep(EDIT_SLEEP)
@@ -257,8 +258,9 @@ def clock(bot: Bot, update: Update):
 
 @user_admin
 @run_async
-def earth(bot: Bot, update: Update):
-    msg = update.effective_message.reply_text('🌏') 
+def earthanimation(bot: Bot, update: Update):
+    msg = update.effective_message
+    reply_text = msg.reply_to_message.reply_text if msg.reply_to_message else msg.reply_text
     for x in range(EDIT_TIMES):
         msg.edit_text(earth_ani[x%18])
         time.sleep(EDIT_SLEEP)
@@ -269,7 +271,7 @@ def earth(bot: Bot, update: Update):
 
 @user_admin
 @run_async
-def moon(bot: Bot, update: Update):
+def moonanimation(bot: Bot, update: Update):
     msg = update.effective_message.reply_text('🌚') 
     for x in range(EDIT_TIMES):
         msg.edit_text(moon_ani[x%32])
@@ -310,7 +312,7 @@ def hack(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('successful hacked you should play $70 ')
+    msg.edit_text('successful hacked! all data saved on Database')
 
 
 
@@ -326,7 +328,7 @@ def love(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(love_siren[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('💞')
+    msg.edit_text('True Love💞')
 
 
 
@@ -341,24 +343,23 @@ def kill(bot: Bot, update: Update):
     msg.edit_text('⚰')
 
 
-
 KILL_HANDLER = DisableAbleCommandHandler("kill",kill)
 LOVE_HANDLER = DisableAbleCommandHandler("love", love)
 HACK_HANDLER = DisableAbleCommandHandler("hack", hack)
 BOMBS_HANDLER = DisableAbleCommandHandler("bombs",bombs)
-MOON_HANDLER =DisableAbleCommandHandler("moon",moon)
-CLOCK_HANDLER =DisableAbleCommandHandler("clock",clock)
-BLOCK_HANDLER =DisableAbleCommandHandler("block",block)
-EARTH_HANDLER =DisableAbleCommandHandler("earth",earth)
+MOONANIMATION_HANDLER =DisableAbleCommandHandler("moonanimation",moonanimation)
+CLOCKANIMATION_HANDLER =DisableAbleCommandHandler("clockanimation",clockanimation)
+BLOCKANIMATION_HANDLER =DisableAbleCommandHandler("blockanimation",blockanimation)
+EARTHANIMATION_HANDLER =DisableAbleCommandHandler("earthanimation",earthanimation)
 dispatcher.add_handler(KILL_HANDLER)
 dispatcher.add_handler(LOVE_HANDLER)
 dispatcher.add_handler(HACK_HANDLER)
 dispatcher.add_handler(BOMBS_HANDLER)
-dispatcher.add_handler(EARTH_HANDLER)
-dispatcher.add_handler(MOON_HANDLER)
-dispatcher.add_handler(CLOCK_HANDLER)
-dispatcher.add_handler(BLOCK_HANDLER)
+dispatcher.add_handler(EARTHANIMATION_HANDLER)
+dispatcher.add_handler(MOONANIMATION_HANDLER)
+dispatcher.add_handler(CLOCKANIMATION_HANDLER)
+dispatcher.add_handler(BLOCKANIMATION_HANDLER)
 
 
-__command_list__ = ["love", "hack", "bombs", "moon", "clock", "earth", "block", "kill"]
-__handlers__ = [LOVE_HANDLER, HACK_HANDLER, BOMBS_HANDLER, MOON_HANDLER, CLOCK_HANDLER, EARTH_HANDLER, BLOCK_HANDLER, KILL_HANDLER]
+__command_list__ = ["love", "hack", "bombs", "moonanimation", "clockanimation", "earthanimation", "blockanimation", "kill"]
+__handlers__ = [LOVE_HANDLER, HACK_HANDLER, BOMBS_HANDLER, MOONANIMATION_HANDLER, CLOCKANIMATION_HANDLER, EARTHANIMATION_HANDLER, BLOCKANIMATION_HANDLER, KILL_HANDLER]
