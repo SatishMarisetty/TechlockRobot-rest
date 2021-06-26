@@ -90,10 +90,10 @@ buttons = [
     ],
     [
         InlineKeyboardButton( text="👥 ɢʀᴏᴜᴘ", url="https://t.me/joinchat/SCYeWy4pj_EDGcYP"),
-        InlineKeyboardButton( text="📖 Qᴜɪᴄᴋ ꜱᴇᴛᴜᴘ", url="https://telegra.ph/New-to-TECHLOCK-06-14"),
+        InlineKeyboardButton( text="📖 ꜱᴇᴛᴜᴘ ɢᴜɪᴅᴇ", url="https://telegra.ph/New-to-TECHLOCK-06-14"),
     ],
     [
-        InlineKeyboardButton(text="⚙ ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="help_back",
+        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help_back",
            ),
     ],
 ]
