@@ -66,6 +66,7 @@ aioredis
 odmantic
 aiohttp
 pykeyboard
+PyDictionary==2.0.1
 aiofiles
 carbonnow
 bing_image_downloader
