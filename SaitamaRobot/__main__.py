@@ -82,7 +82,7 @@ I CAN ALSO PLAY SONGS ON EITHER GROUP OR CHANNEL USE `/VCHELP` FOR MUSIC PLAYER 
 
 buttons = [
     [
-        InlineKeyboardButton( text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ !", url="t.me/techlock_bot?startgroup=true"),
+        InlineKeyboardButton( text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕", url="t.me/techlock_bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton( text="👑 ᴏᴡɴᴇʀ", url="t.me/satishmarisettyTG"),
