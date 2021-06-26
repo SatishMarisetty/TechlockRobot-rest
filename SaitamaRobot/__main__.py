@@ -621,7 +621,7 @@ def donate(update: Update, context: CallbackContext):
         if OWNER_ID != 1610284626 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
-                "[here]({})".format(t.me/SatishMarisettyTG),
+                "[here]({})".format(https://t.me/SatishMarisettyTG),
                 parse_mode=ParseMode.MARKDOWN,
             )
 
