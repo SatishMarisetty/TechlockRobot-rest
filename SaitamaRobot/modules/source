@@ -23,8 +23,16 @@ def source(update: Update, context: CallbackContext):
         """🖕""",
         parse_mode=ParseMode.MARKDOWN,
     )
+@run_async
+def source_shit(update: Update, context: CallbackContext):
+    if update.effective_chat.type != "private":
+        update.effective_message.reply_text(
+            "",
+        )
+        return
+    source(update)
 
 
 
-SOURCE_HANDLER = CommandHandler("source", source)
+SOURCE_HANDLER = CommandHandler("source", source_shit)
 dispatcher.add_handler(SOURCE_HANDLER)
