@@ -30,5 +30,5 @@ def me(update: Update, context: CallbackContext):
 
 
 
-ME_HANDLER = MessageHandler(Filters.regex(r"(?i)@SatishMarisetty(TG)?"), me)
+ME_HANDLER = MessageHandler(Filters.regex(r"(?i)@SatishMarisettyTG"), me)
 dispatcher.add_handler(ME_HANDLER)
