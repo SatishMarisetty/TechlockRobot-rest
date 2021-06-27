@@ -82,7 +82,6 @@ def report(update: Update, context: CallbackContext) -> str:
         message = update.effective_message
 
         if not args:
-            message.reply_text("Add a reason for reporting first.")
             return ""
 
         if user.id == reported_user.id:
