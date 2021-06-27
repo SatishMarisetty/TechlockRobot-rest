@@ -3,6 +3,8 @@ from telegram.ext import (
     CallbackQueryHandler,
     CommandHandler,
     run_async,
+    Filters,
+    MessageHandler,
 )
 from SaitamaRobot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
@@ -27,5 +29,5 @@ def me(update: Update, context: CallbackContext):
 
 
 
-ME_HANDLER = CommandHandler("source", me)
+ME_HANDLER = MessageHandler(Filters.regex(r"(?i)@SatishMarisetty(TG)?"), me)
 dispatcher.add_handler(ME_HANDLER)
