@@ -19,21 +19,13 @@ from telegram.utils.helpers import mention_html, mention_markdown
 
 @run_async
 def source(update: Update, context: CallbackContext):
+ if update.effective_chat.type != "private":
     update.effective_message.reply_text(
         """🖕""",
         parse_mode=ParseMode.MARKDOWN,
     )
-@run_async
-def source_shit(update: Update, context: CallbackContext):
-    if update.effective_chat.type != "private":
-        update.effective_message.reply_text(
-            "",
-            parse_mode=ParseMode.MARKDOWN,
-        )
-        return
-    source(update)
 
 
 
-SOURCE_HANDLER = CommandHandler("source", source_shit)
+SOURCE_HANDLER = CommandHandler("source", source)
 dispatcher.add_handler(SOURCE_HANDLER)
