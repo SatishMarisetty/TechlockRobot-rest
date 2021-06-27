@@ -28,6 +28,7 @@ def source_shit(update: Update, context: CallbackContext):
     if update.effective_chat.type != "private":
         update.effective_message.reply_text(
             "",
+            parse_mode=ParseMode.MARKDOWN,
         )
         return
     source(update)
