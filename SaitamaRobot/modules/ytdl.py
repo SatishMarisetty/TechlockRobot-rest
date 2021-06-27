@@ -36,7 +36,8 @@ from SaitamaRobot.utils.errors import capture_err
 from SaitamaRobot.utils.formatter import convert_seconds_to_minutes as timeFormat
 from SaitamaRobot.utils.functions import downloader
 
-__help__ = """ /ytdl [VIDEO_LINK] - Download a youtube video."""
+__help__ = """
+• `/ytdl` [VIDEO_LINK] - Download a youtube video."""
 __mod_name__ = "YOUTUBE"
 
 
