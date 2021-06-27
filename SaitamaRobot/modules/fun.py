@@ -399,6 +399,8 @@ __help__ = """
  • `/8ball`*:* predicts using 8ball method
  • `/meme`*:* sends random anime memes
  • `/gbam`*:* troll somone with fake gbans, only Disaster People can do this
+ • `/truth`*:* Gives random truth task
+ • `/dare`*:* Gives random dare task
 
  *Play Game With Emojis:*
  • `/dice` or /dice 1 to 6 any value
