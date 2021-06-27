@@ -1,6 +1,6 @@
-from SaitamaRobot.events import register 
-
-@register(cmds="source")  
-async def _(message): 
-j = "🖕" 
-await message.reply(j)
+@run_async
+def source(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(
+        """🖕""",
+        parse_mode=ParseMode.MARKDOWN,
+    )
