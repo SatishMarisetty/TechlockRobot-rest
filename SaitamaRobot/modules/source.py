@@ -19,7 +19,7 @@ from telegram.utils.helpers import mention_html, mention_markdown
 
 @run_async
 def source(update: Update, context: CallbackContext):
- if update.effective_chat.type != "private":
+ if not update.effective_chat.type != "private":
     update.effective_message.reply_text(
         """🖕""",
         parse_mode=ParseMode.MARKDOWN,
