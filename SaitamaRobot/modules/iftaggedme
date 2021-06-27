@@ -22,10 +22,11 @@ from telegram.utils.helpers import mention_html, mention_markdown
 @run_async
 def me(update: Update, context: CallbackContext):
  if update.effective_chat.type != "private":
-    update.effective_message.reply_text(
-        """Should Change""",
-        parse_mode=ParseMode.MARKDOWN,
-    )
+    update.effective_message.reply_document(
+                document=open(f"./SaitamaRobot/shit/sticker.webp", "rb"),
+                parse_mode=ParseMode.HTML,
+            )
+
 
 
 
