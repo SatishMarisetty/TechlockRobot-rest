@@ -133,7 +133,7 @@ size=200x200&charset-source=UTF-8&charset-target=UTF-8\
 
 __help__ = """
 *Commands:*
-• `/makeqr` <text> : make any text to a QR code format
+• `/makeqr` <text> : makes any text to a QR code format
 • `/getqr` <reply to a qrcode> : decodes the replied QR code.
  """
 __mod_name__ = "QRCODE"
