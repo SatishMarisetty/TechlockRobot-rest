@@ -4,6 +4,8 @@ from telegram.ext import (
     CommandHandler,
     run_async,
 )
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from SaitamaRobot import dispatcher
 
 @run_async
 def source(update: Update, context: CallbackContext):
