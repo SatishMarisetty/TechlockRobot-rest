@@ -85,7 +85,7 @@ buttons = [
         InlineKeyboardButton( text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="t.me/techlock_bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton( text="👑 ᴏᴡɴᴇʀ", url="t.me/satishmarisettyTG"),
+        InlineKeyboardButton( text="ɢᴏ ɪɴʟɪɴᴇ", switch_inline_query_current_chat=""),
         InlineKeyboardButton( text="🔔 ᴄʜᴀɴɴᴇʟ", url="https://t.me/joinchat/Uyn68IozS5hKyWPg"),
     ],
     [
