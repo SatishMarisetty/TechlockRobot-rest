@@ -1,9 +1,10 @@
 from googletrans import Translator
+from SaitamaRobot.events import register
 
 
 
 
-@ultroid_cmd(
+@register(
     pattern="tr",
 )
 async def _(event):
@@ -21,7 +22,7 @@ async def _(event):
         text = txt
         lan = input or "en"
     else:
-        return await eod(xx, f"`{hndlr}tr LanguageCode` as reply to a message", time=5)
+        return await eod(xx, f"`tr LanguageCode` as reply to a message", time=5)
     translator = Translator()
     try:
         tt = translator.translate(text, dest=lan)
