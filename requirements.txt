@@ -1,6 +1,7 @@
 alphabet_detector
 countryinfo
 google_trans_new
+googletrans
 beautifulsoup4
 bleach
 cachetools
