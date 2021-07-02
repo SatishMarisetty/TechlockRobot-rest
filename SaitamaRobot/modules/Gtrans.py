@@ -3,10 +3,7 @@ from SaitamaRobot.events import register
 
 
 
-
-@register(
-    pattern="tr",
-)
+@register(pattern="^/tr ?(.*)")
 async def _(event):
     if len(event.text) > 3:
         if not event.text[3] == " ":
