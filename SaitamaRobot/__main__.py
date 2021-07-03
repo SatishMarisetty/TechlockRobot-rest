@@ -85,12 +85,12 @@ buttons = [
         InlineKeyboardButton( text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="t.me/techlock_bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton( text="ɢᴏ ɪɴʟɪɴᴇ", switch_inline_query_current_chat=""),
-        InlineKeyboardButton( text="🔔 ᴄʜᴀɴɴᴇʟ", url="https://t.me/joinchat/Uyn68IozS5hKyWPg"),
+        InlineKeyboardButton( text="Gᴏ Iɴʟɪɴᴇ", switch_inline_query_current_chat=""),
+        InlineKeyboardButton( text="🔔 Cʜᴀɴɴᴇʟ", url="https://t.me/joinchat/Uyn68IozS5hKyWPg"),
     ],
     [
-        InlineKeyboardButton( text="👥 ɢʀᴏᴜᴘ", url="https://t.me/joinchat/SCYeWy4pj_EDGcYP"),
-        InlineKeyboardButton( text="📖 ꜱᴇᴛᴜᴘ ɢᴜɪᴅᴇ", url="https://telegra.ph/New-to-TECHLOCK-06-14"),
+        InlineKeyboardButton( text="👥 Gʀᴏᴜᴘ", url="https://t.me/joinchat/SCYeWy4pj_EDGcYP"),
+        InlineKeyboardButton( text="📖 Sᴇᴛᴜᴘ Gᴜɪᴅᴇ", url="https://telegra.ph/New-to-TECHLOCK-06-14"),
     ],
     [
         InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help_back",
