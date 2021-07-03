@@ -98,10 +98,10 @@ __help__ = """
             [all available language codes](https://developers.google.com/admin-sdk/directory/v1/languages)
 """
 
-TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], totranslate)
+TRANSLATE_HANDLER = DisableAbleCommandHandler("tl", totranslate)
 
 dispatcher.add_handler(TRANSLATE_HANDLER)
 
 __mod_name__ = "G-TRANS"
-__command_list__ = ["tr", "tl"]
+__command_list__ = ["tl"]
 __handlers__ = [TRANSLATE_HANDLER]
