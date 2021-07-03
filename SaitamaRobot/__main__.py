@@ -82,7 +82,7 @@ I CAN ALSO PLAY SONGS ON EITHER GROUP OR CHANNEL USE `/VCHELP` FOR MUSIC PLAYER 
 
 buttons = [
     [
-        InlineKeyboardButton( text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="t.me/techlock_bot?startgroup=true"),
+        InlineKeyboardButton( text="➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕", url="t.me/techlock_bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton( text="Gᴏ Iɴʟɪɴᴇ", switch_inline_query_current_chat=""),
@@ -93,7 +93,7 @@ buttons = [
         InlineKeyboardButton( text="📖 Sᴇᴛᴜᴘ Gᴜɪᴅᴇ", url="https://telegra.ph/New-to-TECHLOCK-06-14"),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help_back",
+        InlineKeyboardButton(text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help_back",
            ),
     ],
 ]
