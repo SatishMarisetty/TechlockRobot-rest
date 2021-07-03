@@ -6,7 +6,7 @@
 import emoji
 import re
 import aiohttp
-from googletrans import Translator as google_translator
+from googletrans import Translator as translator
 from pyrogram import filters
 
 from SaitamaRobot import BOT_ID
@@ -15,7 +15,6 @@ from SaitamaRobot import arq
 from SaitamaRobot.utils.pluginhelp import admins_only, edit_or_reply
 from SaitamaRobot import pbot as eren
 
-translator = google_translator()
 IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
 IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
 
