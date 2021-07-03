@@ -1,6 +1,7 @@
 from SaitamaRobot import pbot as app
 from SaitamaRobot import arq
 from SaitamaRobot.utils.errors import capture_err
+from pyrogram import filters
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
