@@ -77,6 +77,7 @@ async def _(event):
     async with ubot.conversation(chat) as conv:
 
         try:
+                await silently_send_message(conv, f"/search_id {uid}")
 
             
                 msg = await conv.send_message(id)
@@ -85,8 +86,7 @@ async def _(event):
                 responds = await conv.get_response()
 
           
-
-  except YouBlockedUserError:
+   except YouBlockedUserError:
 
                 await event.reply("Please unblock @sangmatainfo_bot and try again")
 
