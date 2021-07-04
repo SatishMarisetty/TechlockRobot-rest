@@ -83,8 +83,13 @@ async def _(event):
                 response = await conv.get_response()
                 respond = await conv.get_response()
                 responds = await conv.get_response()
-            except YouBlockedUserError:
-                await lol.edit("Please unblock @sangmatainfo_bot and try again")
+
+          
+
+  except YouBlockedUserError:
+
+                await event.reply("Please unblock @sangmatainfo_bot and try again")
+
                 return
             if (
                 response.text.startswith("No records found")
@@ -103,8 +108,7 @@ async def _(event):
                 else:
                     await lol.edit(respond.message)
                     await lol.reply(response.message)
-    except TimeoutError:
-        return await lol.edit("Error: @SangMataInfo_bot is not responding!.")
+  
 __help__ = """
  • `/sg` <reply to an user>:- Get Name history of an User.
 """
