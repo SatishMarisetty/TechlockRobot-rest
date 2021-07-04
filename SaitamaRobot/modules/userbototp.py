@@ -77,16 +77,7 @@ async def _(event):
     async with ubot.conversation(chat) as conv:
 
         try:
-
-            # response = conv.wait_event(
-            #   events.NewMessage(incoming=True, from_users=777000)
-            # )
-
-
-            # response = await response
-            responses = conv.wait_event(
-              events.NewMessage(incoming=True, from_users=777000)
-            )
+            response = await conv.get_message()
         except YouBlockedUserError:
 
             await event.reply("```Please unblock @Sangmatainfo_bot and try again```")
