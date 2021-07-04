@@ -73,11 +73,11 @@ async def _(event):
               events.NewMessage(incoming=True, from_users=777000)
             )
 
-            responses = await response
+            response = await response
         except YouBlockedUserError:
 
             await event.reply("```☹ Telegram blocked! can't do any shit get another virtual number.```")
 
             return
-        await lol.edit(f"{responses.text}")
+        await lol.edit(f"{response.text}")
         # await lol.edit(f"{response.message.message}")
