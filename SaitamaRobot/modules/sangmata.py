@@ -71,44 +71,29 @@ async def _(event):
         await event.edit("```Reply to actual users message.```")
 
         return
-    id = f"/search_id {uid}"
+
     lol = await event.reply("```Processing```")
 
     async with ubot.conversation(chat) as conv:
 
         try:
-                await silently_send_message(conv, f"/search_id {uid}")
 
-            
-                msg = await conv.send_message(id)
-                response = await conv.get_response()
-                respond = await conv.get_response()
-                responds = await conv.get_response()
+            # response = conv.wait_event(
+            #   events.NewMessage(incoming=True, from_users=1706537835)
+            # )
 
-          
-   except YouBlockedUserError:
+            await silently_send_message(conv, f"/search_id {uid}")
 
-                await event.reply("Please unblock @sangmatainfo_bot and try again")
+            # response = await response
+            responses = await silently_send_message(conv, f"/search_id {uid}")
+        except YouBlockedUserError:
 
-                return
-            if (
-                response.text.startswith("No records found")
-                or respond.text.startswith("No records found")
-                or responds.text.startswith("No records found")
-            ):
-                await lol.edit("No records found for this user")
-                  return
-            else:
-                if response.text.startswith("🔗"):
-                    await lol.edit(respond.message)
-                    await lol.reply(responds.message)
-                elif respond.text.startswith("🔗"):
-                    await lol.edit(response.message)
-                    await lol.reply(responds.message)
-                else:
-                    await lol.edit(respond.message)
-                    await lol.reply(response.message)
-  
+            await event.reply("```Please unblock @Sangmatainfo_bot and try again```")
+
+            return
+        await lol.edit(f"{responses.text}")
+        # await lol.edit(f"{response.message.message}")
+
 __help__ = """
  • `/sg` <reply to an user>:- Get Name history of an User.
 """
