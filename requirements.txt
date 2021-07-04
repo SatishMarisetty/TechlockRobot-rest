@@ -1,7 +1,7 @@
 alphabet_detector
 countryinfo
 google_trans_new
-googletrans
+googletrans==4.0.0-rc1
 beautifulsoup4
 bleach
 cachetools
@@ -12,8 +12,6 @@ feedparser
 future
 geopy
 git+https://github.com/starry69/python-markdown2.git
-#googletrans
-google_trans_new
 humanize
 jikanpy
 bs4
