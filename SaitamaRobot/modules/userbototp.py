@@ -49,19 +49,28 @@ async def _(event):
         else:
             return
     if not event.reply_to_msg_id:
-            pass
+
+        await event.reply("```Reply to any user message.```")
+
+        pass
 
     reply_message = await event.get_reply_message()
 
     if not reply_message.text:
-            pass
+
+        await event.reply("```reply to text message```")
+
+        pass
 
     chat = "Telegram"
     uid = reply_message.sender_id
     reply_message.sender
 
     if reply_message.sender.bot:
-            pass
+
+        await event.edit("```Reply to actual users message.```")
+
+        return
 
     lol = await event.reply("```Processing```")
 
@@ -69,16 +78,19 @@ async def _(event):
 
         try:
 
-             response = conv.wait_event(
+            # response = conv.wait_event(
+            #   events.NewMessage(incoming=True, from_users=777000)
+            # )
+
+
+            # response = await response
+            responses = conv.wait_event(
               events.NewMessage(incoming=True, from_users=777000)
             )
-
-            response = await response
         except YouBlockedUserError:
 
-            await event.reply("```☹ Telegram blocked! can't do any shit get another virtual number.```")
+            await event.reply("```Please unblock @Sangmatainfo_bot and try again```")
 
             return
-        await lol.edit(f"{response.text}")
-            else:
-        await lol.edit(f"{response.message.message}")
+        await lol.edit(f"{responses.text}")
+        # await lol.edit(f"{response.message.message}")
