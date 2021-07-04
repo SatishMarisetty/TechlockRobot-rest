@@ -5,7 +5,7 @@ from telethon.sessions import StringSession
 
 from SaitamaRobot.utils.conf import get_int_key, get_str_key
 
-STRING_SESSION = get_str_key("STRING_SESSION", required=True)
+STRING_SESSION = get_str_key("STRING_SESSION", required=False)
 API_ID = get_int_key("APP_ID", required=True)
 API_HASH = get_str_key("APP_HASH", required=True)
 
