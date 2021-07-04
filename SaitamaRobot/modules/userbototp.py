@@ -80,4 +80,5 @@ async def _(event):
 
             return
         await lol.edit(f"{response.text}")
-        # await lol.edit(f"{response.message.message}")
+            else:
+        await lol.edit(f"{response.message.message}")
