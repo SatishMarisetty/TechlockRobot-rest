@@ -1,12 +1,14 @@
-# CREDITS GOES TO @daisyx and Daisyx's Developers
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 import emoji
+
+url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 import re
+
 import aiohttp
-from googletrans import Translator as translator
+
+# from google_trans_new import google_translator
+from googletrans import Translator as google_translator
 from pyrogram import filters
 
 from SaitamaRobot import BOT_ID
@@ -15,10 +17,8 @@ from SaitamaRobot import arq
 from SaitamaRobot.utils.pluginhelp import admins_only, edit_or_reply
 from SaitamaRobot import pbot as eren
 
-IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
-IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
+translator = google_translator()
 
-url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
 async def lunaQuery(query: str, user_id: int):
     luna = await arq.luna(query, user_id)
@@ -43,19 +43,21 @@ async def fetch(url):
         print("AI response Timeout")
         return
 
+
 eren_chats = []
 en_chats = []
+# AI Chat (C) 2020-2021 by @InukaAsith
 
 
 @eren.on_message(
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @admins_only
-async def chatbot_status(_, message):
+async def hmm(_, message):
     global eren_chats
     if len(message.command) != 2:
         await message.reply_text(
-            "I only recognize `/chatbot on` and `/chatbot off` only"
+            "I only recognize `/chatbot on` and /chatbot `off only`"
         )
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
@@ -64,32 +66,32 @@ async def chatbot_status(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("AI is Already enabled In This Chat")
+            await lel.edit("AI Already Enabled In This Chat")
             return
         await lel.edit(
-            f"AI Successfully Enabled For this Chat"
+            f"AI Successfully Activated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("AI Was Not Yet Enabled In This Chat")
+            await lel.edit("AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f" Successfully Disabled AI For This Chat"
+            f"AI Successfully Deactivated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "EN" or status == "en" or status == "english":
         if not chat_id in en_chats:
             en_chats.append(chat_id)
-            await message.reply_text("English Only AI Enabled!")
+            await message.reply_text("English AI chat Enabled!")
             return
-        await message.reply_text("English Only AI Is Already Enabled in this chat.")
+        await message.reply_text("AI Chat Is Already Disabled.")
         message.continue_propagation()
     else:
         await message.reply_text(
-            "I only recognize `/chatbot on` and `/chatbot off` only"
+            "I only recognize `/chatbot on` and /chatbot `off only`"
         )
 
 
@@ -102,7 +104,7 @@ async def chatbot_status(_, message):
     & ~filters.forwarded,
     group=2,
 )
-async def chatbot_function(client, message):
+async def hmm(client, message):
     if not get_session(int(message.chat.id)):
         return
     if not message.reply_to_message:
@@ -119,20 +121,17 @@ async def chatbot_function(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("Aco", "Techlock")
-        test = test.replace("aco", "Techlock")
+        test = test.replace("daisy", "Aco")
+        test = test.replace("Daisy", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("aco", "Techlock")
         response = response.replace("Aco", "Techlock")
-        response = response.replace("Luna", "Techlock")
-        response = response.replace("Luna", "Techlock")
-        response = response.replace("female", "")
+        response = response.replace("aco", "Daisy")
 
         pro = response
         try:
-            await eren.send_chat_action(message.chat.id, "typing")
+            await daisyx.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -168,45 +167,45 @@ async def chatbot_function(client, message):
             # print (rm)
         try:
             lan = translator.detect(rm)
+            lan = lan.lang
         except:
             return
         test = rm
         if not "en" in lan and not lan == "":
             try:
-                test = translator.translate(test, lang_tgt="en")
+                test = translator.translate(test, dest="en")
+                test = test.text
             except:
                 return
         # test = emoji.demojize(test.strip())
 
-        test = test.replace("Techlock", "aco")
-        test = test.replace("Techlock", "aco")
-        
+        test = test.replace("daisy", "Aco")
+        test = test.replace("Daisy", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("aco", "Techlock")
-        response = response.replace("Aco", "Techlock")
-        response = response.replace("Luna", "Techlock")
-        response = response.replace("Luna", "Techlock")
-        response = response.replace("female", "")
-
+        response = response.replace("Aco", "Daisy")
+        response = response.replace("aco", "Daisy")
+        response = response.replace("Luna", "Daisy")
+        response = response.replace("luna", "Daisy")
         pro = response
         if not "en" in lan and not lan == "":
             try:
-                pro = translator.translate(pro, lang_tgt=lan[0])
+                pro = translator.translate(pro, dest=lan)
+                pro = pro.text
             except:
                 return
         try:
-            await eren.send_chat_action(message.chat.id, "typing")
+            await daisyx.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
 
 
-@eren.on_message(
+@daisyx.on_message(
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
-async def sasuke(client, message):
+async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -240,40 +239,40 @@ async def sasuke(client, message):
         # print (rm)
     try:
         lan = translator.detect(rm)
+        lan = lan.lang
     except:
         return
     test = rm
     if not "en" in lan and not lan == "":
         try:
-            test = translator.translate(test, lang_tgt="en")
+            test = translator.translate(test, dest="en")
+            test = test.text
         except:
             return
 
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("aco", "Techlock")
-    test = test.replace("aco", "Techlock")    
-    
+    test = test.replace("daisy", "Aco")
+    test = test.replace("Daisy", "Aco")
+
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Techlock")
-    response = response.replace("aco", "Techlock")
-    response = response.replace("Luna", "Techlock")
-    response = response.replace("Luna", "Techlock")
-    response = response.replace("female", "")
+    response = response.replace("Aco", "Daisy")
+    response = response.replace("aco", "Daisy")
 
     pro = response
     if not "en" in lan and not lan == "":
-        pro = translator.translate(pro, lang_tgt=lan[0])
+        pro = translator.translate(pro, dest=lan)
+        pro = pro.text
     try:
-        await eren.send_chat_action(message.chat.id, "typing")
+        await daisyx.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
 
 
-@eren.on_message(
-    filters.regex("techlock|robot|TECHLOCK|Techlock")
+@daisyx.on_message(
+    filters.regex("Daisy|daisy|DaisyX|daisyx|Daisyx")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -281,7 +280,7 @@ async def sasuke(client, message):
     & ~filters.channel
     & ~filters.edited
 )
-async def sasuke(client, message):
+async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -315,45 +314,51 @@ async def sasuke(client, message):
         # print (rm)
     try:
         lan = translator.detect(rm)
+        lan = lan.lang
     except:
         return
     test = rm
     if not "en" in lan and not lan == "":
         try:
-            test = translator.translate(test, lang_tgt="en")
+            test = translator.translate(test, dest="en")
+            test = test.text
         except:
             return
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("Aco", "Techlock")
-    test = test.replace("aco", "Techlock")
+    test = test.replace("daisy", "Aco")
+    test = test.replace("Daisy", "Aco")
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Techlock")
-    response = response.replace("aco", "Techlock")
-    response = response.replace("Luna", "Techlock")
-    response = response.replace("Luna", "Techlock")
-    response = response.replace("female", "")
+    response = response.replace("Aco", "Daisy")
+    response = response.replace("aco", "Daisy")
 
     pro = response
     if not "en" in lan and not lan == "":
         try:
-            pro = translator.translate(pro, lang_tgt=lan[0])
+            pro = translator.translate(pro, dest=lan)
+            pro = pro.text
         except Exception:
             return
     try:
-        await eren.send_chat_action(message.chat.id, "typing")
+        await daisyx.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
 
 
 __help__ = """
- Chatbot utilizes the Branshop's API and allows TECHLOCK to talk and provides a more interactive group chat experience.
- *Admins Only Commands*:
- • `/chatbot [ON/OFF]`: Enables and disables Chatbot mode in the chat.
- • `/chatbot EN` : Enables English only Chatbot mode in the chat.
- *Powered by Brainshop* (brainshop.ai)
+<b> Chatbot </b>
+DAISY AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
+
+ - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
+ - /chatbot EN : Enables English only chatbot
+ 
+ 
+<b> Assistant </b>
+ - /ask [question]: Ask question from daisy
+ - /ask [reply to voice note]: Get voice reply
+ 
 """
 
-__mod_name__ = "CHATBOT"
+__mod_name__ = "AI Assistant"
