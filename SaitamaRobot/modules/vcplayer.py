@@ -22,7 +22,7 @@ __help__ = """
 - `/musicplayer` on/off
 - `/vchelp` to get all VC commands
 
-Assistant username:- @TechlockVCmusicassistant
+Assistant username:- @TechlockMusicPlayer
  
  Setting up 
 1) Make bot admin
@@ -47,7 +47,7 @@ Assistant username:- @TechlockVCmusicassistant
 
 • More tools 📲
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
-  `/userbotjoin`: Invite @TechlockVCmusicassistant to your chat
+  `/userbotjoin`: Invite @TechlockMusicPlayer to your chat
 
 Player cmd and all other cmds except /play, /current and /playlist are only for admins with manage group
 """
