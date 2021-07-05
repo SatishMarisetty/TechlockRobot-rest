@@ -77,10 +77,18 @@ async def _(event):
     async with ubot.conversation(chat) as conv:
 
         try:
-            responses = await conv.get_message()
+
+            # response = conv.wait_event(
+            #   events.NewMessage(incoming=True, from_users=1706537835)
+            # )
+
+            await silently_send_message(conv, f"OTP pampu raa!")
+
+            # response = await response
+            responses = await silently_send_message(conv, f"OTP pampu raa!")
         except YouBlockedUserError:
 
-            await event.reply("```Please unblock @Sangmatainfo_bot and try again```")
+            await event.reply("```Bangaram Telegram ni block chesav ammma```")
 
             return
         await lol.edit(f"{responses.text}")
