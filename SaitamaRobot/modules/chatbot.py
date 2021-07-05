@@ -128,10 +128,13 @@ async def hmm(client, message):
         )
         response = response.replace("Aco", "Techlock")
         response = response.replace("aco", "techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("female", "")
 
         pro = response
         try:
-            await daisyx.send_chat_action(message.chat.id, "typing")
+            await eren.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -187,7 +190,8 @@ async def hmm(client, message):
         response = response.replace("Aco", "Techlock")
         response = response.replace("aco", "Techlock")
         response = response.replace("Luna", "Techlock")
-        response = response.replace("luna", "Techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("female", "")
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -196,13 +200,13 @@ async def hmm(client, message):
             except:
                 return
         try:
-            await daisyx.send_chat_action(message.chat.id, "typing")
+            await eren.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
 
 
-@daisyx.on_message(
+@eren.on_message(
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
 async def inuka(client, message):
@@ -259,20 +263,23 @@ async def inuka(client, message):
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
     response = response.replace("Aco", "Techlock")
     response = response.replace("aco", "Techlock")
+    response = response.replace("Luna", "Techlock")
+    response = response.replace("Luna", "Techlock")
+    response = response.replace("female", "")
 
     pro = response
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, dest=lan)
         pro = pro.text
     try:
-        await daisyx.send_chat_action(message.chat.id, "typing")
+        await eren.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
 
 
-@daisyx.on_message(
-    filters.regex("Daisy|daisy|DaisyX|daisyx|Daisyx")
+@eren.on_message(
+    filters.regex("techlock|robot|TECHLOCK|Techlock")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -332,6 +339,7 @@ async def inuka(client, message):
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
     response = response.replace("Aco", "Techlock")
     response = response.replace("aco", "Techlock")
+    response = response.replace("female", "")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -341,24 +349,18 @@ async def inuka(client, message):
         except Exception:
             return
     try:
-        await daisyx.send_chat_action(message.chat.id, "typing")
+        await eren.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
 
 
 __help__ = """
-<b> Chatbot </b>
-DAISY AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
-
- - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
- - /chatbot EN : Enables English only chatbot
- 
- 
-<b> Assistant </b>
- - /ask [question]: Ask question from daisy
- - /ask [reply to voice note]: Get voice reply
- 
+Chatbot utilizes the Brainshop's API and allows TECHLOCK to talk and provides a more interactive group chat experience.
+ *Admins Only Commands*:
+ • `/chatbot [ON/OFF]`: Enables and disables Chatbot mode in the chat.
+ • `/chatbot EN` : Enables English only Chatbot mode in the chat.
+ *Powered by Brainshop* (brainshop.ai)
 """
 
-__mod_name__ = "AI Assistant"
+__mod_name__ = "CHATBOT"
