@@ -121,13 +121,13 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("daisy", "Aco")
-        test = test.replace("Daisy", "Aco")
+        test = test.replace("Techlock", "Aco")
+        test = test.replace("Techlock", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
         response = response.replace("Aco", "Techlock")
-        response = response.replace("aco", "Daisy")
+        response = response.replace("aco", "techlock")
 
         pro = response
         try:
@@ -179,15 +179,15 @@ async def hmm(client, message):
                 return
         # test = emoji.demojize(test.strip())
 
-        test = test.replace("daisy", "Aco")
-        test = test.replace("Daisy", "Aco")
+        test = test.replace("Techlock", "Aco")
+        test = test.replace("Techlock", "Aco")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "Daisy")
-        response = response.replace("aco", "Daisy")
-        response = response.replace("Luna", "Daisy")
-        response = response.replace("luna", "Daisy")
+        response = response.replace("Aco", "Techlock")
+        response = response.replace("aco", "Techlock")
+        response = response.replace("Luna", "Techlock")
+        response = response.replace("luna", "Techlock")
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -253,12 +253,12 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("daisy", "Aco")
-    test = test.replace("Daisy", "Aco")
+    test = test.replace("Techlock", "Aco")
+    test = test.replace("Techlock", "Aco")
 
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Daisy")
-    response = response.replace("aco", "Daisy")
+    response = response.replace("Aco", "Techlock")
+    response = response.replace("aco", "Techlock")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -327,11 +327,11 @@ async def inuka(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    test = test.replace("daisy", "Aco")
-    test = test.replace("Daisy", "Aco")
+    test = test.replace("Techlock", "Aco")
+    test = test.replace("Techlock", "Aco")
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
-    response = response.replace("Aco", "Daisy")
-    response = response.replace("aco", "Daisy")
+    response = response.replace("Aco", "Techlock")
+    response = response.replace("aco", "Techlock")
 
     pro = response
     if not "en" in lan and not lan == "":
