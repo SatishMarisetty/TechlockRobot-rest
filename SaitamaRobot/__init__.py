@@ -232,6 +232,70 @@ print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 print("[INFO]: CONNECTING TO ELEPHANT SQL DATABASE")
 
+print("[INFO]: INITIALIZING USERBOT CLIENT")
+app2 = Client(SESSION_STRING, api_id=API_ID, api_hash=API_HASH)
+print("[INFO]: INITIALIZING BOT CLIENT")
+app = Client(
+    "wbb", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH
+)
+
+BOT_ID = 0
+BOT_NAME = ""
+BOT_USERNAME = ""
+BOT_MENTION = ""
+BOT_DC_ID = 0
+USERBOT_ID = 0
+USERBOT_NAME = ""
+USERBOT_USERNAME = ""
+USERBOT_DC_ID = 0
+USERBOT_MENTION = ""
+USERBOT_BOT_CHAT_COMMON = []
+
+
+def get_info(app, app2):
+    global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_DC_ID, BOT_MENTION
+    global USERBOT_ID, USERBOT_NAME, USERBOT_USERNAME, USERBOT_DC_ID, USERBOT_MENTION
+    global USERBOT_BOT_CHAT_COMMON
+    getme = app.get_me()
+    getme2 = app2.get_me()
+    BOT_ID = getme.id
+    USERBOT_ID = getme2.id
+    BOT_NAME = (
+        f"{getme.first_name} {getme.last_name}"
+        if getme.last_name
+        else getme.first_name
+    )
+    BOT_USERNAME = getme.username
+    BOT_MENTION = getme.mention
+    BOT_DC_ID = getme.dc_id
+
+    USERBOT_NAME = (
+        f"{getme2.first_name} {getme2.last_name}"
+        if getme2.last_name
+        else getme2.first_name
+    )
+    USERBOT_USERNAME = getme2.username
+    USERBOT_MENTION = getme2.mention
+    USERBOT_DC_ID = getme2.dc_id
+
+    USERBOT_BOT_CHAT_COMMON = [
+        i.id for i in app2.get_common_chats(BOT_USERNAME)
+    ] + SPAM_CHECK_EXCEPTION_GROUPS
+
+
+print("[INFO]: STARTING BOT CLIENT TEMPORARILY")
+app.start()
+print("[INFO]: STARTING USERBOT CLIENT TEMPORARILY")
+app2.start()
+print("[INFO]: LOADING UB/BOT PROFILE INFO")
+get_info(app, app2)
+print("[INFO]: LOADED UB/BOT PROFILE INFO")
+
+app.stop()
+app2.stop()
+
+
+
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
