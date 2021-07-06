@@ -275,7 +275,6 @@ print("[INFO]: LOADING BOT PROFILE INFO")
 get_info(app, app2)
 print("[INFO]: LOADED BOT PROFILE INFO")
 
-app.stop()
 
 
 
