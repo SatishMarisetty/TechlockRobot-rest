@@ -280,7 +280,7 @@ def get_info(app, app2):
 
     USERBOT_BOT_CHAT_COMMON = [
         i.id for i in app2.get_common_chats(BOT_USERNAME)
-    ] + SPAM_CHECK_EXCEPTION_GROUPS
+    ]
 
 
 print("[INFO]: STARTING BOT CLIENT TEMPORARILY")
