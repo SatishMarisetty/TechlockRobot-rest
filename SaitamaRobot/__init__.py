@@ -233,10 +233,10 @@ arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 print("[INFO]: CONNECTING TO ELEPHANT SQL DATABASE")
 
 print("[INFO]: INITIALIZING USERBOT CLIENT")
-app2 = Client(SESSION_STRING, api_id=API_ID, api_hash=API_HASH)
+app2 = Client(STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
 print("[INFO]: INITIALIZING BOT CLIENT")
 app = Client(
-    "wbb", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH
+    "wbb", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH
 )
 
 BOT_ID = 0
