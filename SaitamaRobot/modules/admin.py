@@ -17,6 +17,31 @@ from SaitamaRobot.modules.helper_funcs.extraction import (extract_user,
                                                           extract_user_and_text)
 from SaitamaRobot.modules.log_channel import loggable
 from SaitamaRobot.modules.helper_funcs.alternate import send_message
+from SaitamaRobot import pbot as app
+from SaitamaRobot.utils.errors import capture_err
+
+@app.on_message(
+    (
+        filters.command("everyone")
+        | filters.command("all", prefixes="@")
+    )
+    & ~filters.edited
+    & ~filters.private
+)
+@capture_err
+@user_admin
+async def report_user(_, message):
+    if not message.reply_to_message:
+        return await message.reply_text(
+            "Reply to a message to report user."
+        )
+    list_of_members = await get_users(message.chat.id)
+    user_mention = message.reply_to_message.from_user.mention
+    text = f"Mentioned Everyone"
+    for all in list_of_members:
+        text += f"[\u2063](tg://user?id={all})"
+    await message.reply_text(text)
+
 
 
 @run_async
