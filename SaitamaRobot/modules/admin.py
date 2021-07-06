@@ -1,4 +1,5 @@
 import html
+import asyncio
 
 from telegram import ParseMode, Update
 from telegram.error import BadRequest
@@ -19,6 +20,7 @@ from SaitamaRobot.modules.log_channel import loggable
 from SaitamaRobot.modules.helper_funcs.alternate import send_message
 from SaitamaRobot import pbot as app
 from SaitamaRobot.utils.errors import capture_err
+from pyrogram import filters
 
 @app.on_message(
     (
