@@ -101,6 +101,7 @@ if ENV:
     ARQ_API_URL =  "https://thearq.tech"
     ARQ_API_KEY = ARQ_API
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
+    STRING_SESSION = os.environ.get("STRING_SESSION", True)
     
 
     try:
