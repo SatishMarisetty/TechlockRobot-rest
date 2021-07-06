@@ -258,9 +258,7 @@ def get_info(app, app2):
     global USERBOT_ID, USERBOT_NAME, USERBOT_USERNAME, USERBOT_DC_ID, USERBOT_MENTION
     global USERBOT_BOT_CHAT_COMMON
     getme = app.get_me()
-    getme2 = app2.get_me()
     BOT_ID = getme.id
-    USERBOT_ID = getme2.id
     BOT_NAME = (
         f"{getme.first_name} {getme.last_name}"
         if getme.last_name
@@ -270,27 +268,12 @@ def get_info(app, app2):
     BOT_MENTION = getme.mention
     BOT_DC_ID = getme.dc_id
 
-    USERBOT_NAME = (
-        f"{getme2.first_name} {getme2.last_name}"
-        if getme2.last_name
-        else getme2.first_name
-    )
-    USERBOT_USERNAME = getme2.username
-    USERBOT_MENTION = getme2.mention
-    USERBOT_DC_ID = getme2.dc_id
-
-    USERBOT_BOT_CHAT_COMMON = [
-        i.id for i in app2.get_common_chats(BOT_USERNAME)
-    ]
-
 
 print("[INFO]: STARTING BOT CLIENT TEMPORARILY")
 app.start()
-print("[INFO]: STARTING USERBOT CLIENT TEMPORARILY")
-app2.start()
-print("[INFO]: LOADING UB/BOT PROFILE INFO")
+print("[INFO]: LOADING BOT PROFILE INFO")
 get_info(app, app2)
-print("[INFO]: LOADED UB/BOT PROFILE INFO")
+print("[INFO]: LOADED BOT PROFILE INFO")
 
 app.stop()
 app2.stop()
