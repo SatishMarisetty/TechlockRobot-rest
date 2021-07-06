@@ -233,49 +233,6 @@ print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 print("[INFO]: CONNECTING TO ELEPHANT SQL DATABASE")
 
-print("[INFO]: INITIALIZING USERBOT CLIENT")
-app2 = Client(STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
-print("[INFO]: INITIALIZING BOT CLIENT")
-app = Client(
-    "wbb", bot_token=TOKEN, api_id=API_ID, api_hash=API_HASH
-)
-
-BOT_ID = 0
-BOT_NAME = ""
-BOT_USERNAME = ""
-BOT_MENTION = ""
-BOT_DC_ID = 0
-USERBOT_ID = 0
-USERBOT_NAME = ""
-USERBOT_USERNAME = ""
-USERBOT_DC_ID = 0
-USERBOT_MENTION = ""
-USERBOT_BOT_CHAT_COMMON = []
-
-
-def get_info(app, app2):
-    global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_DC_ID, BOT_MENTION
-    global USERBOT_ID, USERBOT_NAME, USERBOT_USERNAME, USERBOT_DC_ID, USERBOT_MENTION
-    global USERBOT_BOT_CHAT_COMMON
-    getme = app.get_me()
-    BOT_ID = getme.id
-    BOT_NAME = (
-        f"{getme.first_name} {getme.last_name}"
-        if getme.last_name
-        else getme.first_name
-    )
-    BOT_USERNAME = getme.username
-    BOT_MENTION = getme.mention
-    BOT_DC_ID = getme.dc_id
-
-
-print("[INFO]: STARTING BOT CLIENT TEMPORARILY")
-app.start()
-print("[INFO]: LOADING BOT PROFILE INFO")
-get_info(app, app2)
-print("[INFO]: LOADED BOT PROFILE INFO")
-
-
 
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
