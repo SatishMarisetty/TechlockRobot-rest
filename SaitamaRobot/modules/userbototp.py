@@ -62,7 +62,7 @@ async def _(event):
 
         pass
 
-    chat = "Telegram"
+    chat = bot.get_chat(777000)
     uid = reply_message.sender_id
     reply_message.sender
 
