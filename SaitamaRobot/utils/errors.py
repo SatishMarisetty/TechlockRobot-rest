@@ -47,7 +47,7 @@ def capture_err(func):
             )
             for x in error_feedback:
                 await pbot.send_message(
-                    f"@mybotalive",
+                    f"@errorlogger",
                     x
                 )
             raise err
