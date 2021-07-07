@@ -19,7 +19,6 @@ from SaitamaRobot.utils.errors import capture_err
     & ~filters.private
 )
 @capture_err
-@adminsOnly("can_pin_messages")
 async def report_user(_, message):
     if not message.reply_to_message:
         return await message.reply_text(
