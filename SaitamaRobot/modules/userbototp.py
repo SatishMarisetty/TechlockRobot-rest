@@ -66,9 +66,6 @@ async def _(event):
 
         pass
 
-@run_async
-def get_id(context: CallbackContext):
-
 
     bot = context.bot
 
