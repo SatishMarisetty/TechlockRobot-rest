@@ -65,7 +65,7 @@ async def _(event):
 
         pass
 
-   context: CallbackContext
+   context = CallbackContext
 
     bot = context.bot
 
