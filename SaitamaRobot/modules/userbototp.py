@@ -1,5 +1,5 @@
 
-
+from telegram.ext import CallbackContext
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions, types
@@ -64,6 +64,8 @@ async def _(event):
         await event.reply("```reply to text message```")
 
         pass
+
+   context: CallbackContext
 
     bot = context.bot
 
