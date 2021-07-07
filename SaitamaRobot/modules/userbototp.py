@@ -3,6 +3,7 @@ from telegram.ext import CallbackContext
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions, types
+from telegram.ext.dispatcher import run_async
 
 from SaitamaRobot.events import register as shit
 from SaitamaRobot import telethn as tbot
@@ -65,7 +66,9 @@ async def _(event):
 
         pass
 
-   context = CallbackContext
+@run_async
+def get_id(context: CallbackContext):
+
 
     bot = context.bot
 
