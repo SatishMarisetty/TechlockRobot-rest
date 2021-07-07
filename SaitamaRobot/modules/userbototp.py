@@ -1,36 +1,4 @@
 
-import html
-import re
-import os
-import requests
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity
-from telegram.ext import CallbackContext, CommandHandler
-from telegram.ext.dispatcher import run_async
-from telegram.error import BadRequest
-from telegram.utils.helpers import escape_markdown, mention_html
-
-from SaitamaRobot import (
-    DEV_USERS,
-    OWNER_ID,
-    DRAGONS,
-    DEMONS,
-    TIGERS,
-    WOLVES,
-    INFOPIC,
-    dispatcher,
-    sw,
-)
-from SaitamaRobot.__main__ import STATS, TOKEN, USER_INFO
-import SaitamaRobot.modules.sql.userinfo_sql as sql
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.modules.sql.global_bans_sql import is_user_gbanned
-from SaitamaRobot.modules.redis.afk_redis import is_user_afk, afk_reason
-from SaitamaRobot.modules.sql.users_sql import get_user_num_chats
-from SaitamaRobot.modules.helper_funcs.chat_status import sudo_plus
-from SaitamaRobot.modules.helper_funcs.extraction import extract_user
-
-
-
 
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
