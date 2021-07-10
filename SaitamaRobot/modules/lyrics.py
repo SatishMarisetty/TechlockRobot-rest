@@ -14,7 +14,7 @@ from youtubesearchpython import SearchVideos
 
 from SaitamaRobot.utils.conf import get_str_key
 from SaitamaRobot.utils.pluginhelp import get_text, progress
-from SaitamaRobot import pbot
+from SaitamaRobot import pbot, arq
 
 GENIUS = get_str_key("GENIUS_API_TOKEN", None)
 
@@ -164,38 +164,21 @@ def time_to_seconds(time):
 # Lel, Didn't Get Time To Make New One So Used Plugin Made br @mrconfused and @sandy1709 dont edit credits
 
 
-@pbot.on_message(filters.command(["lyric", "lyrics"]))
-async def _(client, message):
-    lel = await message.reply("Searching For Lyrics.....")
-    query = message.text
-    if not query:
-        await lel.edit("`What I am Supposed to find `")
-        return
+@@pbot.on_message(filters.command("lyrics"))
+async def lyrics_func(_, message):
+    if len(message.command) < 2:
+        return await message.reply_text("**Usage:**\n/lyrics [QUERY]")
+    m = await message.reply_text("**Searching**")
+    query = message.text.strip().split(None, 1)[1]
+    song = await arq.lyrics(query)
+    lyrics = song.result
+    if len(lyrics) < 4095:
+        return await m.edit(f"__{lyrics}__")
+    lyrics = await paste(lyrics)
+    await m.edit(f"**LYRICS_TOO_LONG:** [URL]({lyrics})")
 
-    song = ""
-    song = Song.find_song(query)
-    if song:
-        if song.lyrics:
-            reply = song.format()
-        else:
-            reply = "Couldn't find any lyrics for that song! try with artist name along with song if still doesnt work try `/glyrics`"
-    else:
-        reply = "lyrics not found! try with artist name along with song if still doesnt work try `/glyrics`"
 
-    if len(reply) > 4095:
-        with io.BytesIO(str.encode(reply)) as out_file:
-            out_file.name = "lyrics.text"
-            await client.send_document(
-                message.chat.id,
-                out_file,
-                force_document=True,
-                allow_cache=False,
-                caption=query,
-                reply_to_msg_id=message.message_id,
-            )
-            await lel.delete()
-    else:
-        await lel.edit(reply)  # edit or reply
+
 
 
 @pbot.on_message(filters.command(["glyric", "glyrics"]))
