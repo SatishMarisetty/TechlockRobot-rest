@@ -3,6 +3,7 @@ from typing import Dict, List, Union
 
 coupledb = db.couple
 karmadb = db.karma
+trustdb = db.trust
 
 
 #karma
@@ -100,4 +101,29 @@ async def save_couple(chat_id: int, date: str, couple: dict):
             }
         },
         upsert=True
+    )
+
+#trust
+
+
+async def get_trust_db(user_id: int) -> list:
+    user = await trustdb.find_one({"user_id": user_id})
+    if not user:
+        return []
+    return user["data"]
+
+
+async def update_trust_db(user_id: int, new_data: float):
+    user = await trustdb.find_one({"user_id": user_id})
+    data = user["data"] if user else []
+    if len(data) >= 100:
+        data = data[1:100]
+    data.append(new_data)
+    data = [
+        i for i in data if isinstance(i, float) or isinstance(i, int)
+    ]
+    await trustdb.update_one(
+        {"user_id": user_id},
+        {"$set": {"data": data}},
+        upsert=True,
     )
