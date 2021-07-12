@@ -214,8 +214,6 @@ def gifid(update: Update, context: CallbackContext):
 
 async def get_user_info(user):
     user = await app.get_users(user)
-    if not user.first_name:
-        return ["Deleted account", None)
     spam_probab, n_messages = await get_spam_probability(user_id)
     isSpammer = (
         True
