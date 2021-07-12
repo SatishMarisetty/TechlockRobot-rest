@@ -33,7 +33,6 @@ from SaitamaRobot.modules.sql.users_sql import get_user_num_chats
 from SaitamaRobot.modules.helper_funcs.chat_status import sudo_plus
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 from SaitamaRobot import telethn as SaitamaTelethonClient
-from SaitamaRobot import pbot
 
 
 def no_by_per(totalhp, percentage):
@@ -214,7 +213,6 @@ def gifid(update: Update, context: CallbackContext):
 @run_async
 def info(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    fuckuser = await pbot.get_users(user)
     message = update.effective_message
     chat = update.effective_chat
     user_id = extract_user(update.effective_message, args)
@@ -335,20 +333,18 @@ def info(update: Update, context: CallbackContext):
 
     if INFOPIC:
         try:
+            profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
+            _file = bot.get_file(profile["file_id"])
+            _file.download(f"{user.id}.png")
 
-        profileid = fuckuser.photo.big_file_id if user.photo else None
+            message.reply_document(
+                document=open(f"{user.id}.png", "rb"),
+                caption=(text),
+                parse_mode=ParseMode.HTML,
+            )
 
-            profile = await pbot.download_media(profileid)
-            context.bot.sendChatAction(chat.id, "upload_photo")
-            context.bot.send_photo(
-            chat.id,
-            photo=profile,
-            caption=(text),
-            parse_mode=ParseMode.HTML,            
-        )
-         os.remove(profile)
-
-# Incase user don't have profile pic, send normal text
+            os.remove(f"{user.id}.png")
+        # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
                 text, parse_mode=ParseMode.HTML, disable_web_page_preview=True,
