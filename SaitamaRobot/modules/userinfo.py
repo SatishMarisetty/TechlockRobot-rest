@@ -338,7 +338,11 @@ def info(update: Update, context: CallbackContext):
      async def get_user_info(user):
             user = await pbot.get_users(user)
 
-            profile = user.photo.big_file_id
+            profileid = user.photo.big_file_id if user.photo else None
+     profile = await pbot.download_media(profileid)
+    await message.reply_photo(
+        photo, caption=info_caption, quote=False
+    )
             context.bot.sendChatAction(chat.id, "upload_photo")
             context.bot.send_photo(
             chat.id,
@@ -346,6 +350,7 @@ def info(update: Update, context: CallbackContext):
             caption=(text),
             parse_mode=ParseMode.HTML,            
         )
+         os.remove(profile)
 # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
