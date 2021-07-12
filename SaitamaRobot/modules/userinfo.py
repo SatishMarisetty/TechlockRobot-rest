@@ -214,6 +214,7 @@ def gifid(update: Update, context: CallbackContext):
 @run_async
 def info(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
+    fuckuser = await pbot.get_users(user)
     message = update.effective_message
     chat = update.effective_chat
     user_id = extract_user(update.effective_message, args)
@@ -334,8 +335,6 @@ def info(update: Update, context: CallbackContext):
 
     if INFOPIC:
         try:
-
-        fuckuser = await pbot.get_users(user)
 
         profileid = fuckuser.photo.big_file_id if user.photo else None
 
