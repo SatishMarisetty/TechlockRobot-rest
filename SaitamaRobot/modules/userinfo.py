@@ -33,6 +33,8 @@ from SaitamaRobot.modules.sql.users_sql import get_user_num_chats
 from SaitamaRobot.modules.helper_funcs.chat_status import sudo_plus
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 from SaitamaRobot import telethn as SaitamaTelethonClient
+from SaitamaRobot.modules.trust import get_spam_probability
+from SaitamaRobot import pbot as app
 
 
 def no_by_per(totalhp, percentage):
@@ -210,6 +212,25 @@ def gifid(update: Update, context: CallbackContext):
         update.effective_message.reply_text("Please reply to a gif to get its ID.")
 
 
+async def get_user_info(user):
+    user = await app.get_users(user)
+    if not user.first_name:
+        return ["Deleted account", None)
+    spam_probab, n_messages = await get_spam_probability(user_id)
+    isSpammer = (
+        True
+        if spam_probab > 50
+        else False
+        if spam_probab != 0
+        else "Uncertain"
+    )
+    spam_probab = (
+        str(round(spam_probab)) + " %"
+        if spam_probab != 0
+        else "Uncertain"
+    )
+
+
 @run_async
 def info(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
@@ -252,7 +273,7 @@ def info(update: Update, context: CallbackContext):
     if user.username:
         text += f"\nUsername: @{html.escape(user.username)}"
 
-    text += f"\nUserlink: {mention_html(user.id, 'link')}"
+    text += f"\nUserlink: {mention_html(user.id, 'link')} \nAI Spam Detection: \nSpammer: {isSpammer} \nSpam Probability: {spam_probab} \n`Stats Of Last {n_messages} Messages`"
 
     if chat.type != "private" and user_id != bot.id:
         _stext = "\nPresence: <code>{}</code>"
