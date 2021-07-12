@@ -33,6 +33,7 @@ from SaitamaRobot.modules.sql.users_sql import get_user_num_chats
 from SaitamaRobot.modules.helper_funcs.chat_status import sudo_plus
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 from SaitamaRobot import telethn as SaitamaTelethonClient
+from SaitamaRobot import pbot
 
 
 def no_by_per(totalhp, percentage):
@@ -333,7 +334,11 @@ def info(update: Update, context: CallbackContext):
 
     if INFOPIC:
         try:
-            profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
+
+     async def get_user_info(user):
+            user = await pbot.get_users(user)
+
+            profile = user.photo.big_file_id
             context.bot.sendChatAction(chat.id, "upload_photo")
             context.bot.send_photo(
             chat.id,
