@@ -30,7 +30,7 @@ async def get_chat_info(chat):
     return [caption, photo_id]
 
 
-@app.on_message(filters.command("chat_info"))
+@app.on_message(filters.command("chatinfo"))
 @capture_err
 async def chat_info_func(_, message: Message):
     try:
