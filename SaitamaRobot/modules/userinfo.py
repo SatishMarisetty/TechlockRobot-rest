@@ -539,7 +539,6 @@ Examples:
 
 *Overall Information about you:*
  • `/info`*:* get information about a user.
- • `/spaminfo`*:* get spam information about the user
 
 *What is that health thingy?*
  Come and see [HP System explained](https://telegra.ph/What-is-that-health-bar-displays-on-info-05-25)
