@@ -345,8 +345,8 @@ def info(update: Update, context: CallbackContext):
             )
 
             os.remove(f"{user.id}.png")
-# Incase user don't have profile pic, send normal text
-       except IndexError:
+        # Incase user don't have profile pic, send normal text
+        except IndexError:
             message.reply_text(
                 text, parse_mode=ParseMode.HTML, disable_web_page_preview=True,
             )
@@ -356,7 +356,8 @@ def info(update: Update, context: CallbackContext):
             text, parse_mode=ParseMode.HTML, disable_web_page_preview=True,
         )
 
-   rep.delete()
+    rep.delete()
+
 
 @run_async
 def about_me(update: Update, context: CallbackContext):
