@@ -343,12 +343,6 @@ def info(update: Update, context: CallbackContext):
 
             os.remove(f"{user.id}.png")
 # Incase user don't have profile pic, send normal text
-       if not _file:
-          try:
-            message.reply_text(
-                text, parse_mode=ParseMode.HTML, disable_web_page_preview=True,
-            )
-
     else:
         message.reply_text(
             text, parse_mode=ParseMode.HTML, disable_web_page_preview=True,
