@@ -1,6 +1,7 @@
 from SaitamaRobot import pbot as EREN
+from SaitamaRobot.utils.permissions import adminsOnly
 from SaitamaRobot.utils.errors import capture_err
-from SaitamaRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas,
+from SaitamaRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas, is_karma_on, karma_off, karma_on,
                                    int_to_alpha, alpha_to_int)
 from SaitamaRobot.utils.filter_groups import karma_positive_group, karma_negative_group
 from pyrogram import filters
@@ -23,6 +24,8 @@ regex_downvote = r"^(\-|\-\-|\-1|👎|noob|Noob|gross|fuck off)$"
 )
 @capture_err
 async def upvote(_, message):
+    if not await is_karma_on(message.chat.id):
+        return
     if message.reply_to_message.from_user.id == message.from_user.id:
         return
     chat_id = message.chat.id
@@ -56,6 +59,8 @@ async def upvote(_, message):
 )
 @capture_err
 async def downvote(_, message):
+    if not await is_karma_on(message.chat.id):
+        return
     if message.reply_to_message.from_user.id == message.from_user.id:
         return
     chat_id = message.chat.id
@@ -99,7 +104,11 @@ async def karma(_, message):
                 user_name = (await EREN.get_users(int(user_idd))).username
             except Exception:
                 continue
-            msg += f"{user_name} : `{karma_count}`\n"
+            first_name = user.first_name
+            if not first_name:
+                continue
+            username = user.username
+            msg += f" **{(first_name)}:** {karma_count} \n"
             limit += 1
         await message.reply_text(msg)
     else:
@@ -111,3 +120,22 @@ async def karma(_, message):
         else:
             karma = 0
             await message.reply_text(f'**Total Points**: __{karma}__')
+
+
+@EREN.on_message(filters.command("karmas") & ~filters.private)
+@adminsOnly("can_change_info")
+async def captcha_state(_, message):
+    usage = "**Usage:**\n/karmas [on/off]"
+    if len(message.command) != 2:
+        return await message.reply_text(usage)
+    chat_id = message.chat.id
+    state = message.text.split(None, 1)[1].strip()
+    state = state.lower()
+    if state == "on":
+        await karma_on(chat_id)
+        await message.reply_text("Enabled karma system in this chat")
+    elif state == "off":
+        await karma_off(chat_id)
+        await message.reply_text("Disabled karma system!")
+    else:
+        await message.reply_text(usage)
