@@ -83,6 +83,10 @@ def markdown_help(update: Update, context: CallbackContext):
 
 __help__ = """
 *Available commands:*
+*Karma:*
+ • `/karma`*:* reply to a user to check that user's karma points.
+ • `/karma`*:* send without replying to any message to check karma point list of top 10
+ • `/karmas on/off`*:* Enable/Disable karma in your group.
 *Markdown:*
  • `/markdownhelp`*:* quick summary of how markdown works in telegram - can only be called in private chats
 *Memefiy:*
