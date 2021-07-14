@@ -127,8 +127,7 @@ async def command_karma(_, message):
             if not first_name:
                 continue
             username = user.username
-            msg += f"
-**{(first_name)}**: {karma_count} \n"
+            msg += f"**{(first_name)}**: {karma_count} \n"
             limit += 1
         await m.edit(msg)
     else:
