@@ -1,3 +1,6 @@
+import asyncio
+import re
+
 from SaitamaRobot import pbot as EREN
 from SaitamaRobot.utils.permissions import adminsOnly
 from SaitamaRobot.utils.errors import capture_err
@@ -81,45 +84,61 @@ async def downvote(_, message):
     )
 
 
+
+
 @EREN.on_message(filters.command("karma") & filters.group)
 @capture_err
-async def karma(_, message):
+async def command_karma(_, message):
     chat_id = message.chat.id
-
     if not message.reply_to_message:
+        m = await message.reply_text(
+            "Analyzing Karma...Will Take few Seconds"
+        )
         karma = await get_karmas(chat_id)
+        if not karma:
+            await m.edit("No karma in DB for this chat.")
+            return
         msg = f"**Karma list of {message.chat.title}:- **\n"
         limit = 0
         karma_dicc = {}
         for i in karma:
             user_id = await alpha_to_int(i)
-            user_karma = karma[i]['karma']
+            user_karma = karma[i]["karma"]
             karma_dicc[str(user_id)] = user_karma
             karma_arranged = dict(
-                sorted(karma_dicc.items(), key=lambda item: item[1], reverse=True))
+                sorted(
+                    karma_dicc.items(),
+                    key=lambda item: item[1],
+                    reverse=True,
+                )
+            )
+        if not karma_dicc:
+            await m.edit("No karma in DB for this chat.")
+            return
         for user_idd, karma_count in karma_arranged.items():
             if limit > 9:
                 break
             try:
-                user_name = (await EREN.get_users(int(user_idd))).username
+                user = await EREN.get_users(int(user_idd))
+                await asyncio.sleep(0.8)
             except Exception:
                 continue
             first_name = user.first_name
             if not first_name:
                 continue
             username = user.username
-            msg += f" **{(first_name)}:** {karma_count} \n"
+            msg += f"**{(first_name)}**: {karma_count} \n"
             limit += 1
-        await message.reply_text(msg)
+        await m.edit(msg)
     else:
         user_id = message.reply_to_message.from_user.id
         karma = await get_karma(chat_id, await int_to_alpha(user_id))
         if karma:
-            karma = karma['karma']
-            await message.reply_text(f'**Total Points**: __{karma}__')
+            karma = karma["karma"]
+            await message.reply_text(f"**Total Points**: __{karma}__")
         else:
             karma = 0
-            await message.reply_text(f'**Total Points**: __{karma}__')
+            await message.reply_text(f"**Total Points**: __{karma}__")
 
 
 @EREN.on_message(filters.command("karmas") & ~filters.private)
