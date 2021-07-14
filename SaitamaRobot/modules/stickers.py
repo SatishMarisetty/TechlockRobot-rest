@@ -465,6 +465,82 @@ def makepack_internal(
     else:
         msg.reply_text("Failed to create sticker pack. Possibly due to blek mejik.")
 
+def is_it_animated_sticker(message):
+    try:
+        if message.media and message.media.document:
+            mime_type = message.media.document.mime_type
+            if "tgsticker" in mime_type:
+                return True
+            return False
+        return False
+    except BaseException:
+        return False
+
+
+def is_message_image(message):
+    if message.media:
+        if isinstance(message.media, MessageMediaPhoto):
+            return True
+        if message.media.document:
+            if message.media.document.mime_type.split("/")[0] == "image":
+                return True
+        return False
+    return False
+
+
+async def silently_send_message(conv, text):
+    await conv.send_message(text)
+    response = await conv.get_response()
+    await conv.mark_read(message=response)
+    return response
+
+
+async def stickerset_exists(conv, setname):
+    try:
+        await tbot(GetStickerSetRequest(InputStickerSetShortName(setname)))
+        response = await silently_send_message(conv, "/addsticker")
+        if response.text == "Invalid pack selected.":
+            await silently_send_message(conv, "/cancel")
+            return False
+        await silently_send_message(conv, "/cancel")
+        return True
+    except StickersetInvalidError:
+        return False
+
+
+def resize_image(image, save_locaton):
+    """Copyright Rhyse Simpson:
+    https://github.com/skittles9823/SkittBot/blob/master/tg_bot/modules/stickers.py
+    """
+    im = Image.open(image)
+    maxsize = (512, 512)
+    if (im.width and im.height) < 512:
+        size1 = im.width
+        size2 = im.height
+        if im.width > im.height:
+            scale = 512 / size1
+            size1new = 512
+            size2new = size2 * scale
+        else:
+            scale = 512 / size2
+            size1new = size1 * scale
+            size2new = 512
+        size1new = math.floor(size1new)
+        size2new = math.floor(size2new)
+        sizenew = (size1new, size2new)
+        im = im.resize(sizenew)
+    else:
+        im.thumbnail(maxsize)
+    im.save(save_locaton, "PNG")
+
+
+def find_instance(items, class_or_tuple):
+    for item in items:
+        if isinstance(item, class_or_tuple):
+            return item
+    return None
+
+
 
 @register(pattern="^/rmvkang$")
 async def _(event):
