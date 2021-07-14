@@ -554,7 +554,7 @@ __help__ = """
  • `/fullpromote`*:* promotes the user with all rights
  • `/demote`*:* demotes the user replied to
  • `/title <title here>`*:* sets a custom title for an admin that the bot promoted
- • `/admincache`*:* force refresh the admins list
+ • `/refreshadmin`*:* force refresh the admins list
  • `/zombies` :- searches deleted accounts
  • `/zombies clean` :- removes deleted accounts from the group.
 
@@ -573,7 +573,7 @@ DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote)
 
 SET_TITLE_HANDLER = CommandHandler("title", set_title)
 ADMIN_REFRESH_HANDLER = CommandHandler(
-    "admincache", refresh_admin, filters=Filters.group)
+    "refreshadmin", refresh_admin, filters=Filters.group)
 
 dispatcher.add_handler(ADMINLIST_HANDLER)
 dispatcher.add_handler(PIN_HANDLER)
