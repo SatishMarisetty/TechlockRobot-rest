@@ -102,12 +102,10 @@ async def ytdlCallback(_, cq):
         title = data["title"]
         duration = data["duration"]
         format = data["format"]
-        size = data["size"]
         thumbnail = data["thumbnail"]
         cc = data["cc"]
         caption = f"""
 **Title:** {title}
-**Size:** {size}
 **Format:** {format}
 **Duration:** {await timeFormat(duration)}
 **CC:** {cc}
