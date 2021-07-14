@@ -92,7 +92,7 @@ Region:- {reg}
 Sub Region:- {sub}
 Time Zones:- {tom}
 Top Level Domain:- {lanester}
-wikipedia:- has{wiki}</b>
+wikipedia:- `{wiki}`</b>
 
 <b>Gathered By TECHLOCK.</b>
 """
