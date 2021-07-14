@@ -256,6 +256,7 @@ __help__ = """
  *You can either enter just the song name or both the artist and song
   name. *
 
+ - `/vchelp` Voice Chat Music Player Commands
  - `/song` <songname artist(optional)>: uploads the song in it's best quality available
  - `/saavn` <songname>: uploads the song from saavn.
  - `/video` <songname artist(optional)>: uploads the video song in it's best quality available
