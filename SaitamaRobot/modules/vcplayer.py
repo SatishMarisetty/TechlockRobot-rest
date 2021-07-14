@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-__mod_name__ = "VC PLAYER"
+__mod_name__ = "VCPLAYER"
 __help__ = """
 *TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE*
 - `/musicplayer` on/off
