@@ -28,7 +28,7 @@ from telethon.tl.types import (
 )
 
 from SaitamaRobot.events import register as Daisy
-from SaitamaRobot import pbot, bot
+from SaitamaRobot import pbot
 from SaitamaRobot import telethn as tbot
 from SaitamaRobot.utils.telethonub import ubot
 
