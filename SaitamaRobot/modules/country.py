@@ -92,13 +92,12 @@ Region:- {reg}
 Sub Region:- {sub}
 Time Zones:- {tom}
 Top Level Domain:- {lanester}
-[wikipedia]({wiki})</b>
+wikipedia:- has{wiki}</b>
 
 Gathered By TECHLOCK.</b>
 """
 
     await borg.send_message(
         event.chat_id,
-        caption,
-        parse_mode="HTML",
-    )
+        caption, parse_mode='Markdown', disable_web_page_preview=True)
+
