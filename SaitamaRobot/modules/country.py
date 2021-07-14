@@ -94,10 +94,12 @@ Time Zones:- {tom}
 Top Level Domain:- {lanester}
 wikipedia:- has{wiki}</b>
 
-Gathered By TECHLOCK.</b>
+<b>Gathered By TECHLOCK.</b>
 """
 
     await borg.send_message(
         event.chat_id,
-        caption, parse_mode='Markdown', disable_web_page_preview=True)
+        caption,
+        parse_mode="HTML"
+  )
 
