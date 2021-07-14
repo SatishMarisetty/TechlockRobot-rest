@@ -220,7 +220,7 @@ print("[INFO]: TELETHON CLIENT STARTING")
 telethn = TelegramClient("eren", API_ID, API_HASH)
 dispatcher = updater.dispatcher
 print("[INFO]: PYROGRAM CLIENT STARTING")
-pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("wbb", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 print("[INFO]: CONNECTING TO MONGO DATABASE")
 mongodb = MongoClient(MONGO_URI, MONGO_PORT)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_URI)
