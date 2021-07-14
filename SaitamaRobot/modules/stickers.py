@@ -15,6 +15,21 @@ from telegram.utils.helpers import mention_html
 from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 
+from SaitamaRobot import pbot
+from SaitamaRobot import telethn as tbot
+from SaitamaRobot.utils.telethonub import ubot
+from SaitamaRobot.events import register
+from pyrogram import filters
+from telethon import *
+from telethon.errors.rpcerrorlist import StickersetInvalidError
+from telethon.tl.functions.messages import GetStickerSetRequest
+from telethon.tl.types import (
+    DocumentAttributeSticker,
+    InputStickerSetID,
+    InputStickerSetShortName,
+    MessageMediaPhoto,
+)
+
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
 
@@ -449,6 +464,96 @@ def makepack_internal(
         )
     else:
         msg.reply_text("Failed to create sticker pack. Possibly due to blek mejik.")
+
+
+@register(pattern="^/rmvkang$")
+async def _(event):
+    try:
+        if not event.is_reply:
+            await event.reply(
+                "Reply to a sticker to remove it from your personal sticker pack."
+            )
+            return
+        reply_message = await event.get_reply_message()
+        kanga = await event.reply("`Deleting .`")
+
+        if not is_message_image(reply_message):
+            await kanga.edit("Please reply to a sticker.")
+            return
+
+        rmsticker = await ubot.get_messages(event.chat_id, ids=reply_message.id)
+
+        stickerset_attr_s = reply_message.document.attributes
+        stickerset_attr = find_instance(stickerset_attr_s, DocumentAttributeSticker)
+        if not stickerset_attr.stickerset:
+            await event.reply("Sticker does not belong to a pack.")
+            return
+
+        get_stickerset = await tbot(
+            GetStickerSetRequest(
+                InputStickerSetID(
+                    id=stickerset_attr.stickerset.id,
+                    access_hash=stickerset_attr.stickerset.access_hash,
+                )
+            )
+        )
+
+        packname = get_stickerset.set.short_name
+
+        sresult = (
+            await ubot(
+                functions.messages.GetStickerSetRequest(
+                    InputStickerSetShortName(packname)
+                )
+            )
+        ).documents
+        for c in sresult:
+            if int(c.id) == int(stickerset_attr.stickerset.id):
+                pass
+            else:
+                await kanga.edit(
+                    "This sticker is already removed from your personal sticker pack."
+                )
+                return
+
+        await kanga.edit("`Deleting ..`")
+
+        async with ubot.conversation("@Stickers") as bot_conv:
+
+            await silently_send_message(bot_conv, "/cancel")
+            response = await silently_send_message(bot_conv, "/delsticker")
+            if "Choose" not in response.text:
+                await tbot.edit_message(
+                    kanga, f"**FAILED**! @Stickers replied: {response.text}"
+                )
+                return
+            response = await silently_send_message(bot_conv, packname)
+            if not response.text.startswith("Please"):
+                await tbot.edit_message(
+                    kanga, f"**FAILED**! @Stickers replied: {response.text}"
+                )
+                return
+            try:
+                await rmsticker.forward_to("@Stickers")
+            except Exception as e:
+                print(e)
+            if response.text.startswith("This pack has only"):
+                await silently_send_message(bot_conv, "Delete anyway")
+
+            await kanga.edit("`Deleting ...`")
+            response = await bot_conv.get_response()
+            if not "I have deleted" in response.text:
+                await tbot.edit_message(
+                    kanga, f"**FAILED**! @Stickers replied: {response.text}"
+                )
+                return
+
+            await kanga.edit(
+                "Successfully deleted that sticker from your personal pack."
+            )
+    except Exception as e:
+        os.remove("sticker.webp")
+        print(e)
 
 
 __help__ = """
