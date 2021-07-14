@@ -18,13 +18,14 @@
 
 __mod_name__ = "VCPLAYER"
 __help__ = """
-*TECHLOCK BROUGHT A NEW OPTION TO ON/OFF MUSIC PLAYER IN THIS RELEASE*
+*Here is the Basic Help for Techlock Music Player:*
+
 - `/musicplayer` on/off
 - `/vchelp` to get all VC commands
 
 Assistant username:- @TechlockMusicPlayer
  
- Setting up 
+• Setting up 🛠
 1) Make bot admin
 2) Start a voice chat
 3) Use `/userbotjoin` for the first time by an admin
@@ -45,7 +46,7 @@ Assistant username:- @TechlockMusicPlayer
   `/current`: Shows the current Playing track
   `/playlist`: Shows playlist
 
-• More tools 📲
+• More tools ⚙
   `/admincache`: Updates admin info of your group. Try if bot isn't recognize admin
   `/userbotjoin`: Invite @TechlockMusicPlayer to your chat
 
