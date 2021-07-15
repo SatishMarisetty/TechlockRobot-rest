@@ -24,9 +24,9 @@ async def tr(_, message):
             "Reply to a text to translate it"
         )
     result = await arq.translate(text, lang)
+    output = result.result.translatedText
+    msg = f"""**Successfully translated to {lang}:**
+`{output}`"""
     if not result.ok:
         return await message.reply_text(result.result)
-    output = result.result.translatedText
-    msg = f""" **Successfully translated to {lang}**
-` {output} `"""
-        await message.reply_text(msg)
+    await message.reply_text(msg)
