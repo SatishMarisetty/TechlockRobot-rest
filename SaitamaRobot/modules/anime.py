@@ -546,7 +546,12 @@ Get information about anime, manga or characters from [AniList](anilist.co).
  • `/airing <anime>`*:* returns anime airing info.
  • `/animequotes` : gives random anime quotes.
  • `/animetm` <anime> : Find anime from animetm dubbers website.
- • `/animespot` <anime> : Find anime from animespot website
+ • `/animespot` <anime> : Find anime from animespot website.
+
+ • `/whatanime` : Please reply to a Gif or Photo or Video,
+You saw a good anime video, photo, gif but dont know what is that anime's name?
+This is where whatanime comes in, just reply to that media with /whatanime and it will search the anime name for you from anilist.
+
 
  """
 
