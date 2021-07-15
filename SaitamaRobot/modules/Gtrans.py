@@ -27,4 +27,9 @@ async def tr(_, message):
     if not result.ok:
         return await message.reply_text(result.result)
     output = result.result.translatedText
-    await message.reply_text( *Successfully translated to {lang}* \n ` {output} `)
+    msg = f""" **Successfully translated to {lang}**
+` {output} `)
+        await app.send_message(
+                message.chat.id,
+                text=msg
+            )
