@@ -29,7 +29,4 @@ async def tr(_, message):
     output = result.result.translatedText
     msg = f""" **Successfully translated to {lang}**
 ` {output} `"""
-        await app.send_message(
-                message.chat.id,
-                text=msg
-            )
+        await message.reply_text(msg)
