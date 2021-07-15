@@ -33,6 +33,5 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
     if not result.ok:
         return await message.reply_text(result.result)
     await message.reply_text(msg)
-    else:
-            message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True, )
-        return
+    if not result.result.translatedText:
+    await message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True, )
