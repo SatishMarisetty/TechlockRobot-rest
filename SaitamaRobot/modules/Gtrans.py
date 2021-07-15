@@ -36,4 +36,3 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
     if not result.ok:
         return await message.reply_text(result.result)
     await message.reply_text(msg)
-        except AttributeError:
