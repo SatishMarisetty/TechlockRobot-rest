@@ -167,7 +167,7 @@ Downvote - Use downvote keywords like "-", "-1", etc. to downvote a message.
 
 *Commands*
 •/karma:- reply to a user to check that user's karma points.
-•/karma:- send without replying to any message to check karma point list of top 10
+•/karma:- send without replying to any message to check karma point among group.
 •/karmas on/off :- Enable/Disable karma in your group.
 """
 __mod_name__ = "KARMA"
