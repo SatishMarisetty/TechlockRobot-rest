@@ -72,9 +72,9 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
     
 PM_START_TEXT = """
-*HEY 👋 {}!* I'M TECHLOCK ROBOT
+*HEY 👋 {},*
 
-I'M A POWERFUL GROUP MANAGER BOT [🤖](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg) BUILT TO HELP YOU MANAGE YOUR GROUP EASILY.
+I'M TECHLOCK ROBOT! A POWERFUL GROUP MANAGER BOT [🤖](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg) BUILT TO HELP YOU MANAGE YOUR GROUP EASILY.
 
 HIT THE HELP BUTTON BELOW TO EXPLORE MORE.
 
@@ -382,9 +382,11 @@ def eren_data_callback(update, context):
                 ]
             ),
         )
+            first_name = update.effective_user.first_name
     elif query.data == "eren_back":
         query.message.edit_text(
-                PM_START_TEXT,
+                PM_START_TEXT.format(
+                    escape_markdown(first_name), ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
