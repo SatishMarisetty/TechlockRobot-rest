@@ -369,6 +369,7 @@ def help_button(update, context):
 @run_async
 def eren_data_callback(update, context):
     query = update.callback_query
+    first_name = update.effective_user.first_name
     if query.data == "eren_":
         query.message.edit_text(
             text="""CallBackQueriesData Here""",
@@ -383,7 +384,6 @@ def eren_data_callback(update, context):
             ),
         )
     elif query.data == "eren_back":
-            first_name = update.effective_user.first_name
         query.message.edit_text(
                 PM_START_TEXT.format(
                     escape_markdown(first_name), ),
