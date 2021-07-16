@@ -25,14 +25,9 @@ async def tr(_, message):
             "Reply to a text to translate it"
         )
     result = await arq.translate(text, lang)
-    output = result.result.translatedText
     error = f"""**Error occurred!**
 Get supported language codes from [here](https://developers.google.com/admin-sdk/directory/v1/languages)"""
-    msg = f"""**Successfully translated to {lang}:**
-`{output}`"""
-    try:
-    await message.reply_text(msg)
-
-     except Exception:
-        return await message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True, )
-        return
+    if not result.ok:
+        return await message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True,)
+    await message.reply_text(f"""**Successfully translated to {lang}:**
+`{result.result.translatedText}`""")
