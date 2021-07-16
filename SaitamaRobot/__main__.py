@@ -72,8 +72,8 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """
-HEY {html.escape(user.first_name)}! MYSELF *TECHLOCK ROBOT*
+PM_START_TEXT = f"""
+HEY {html.escape(user.first_name)}! I'M *TECHLOCK ROBOT*
 
 I'M A POWERFUL GROUP MANAGER BOT [🤖](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg) BUILT TO HELP YOU MANAGE YOUR GROUP EASILY.
 
@@ -101,7 +101,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-HEY THERE! I'M TECHLOCK ROBOT
+HEY THERE! I'M TECHLOCK ROBOT!
 TO MAKE ME FUNCTIONAL, MAKE SURE THAT I HAVE ENOUGH RIGHTS IN YOUR GROUP.
 
 *HELPFUL COMMANDS*:
