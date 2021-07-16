@@ -13,11 +13,7 @@ async def tr(_, message):
     lang = message.text.split(None, 1)[1]
     if not message.reply_to_message or not lang:
         return await message.reply_text(
-            "Reply to a message with /tr [language code]"
-            + "\nGet supported language list from here -"
-            + " https://developers.google.com/admin-sdk/directory/v1/languages"
-            + "/latest/#googletrans-languages"
-        )
+            "Reply to a message with /tr <lang code> \n Don't know Language codes check [here](https://developers.google.com/admin-sdk/directory/v1/languages ", parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True,)
     reply = message.reply_to_message
     text = reply.text or reply.caption
     if not text:
