@@ -70,11 +70,9 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_time
-
-def _start(message):
     
 PM_START_TEXT = f"""
-HEY {message.from_user.first_name}! I'M *TECHLOCK ROBOT*
+HEY {dispatcher.bot.first_name}! I'M *TECHLOCK ROBOT*
 
 I'M A POWERFUL GROUP MANAGER BOT [🤖](https://telegra.ph/file/d0af5e3e0304e1b31d38e.jpg) BUILT TO HELP YOU MANAGE YOUR GROUP EASILY.
 
