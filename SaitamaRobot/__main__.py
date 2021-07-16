@@ -382,8 +382,8 @@ def eren_data_callback(update, context):
                 ]
             ),
         )
-            first_name = update.effective_user.first_name
     elif query.data == "eren_back":
+            first_name = update.effective_user.first_name
         query.message.edit_text(
                 PM_START_TEXT.format(
                     escape_markdown(first_name), ),
