@@ -30,9 +30,9 @@ async def tr(_, message):
 Get supported language codes from [here](https://developers.google.com/admin-sdk/directory/v1/languages)"""
     msg = f"""**Successfully translated to {lang}:**
 `{output}`"""
-    if not result.ok:
-        return await message.reply_text(result.result)
+    try:
     await message.reply_text(msg)
 
-        except Exception:
-        await message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True, )
+     except Exception:
+        return await message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True, )
+        return
