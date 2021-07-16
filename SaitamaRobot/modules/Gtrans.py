@@ -15,7 +15,7 @@ async def tr(_, message):
         return await message.reply_text(
             "Reply to a message with /tr [language code]"
             + "\nGet supported language list from here -"
-            + " https://py-googletrans.readthedocs.io/en"
+            + " https://developers.google.com/admin-sdk/directory/v1/languages"
             + "/latest/#googletrans-languages"
         )
     reply = message.reply_to_message
@@ -34,6 +34,5 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
         return await message.reply_text(result.result)
     await message.reply_text(msg)
 
-    if not result.result.translatedText:
-        return await message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True, )
-        return 
+        except Exception:
+        await message.reply_text(error, parse_mode=ParseMode.HTML, disable_web_page_preview=True, )
