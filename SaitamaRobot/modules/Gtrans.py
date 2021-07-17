@@ -3,6 +3,8 @@ from SaitamaRobot import arq
 from SaitamaRobot.utils.errors import capture_err
 from pyrogram import filters
 from telegram import ParseMode
+import random
+import os
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
@@ -27,3 +29,23 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
         return await message.reply_text(error, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True,)
     await message.reply_text(f"""**Successfully translated to {lang}:**
 `{result.result.translatedText}`""")
+
+
+
+@app.on_message(filters.command("wall") & ~filters.edited)
+@capture_err
+async def wall(_, message):
+    if len(message.command) != 2:
+        return await message.reply_text(" Usage: /wall [Query]")
+    query = message.text.split(None, 1)[1]
+    results = await arq.wall(query)
+    randm = random.choice(results.result[0:48])
+
+    if not results.ok:
+        return await message.reply_text(results.result)
+            await message.reply_photo(
+                photo=f"{randm.url_image}",
+                quote=False,
+            )
+
+     os.remove(photo)
