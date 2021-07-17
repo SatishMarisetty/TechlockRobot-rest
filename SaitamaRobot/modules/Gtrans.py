@@ -43,5 +43,5 @@ async def wall(_, message):
     if not results.ok:
         return await message.reply_text(results.result)
     results = results.result[0:2]
-    for i in range.results:
+    for i in results:
             await message.reply_text(f"{i.url_image}")
