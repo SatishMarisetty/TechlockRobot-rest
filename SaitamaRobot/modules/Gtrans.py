@@ -43,7 +43,7 @@ async def wall(_, message):
 
     if not results.ok:
         return await message.reply_text(results.result)
-            await message.reply_photo(
+            await app.send_photo(
                 photo=f"{randm.url_image}",
                 quote=False,
             )
