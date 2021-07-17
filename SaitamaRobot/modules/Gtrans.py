@@ -42,9 +42,4 @@ async def wall(_, message):
 
     if not results.ok:
         return await message.reply_text(results.result)
-            await app.send_photo(
-                photo=f"{random.choice(results.result[0:48]).url_image}",
-                quote=False,
-            )
-
-     os.remove(photo)
+            await message.reply_text(f"{random.choice(results.result[0:48]).url_image}")
