@@ -9,9 +9,7 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.events import register
 
 
-@register(
-    pattern="tl",
-)
+@register(pattern="^/tl ?(.*)")
 async def _(event):
     if len(event.text) > 3:
         if not event.text[3] == " ":
