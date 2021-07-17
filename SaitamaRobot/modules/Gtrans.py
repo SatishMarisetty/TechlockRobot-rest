@@ -5,7 +5,6 @@ from pyrogram import filters
 from telegram import ParseMode
 import random
 import os
-import randint
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
@@ -43,6 +42,6 @@ async def wall(_, message):
 
     if not results.ok:
         return await message.reply_text(results.result)
-    results = randint(results.result[0:48])
+    results = random.randint(results.result[0:48])
     for i in results:
             await message.reply_text(f"{i.url_image}")
