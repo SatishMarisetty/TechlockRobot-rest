@@ -5,6 +5,7 @@ from pyrogram import filters
 from telegram import ParseMode
 import random
 import os
+import randint
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
