@@ -39,12 +39,11 @@ async def wall(_, message):
         return await message.reply_text(" Usage: /wall [Query]")
     query = message.text.split(None, 1)[1]
     results = await arq.wall(query)
-    randm = random.choice(results.result[0:48])
 
     if not results.ok:
         return await message.reply_text(results.result)
             await app.send_photo(
-                photo=f"{randm.url_image}",
+                photo=f"{random.choice(results.result[0:48]).url_image}",
                 quote=False,
             )
 
