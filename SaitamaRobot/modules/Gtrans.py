@@ -37,7 +37,8 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
 async def wall(_, message):
    if not message:
       return await message.reply_text(Use /wall [Query])
-    results = await arq.wall(message)
+    query = message.text
+    results = await arq.wall(query)
 
     if not results.ok:
         return await message.reply_text(results.result)
