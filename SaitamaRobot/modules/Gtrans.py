@@ -35,8 +35,8 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
 @app.on_message(filters.command("wall") & ~filters.edited)
 @capture_err
 async def wall(_, message):
-   if len(message.command) != 2:
-        return await message.reply_text(" Usage: /wall [Query]")
+    if len(message.command) != 2:
+        return await message.reply_text("/wall [Query]")
     query = message.text.split(None, 1)[1]
     results = await arq.wall(query)
 
