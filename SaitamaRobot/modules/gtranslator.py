@@ -25,14 +25,14 @@ async def _(event):
         text = txt
         lan = input or "en"
     else:
-        return await xx.edit(f"`/tr LanguageCode` as reply to a message", time=5)
+        return await xx.edit(f"`/tr LanguageCode` as reply to a message")
     translator = Translator()
     try:
         tt = translator.translate(text, dest=lan)
-        output_str = f"**TRANSLATED** from {tt.src} to {lan}\n{tt.text}"
+        output_str = f"**TRANSLATED** from {tt.src} to {lan}\n`{tt.text}`"
         await xx.edit(output_str)
     except Exception as exc:
-        await xx.edit(str(exc), time=10)
+        await xx.edit(str(exc))
 
 
 __help__ = """
