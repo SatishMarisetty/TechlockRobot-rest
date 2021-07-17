@@ -42,6 +42,5 @@ async def wall(_, message):
 
     if not results.ok:
         return await message.reply_text(results.result)
-    num = random.choice(0,48)
-    wallpaper = results.result[(num)]
-            await message.reply_text(f"{wallpaper.url_image}")
+    num = random.choice(results.result[0,48])
+            await message.reply_text(f"{num.url_image}")
