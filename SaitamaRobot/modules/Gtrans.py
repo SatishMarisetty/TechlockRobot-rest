@@ -42,6 +42,7 @@ async def wall(_, message):
 
     if not results.ok:
         return await message.reply_text(results.result)
+    results = await arq.wall(query)
     num = random.randint(results.result(0:48))
     wallpaper = results.result(num)
             await message.reply_text(f"{wallpaper.url_image}")
