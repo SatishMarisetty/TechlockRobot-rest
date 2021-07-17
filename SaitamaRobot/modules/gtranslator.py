@@ -9,7 +9,7 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.events import register
 
 
-@@register(
+@register(
     pattern="tl",
 )
 async def _(event):
