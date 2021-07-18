@@ -1,10 +1,9 @@
 import random
-from asyncio import gather
+from bing_image_downloader import downloader
 import os
 
 from SaitamaRobot import pbot as app
 from SaitamaRobot import arq
-from SaitamaRobot.utils.functions import downloader
 from SaitamaRobot.utils.errors import capture_err
 
 from pyrogram import filters
@@ -50,8 +49,24 @@ async def wall(_, message):
     n = random.randint(1,29)
     reslts = results.result[(n):(n)+1]
     for i in reslts:
+    wallpaper = i.url_image
+        downloader.download(
+        wallpaper,
+        limit=1,
+        output_dir="store",
+        adult_filter_off=False,
+        force_replace=False,
+        timeout=60,
+    )
+    os.chdir(f'./store/"{query}"')
+    types = ("*.png", "*.jpeg", "*.jpg")  # the tuple of file types
+    files_grabbed = []
+    for files in types:
+        files_grabbed.extend(glob.glob(files))
           await message.reply_document(
-                document=open(f"{i.url_image}"),
+                document=open(files_grabbed),
                 filename=f"{query}",
                 timeout=60,
             )
+     os.chdir("/app")
+    os.system("rm -rf store")
