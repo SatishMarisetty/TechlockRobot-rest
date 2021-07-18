@@ -35,6 +35,7 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
 @app.on_message(filters.command("wall") & ~filters.edited)
 @capture_err
 async def wall(_, message):
+    try:
     query = message.text[len("/wall ") :]
     if not query:
         return await message.reply_text("Enter a query to search!")
