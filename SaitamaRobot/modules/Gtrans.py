@@ -36,6 +36,8 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
 @capture_err
 async def wall(_, message):
     query = message.text[len("/wall ") :]
+    if not query:
+        return await message.reply_text("Usage: /wall [Query]")
     results = await arq.wall(query)
 
     if not results.ok:
