@@ -44,12 +44,4 @@ async def wall(_, message):
     n = random.randint(1,29)
     results = results.result[(n):(n)+1]
     for i in results:
-            await app.send_photo(
-                message.chat.id,
-                photo=f"{i.url_image}",
-            )
-        except TypeError:
-            await message.reply_text("Can't fetch Images.")
-            return
-    except Exception as e:
-        await message.reply_text(str(e))
+            await message.reply_text(results)
