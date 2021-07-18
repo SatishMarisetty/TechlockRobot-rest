@@ -55,5 +55,3 @@ async def wall(_, message):
                 filename=f"{query}",
                 timeout=60,
             )
-
-        os.remove(wallpaper)
