@@ -45,4 +45,8 @@ async def wall(_, message):
     n = random.randint(1,29)
     results = results.result[(n):(n)+1]
     for i in results:
-            await message.reply_text(f"{i.url_image}")
+       try:
+            await app.send_photo(
+                message.chat.id,
+                photo=f"{i.url_image}",
+            )
