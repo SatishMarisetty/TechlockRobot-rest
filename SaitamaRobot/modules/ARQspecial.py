@@ -49,7 +49,7 @@ async def wall(_, message):
        try:
             await app.send_photo(
                 message.chat.id,
-                photo=f"https://webshot.amanoteam.com/print?q={url}",
+                photo=f"{i.url_image}",
             )
         except TypeError:
             await message.reply_text("Can't fetch Images.")
