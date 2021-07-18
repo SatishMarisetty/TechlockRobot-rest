@@ -43,5 +43,4 @@ async def wall(_, message):
         return await message.reply_text("No wallpaper found! Refine your search.")
     n = random.randint(1,29)
     results = results.result[(n):(n)+1]
-    for i in results:
-            await message.reply_text(results)
+            await message.reply_text(results.url_image)
