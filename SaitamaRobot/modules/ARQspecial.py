@@ -50,10 +50,8 @@ async def wall(_, message):
     n = random.randint(1,29)
     reslts = results.result[(n):(n)+1]
     for i in reslts:
-    wallpaper = gather(downloader.download(f"{i.url_image}"))
-
           await message.reply_document(
-                document=open(f"{wallpaper}"),
+                document=open(f"{i.url_image}"),
                 filename=f"{query}",
                 timeout=60,
             )
