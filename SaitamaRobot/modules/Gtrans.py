@@ -35,13 +35,11 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
 @app.on_message(filters.command("wall") & ~filters.edited)
 @capture_err
 async def wall(_, message):
-    if len(message.command) != 2:
-        return await message.reply_text("/wall [Query]")
-    query = message.text.split(None, 1)[1]
+    query = message.text[len("/wall ") :]
     results = await arq.wall(query)
 
     if not results.ok:
-        return await message.reply_text(results.result)
+        return await message.reply_text("Not found any wallpaper! Refine your Query.")
     n = random.randint(1,47)
     results = results.result[(n)-1:(n)]
     for i in results:
