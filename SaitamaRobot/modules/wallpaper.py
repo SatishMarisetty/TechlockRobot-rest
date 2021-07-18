@@ -3,6 +3,7 @@ from random import randint
 import requests as r
 from SaitamaRobot import SUPPORT_CHAT, WALL_API, dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from SaitamaRobot import arq
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
@@ -21,35 +22,23 @@ def wall(update: Update, context: CallbackContext):
         msg.reply_text("Please enter a query!")
         return
     else:
-        caption = query
-        term = query.replace(" ", "%20")
-        json_rep = r.get(
-            f"https://wall.alphacoders.com/api2.0/get.php?auth={WALL_API}&method=search&term={term}",
-        ).json()
-        if not json_rep.get("success"):
-            msg.reply_text(f"An error occurred! Report this @{SUPPORT_CHAT}")
-        else:
-            wallpapers = json_rep.get("wallpapers")
-            if not wallpapers:
-                msg.reply_text("No results found! Refine your search.")
-                return
-            else:
-                index = randint(0, len(wallpapers) - 1)  # Choose random index
-                wallpaper = wallpapers[index]
-                wallpaper = wallpaper.get("url_image")
-                wallpaper = wallpaper.replace("\\", "")
+        results = await arq.wall(query)
+    if not results.ok:
+        return await message.reply_text("No wallpaper found! Refine your search.")
+    n = randint(1,29)
+    reslts = results.result[(n):(n)+1].url_image
                 bot.send_photo(
                     chat_id,
-                    photo=wallpaper,
+                    photo=reslts,
                     caption="Preview",
                     reply_to_message_id=msg_id,
                     timeout=60,
                 )
                 bot.send_document(
                     chat_id,
-                    document=wallpaper,
+                    document=reslts,
                     filename="wallpaper",
-                    caption=caption,
+                    caption=query,
                     reply_to_message_id=msg_id,
                     timeout=60,
                 )
