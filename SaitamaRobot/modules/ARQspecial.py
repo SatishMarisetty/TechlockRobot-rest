@@ -35,10 +35,6 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
 @app.on_message(filters.command("wall") & ~filters.edited)
 @capture_err
 async def wall(_, message):
-  try:
-        if len(message.command) != 4:
-            await message.reply_text("Give Query to search")
-            pass
     query = message.text[len("/wall ") :]
     if not query:
         return await message.reply_text("Enter a query to search!")
@@ -48,7 +44,6 @@ async def wall(_, message):
     n = random.randint(1,29)
     results = results.result[(n):(n)+1]
     for i in results:
-       try:
             await app.send_photo(
                 message.chat.id,
                 photo=f"{i.url_image}",
