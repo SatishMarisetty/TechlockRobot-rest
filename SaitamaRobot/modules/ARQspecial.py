@@ -1,10 +1,15 @@
+import random
+from asyncio import gather
+import os
+
 from SaitamaRobot import pbot as app
 from SaitamaRobot import arq
+from SaitamaRobot.utils.functions import downloader
 from SaitamaRobot.utils.errors import capture_err
+
 from pyrogram import filters
 from telegram import ParseMode
-import random
-import os
+
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
@@ -45,4 +50,11 @@ async def wall(_, message):
     n = random.randint(1,29)
     reslts = results.result[(n):(n)+1]
     for i in reslts:
-          await message.reply_text(f"{i.url_image}")
+    wallpaper = await gather(downloader.download(i.url_image))
+          await message.reply_document(
+                document=open(f"{wallpaper}"),
+                filename=f"{query}",
+                timeout=60,
+            )
+
+        os.remove(wallpaper)
