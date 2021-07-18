@@ -47,8 +47,7 @@ async def wall(_, message):
     n = random.randint(1,30)
     reslts = results.result(n).url_image
     try:
-    photo = await gather(
-            downloader.download(reslts))
+    photo = await gather(downloader.download(reslts))
 
     if not results.ok:
         return await message.reply_text("No wallpaper found! Refine your search.")
