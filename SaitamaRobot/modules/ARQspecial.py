@@ -48,5 +48,4 @@ async def wall(_, message):
        try:
             await app.send_photo(
                 message.chat.id,
-                photo=f"{i.url_image}",
-            )
+                photo=f"{i.url_image}")
