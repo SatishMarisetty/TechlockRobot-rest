@@ -1,15 +1,10 @@
-import random
-import os
-from asyncio import gather
-
 from SaitamaRobot import pbot as app
 from SaitamaRobot import arq
-from SaitamaRobot.utils.functions import downloader
 from SaitamaRobot.utils.errors import capture_err
-
 from pyrogram import filters
 from telegram import ParseMode
-
+import random
+import os
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
@@ -42,10 +37,12 @@ Get supported language codes from [here](https://developers.google.com/admin-sdk
 async def wall(_, message):
     query = message.text[len("/wall ") :]
     if not query:
-        return await message.reply_text("Enter a query to Search!")
+        return await message.reply_text("Enter a query to search!")
     results = await arq.wall(query)
-    n = random.randint(0,30)
-    reslts = results.result(n).url_image
+
     if not results.ok:
         return await message.reply_text("No wallpaper found! Refine your search.")
-    await message.reply_text(reslts)
+    n = random.randint(1,29)
+    results = results.result[(n):(n)+1]
+    for i in results:
+            await message.reply_text(f"{i.url_image}")
