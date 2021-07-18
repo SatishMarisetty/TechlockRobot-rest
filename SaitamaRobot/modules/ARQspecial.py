@@ -44,13 +44,11 @@ async def wall(_, message):
     if not query:
         return await message.reply_text("Enter a query to Search!")
     results = await arq.wall(query)
-    n = random.randint(1,29)
-    reslts = results.result[(n):(n)+1]
-    for i in reslts:
-    wallpaper = i.url_image
+    n = random.randint(1,30)
+    reslts = results.result(n).url_image
     try:
     photo = await gather(
-            downloader.download(wallpaper))
+            downloader.download(reslts))
 
     if not results.ok:
         return await message.reply_text("No wallpaper found! Refine your search.")
