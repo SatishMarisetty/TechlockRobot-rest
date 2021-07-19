@@ -46,8 +46,7 @@ async def wall(_, message):
     n = random.randint(1,29)
     results = results.result[(n):(n)+1]
     for i in results:
-    try:
-    img = downloader.download(i.url_image)
+    img = await downloader.download(i.url_image)
             await message.reply_photo(
                 photo=open(f"img"),
             )
