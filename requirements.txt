@@ -1,6 +1,7 @@
 alphabet_detector
 countryinfo
 google_trans_new
+google_image
 googletrans==4.0.0-rc1
 beautifulsoup4
 bleach
