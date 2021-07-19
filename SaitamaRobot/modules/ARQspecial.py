@@ -46,8 +46,31 @@ async def wall(_, message):
     n = random.randint(1,29)
     results = results.result[(n):(n)+1]
     for i in results:
-    img = await downloader.download(i.url_image)
-            await message.reply_photo(
-                photo=open(f"img"),
+            await message.reply_text(i.url_image)
+
+
+@app.on_message(filters.command("walls"))
+@capture_err
+async def take_ss(_, message):
+    try:
+        if len(message.command) != 2:
+            await message.reply_text("Give A Url To Fetch Screenshot.")
+            return
+        query = message.text.split(None, 1)[1]
+        m = await message.reply_text("**Taking Screenshot**")
+        await m.edit("**Uploading**")
+        results = await arq.wall(query)
+        n = random.randint(1,29)
+    resuts = results.result[(n):(n)+1]
+    for i in resuts:
+        try:
+            await app.send_photo(
+                message.chat.id,
+                photo=f"{i.url_image}",
             )
-      os.remove(img)
+        except TypeError:
+            await m.edit("No Such Website.")
+            return
+        await m.delete()
+    except Exception as e:
+        await message.reply_text(str(e))
