@@ -1,5 +1,6 @@
 from SaitamaRobot import pbot as app
 from SaitamaRobot import arq
+from SaitamaRobot.utils.functions import downloader
 from SaitamaRobot.utils.errors import capture_err
 from pyrogram import filters
 from telegram import ParseMode
@@ -45,4 +46,8 @@ async def wall(_, message):
     n = random.randint(1,29)
     results = results.result[(n):(n)+1]
     for i in results:
-            await message.reply_text(f"{i.url_image}")
+    img = downloader.download(i.url_image)
+            await message.reply_photo(
+                photo=open(f"img"),
+            )
+      os.remove(img)
