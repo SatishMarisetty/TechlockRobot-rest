@@ -1,7 +1,6 @@
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
       rev: v3.4.0
-      hooks:
           - id: trailing-whitespace
           - id: end-of-file-fixer
           - id: check-docstring-first
@@ -19,6 +18,5 @@ repos:
           - id: fix-byte-order-marker
     - repo: https://github.com/asottile/add-trailing-comma
       rev: v2.0.1
-      hooks:
           - id: add-trailing-comma
             args: [--py36-plus]
