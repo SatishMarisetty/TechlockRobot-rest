@@ -5,7 +5,6 @@ from SaitamaRobot.utils.errors import capture_err
 from pyrogram import filters
 from telegram import ParseMode
 import random
-import os
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
