@@ -175,6 +175,9 @@ else:
     MONGO_DB = Config.MONGO_DB
     ARQ_API = Config.ARQ_API
     BOT_ID = Config.BOT_ID
+    STRING_SESSION = Config.STRING_SESSION
+    ARQ_API_KEY = Config.ARQ_API
+    ARQ_API_URL =  "https://thearq.tech"
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
 
     try:
