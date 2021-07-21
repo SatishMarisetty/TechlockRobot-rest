@@ -29,7 +29,7 @@ from SaitamaRobot.conf import get_str_key
 from SaitamaRobot.events import register
 from SaitamaRobot.utils.telethon import tbot
 
-REM_BG_API_KEY = get_str_key("REM_BG_API_KEY", required=False)
+REM_BG_API_KEY = "iYRkmtx3b9RPy7c48yDafKbL"
 TEMP_DOWNLOAD_DIRECTORY = "./"
 
 
