@@ -2,12 +2,9 @@ import sys
 
 from telethon import TelegramClient
 from telethon.sessions import StringSession
+from SaitamaRobot import STRING_SESSION, API_HASH, API_ID
 
 from SaitamaRobot.utils.conf import get_int_key, get_str_key
-
-STRING_SESSION = get_str_key("STRING_SESSION", required=False)
-API_ID = get_int_key("APP_ID", required=True)
-API_HASH = get_str_key("APP_HASH", required=True)
 
 ubot = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 try:
