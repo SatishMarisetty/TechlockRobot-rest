@@ -27,7 +27,7 @@ async def tr(_, message):
 Get supported language codes from [here](https://developers.google.com/admin-sdk/directory/v1/languages)"""
     if not result.ok:
         return await message.reply_text(error, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True,)
-    await message.reply_text(f"""**Successfully translated to {lang}:**
+    await message.reply_text(f"""*Successfully translated to {lang}:*
 `{result.result.translatedText}`""")
 
 
