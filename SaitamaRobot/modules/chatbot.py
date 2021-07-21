@@ -12,7 +12,7 @@ from googletrans import Translator as google_translator
 from pyrogram import filters
 
 from SaitamaRobot import BOT_ID
-from SaitamaRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat
+from SaitamaRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat, get_all_chats
 from SaitamaRobot import arq
 from SaitamaRobot.utils.pluginhelp import admins_only, edit_or_reply
 from SaitamaRobot import pbot as eren
@@ -64,7 +64,7 @@ async def hmm(_, message):
     chat_id = message.chat.id
     if status == "ON" or status == "on" or status == "On":
         lel = await edit_or_reply(message, "`Processing...`")
-        lol = eren_chats.append(chat_id)
+        lol = add_chat(int(chat_id))
         if not lol:
             await lel.edit("AI Already Enabled In This Chat")
             return
@@ -83,7 +83,7 @@ async def hmm(_, message):
         )
 
     elif status == "EN" or status == "en" or status == "english":
-        if not chat_id in en_chats:
+        if not chat_id in get_all_chats:
             en_chats.append(chat_id)
             await message.reply_text("English AI chat Enabled!")
             return
@@ -105,8 +105,6 @@ async def hmm(_, message):
     group=2,
 )
 async def hmm(client, message):
-    if message.chat.id not in eren_chats:
-        return
     if not get_session(int(message.chat.id)):
         return
     if not message.reply_to_message:
@@ -212,8 +210,6 @@ async def hmm(client, message):
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
 async def inuka(client, message):
-    if message.chat.id not in eren_chats:
-        return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -289,7 +285,7 @@ async def inuka(client, message):
     & ~filters.edited
 )
 async def inuka(client, message):
-    if message.chat.id not in eren_chats:
+    if message.chat.id not in get_all_chats:
         return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
