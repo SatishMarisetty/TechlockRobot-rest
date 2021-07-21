@@ -280,11 +280,10 @@ async def inuka(client, message):
 
 @eren.on_message(
     filters.regex("techlock|robot|TECHLOCK|Techlock")
+    & filters.reply
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
-    & filters.reply
-    & ~filters.channel
     & ~filters.edited
 )
 async def inuka(client, message):
