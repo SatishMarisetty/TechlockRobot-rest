@@ -1,6 +1,11 @@
 # Create a new config.py or rename this to config.py file in same dir and import, then extend this class.
 import json
 import os
+from os import getenv
+from dotenv import load_dotenv
+
+if os.path.exists("local.env"):
+    load_dotenv("local.env")
 
 
 def get_user_list(config, key):
@@ -49,7 +54,7 @@ class Config(object):
     ##List of id's -  (not usernames) for users which have sudo access to the bot.
     DRAGONS = get_user_list("elevated_users.json", "sudos")
     ##List of id's - (not usernames) for developers who will have the same perms as the owner
-    DEV_USERS = get_user_list("elevated_users.json", "devs")
+    DEV_USERS = set(int(x) for x in getenv("DEV_USERS", "").split())
     ##List of id's (not usernames) for users which are allowed to gban, but can also be banned.
     DEMONS = get_user_list("elevated_users.json", "supports")
     # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
