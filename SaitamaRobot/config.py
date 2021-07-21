@@ -15,7 +15,9 @@ class Config(object):
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
     API_ID =  5099305 # integer value, dont use ""
+    BOT_ID = "1476311937"
     API_HASH = "01bbc17714f0bc7be8ae7649bd1e192c"
+    ARQ_API = "APOEQJ-SMZPYL-PNOTUX-CBDOTI-ARQ"
     TOKEN = "1476311937:AAHjwyUrXY8Kv1vB-UkkG7ovkzAAfOTfkQw"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 1060459378 # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "SatishMarisettyTG"
@@ -33,8 +35,13 @@ class Config(object):
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
     INFOPIC = True
-    ALLOW_EXCL = True
     URL = None
+    MONGO_DB = "SaitamaRobot"
+    MONGO_DB_URI = "mongodb+srv://SATISH:SATISH123@cluster0.3haan.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    MONGO_PORT = "27017"
+    REDIS_URL = "redis://SATISH1234:Satish1234$@redis-10438.c10.us-east-1-3.ec2.cloud.redislabs.com:10438/SATISH1234"
+    STRING_SESSION = "1AZWarzwBu4uAT_kLgFCGNdVpr2gB3lxbrcsYh8zNVVMDaKAJLSzPI49bIyADTwgnjRtox21aDhGUZqxQ96-xaH7mXpMM0fU9O-GKZc-w9Nj7_RNW2N8i40Kar11QMl3BUyfdu5dGKtcq5BP6AmqiTYS1jkMp9qic0TT_3NTffTlJQQDAAdOLRXaFkNRbDoUIdywP3HPEFRQIqvGH_vCEZIXXEvh_rve1i8T4lZAN115ezPcNTNUrC8iWeiOLVOMl9PXTcbxA73FKIKCTm9XTAks5CAmBbVB2FbL6OvkKCLnjMHI7SxO9rPhz7DXani-UdKW78Pl-UL3AmbkrsVFEwC6YfjQzg2c="
+    TEMP_DOWNLOAD_DIRECTORY = "./"
     SPAMWATCH_API = "Rz_AQyrEv7IE8sCwEgKtrLqAhia~ICOPZIo2y_B_lXewOHodbg8O2jXwebllUUhV"  # go to support.spamwat.ch to get key
     SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
 
@@ -51,6 +58,7 @@ class Config(object):
     DONATION_LINK = None  # EG, paypal
     CERT_PATH = None
     PORT = 5000
+    ENV = "ANYTHING"
     DEL_CMDS = True  # Delete commands that users dont have access to, like delete /ban if a non admin uses it.
     STRICT_GBAN = True
     WORKERS = (
@@ -59,7 +67,7 @@ class Config(object):
     BAN_STICKER = ""  # banhammer marie sticker id, the bot will send this sticker before banning or kicking a user in chat.
     ALLOW_EXCL = True  # Allow ! commands as well as / (Leave this to true so that blacklist can work)
     CASH_API_KEY = (
-        "awoo"  # Get your API key from https://www.alphavantage.co/support/#api-key
+        "BTWJL4YF4J6E69D0"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
     TIME_API_KEY = "M53Y1JYT0JVT"  # Get your API key from https://timezonedb.com/api
     WALL_API = (
