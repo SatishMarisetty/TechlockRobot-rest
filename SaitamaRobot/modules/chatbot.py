@@ -62,7 +62,7 @@ async def hmm(_, message):
     chat_id = message.chat.id
     if status == "ON" or status == "on" or status == "On":
         lel = await edit_or_reply(message, "`Processing...`")
-        lol = add_chat(int(chat_id))
+        lol = add_chat(int(message.chat.id))
         if not lol:
             await lel.edit("AI Already Enabled In This Chat")
             return
@@ -81,7 +81,7 @@ async def hmm(_, message):
         )
 
     elif status == "EN" or status == "en" or status == "english":
-        if not chat_id in get_all_chats:
+        if not chat_id in en_chats:
             en_chats.append(chat_id)
             await message.reply_text("English AI chat Enabled!")
             return
@@ -283,7 +283,7 @@ async def inuka(client, message):
     & ~filters.edited
 )
 async def inuka(client, message):
-    if message.chat.id not in get_all_chats:
+    if not message.chat.id in get_all_chats:
         return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
