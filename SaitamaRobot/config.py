@@ -38,7 +38,7 @@ class Config(object):
     URL = None
     MONGO_DB = "SaitamaRobot"
     MONGO_DB_URI = "mongodb+srv://SATISH:SATISH123@cluster0.3haan.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    MONGO_PORT = "27017"
+    MONGO_PORT = 27017
     REDIS_URL = "redis://SATISH1234:Satish1234$@redis-10438.c10.us-east-1-3.ec2.cloud.redislabs.com:10438/SATISH1234"
     STRING_SESSION = "1AZWarzwBu4uAT_kLgFCGNdVpr2gB3lxbrcsYh8zNVVMDaKAJLSzPI49bIyADTwgnjRtox21aDhGUZqxQ96-xaH7mXpMM0fU9O-GKZc-w9Nj7_RNW2N8i40Kar11QMl3BUyfdu5dGKtcq5BP6AmqiTYS1jkMp9qic0TT_3NTffTlJQQDAAdOLRXaFkNRbDoUIdywP3HPEFRQIqvGH_vCEZIXXEvh_rve1i8T4lZAN115ezPcNTNUrC8iWeiOLVOMl9PXTcbxA73FKIKCTm9XTAks5CAmBbVB2FbL6OvkKCLnjMHI7SxO9rPhz7DXani-UdKW78Pl-UL3AmbkrsVFEwC6YfjQzg2c="
     TEMP_DOWNLOAD_DIRECTORY = "./"
