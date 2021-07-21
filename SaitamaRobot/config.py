@@ -30,7 +30,7 @@ class Config(object):
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
-    DATABASE_URI = "postgres://zxsgeecl:mBkD29-8pubRvzxeI5IiOHfgnE-XDl12@batyr.db.elephantsql.com/zxsgeecl"  # needed for any database modules # its "URI" and not "URL" as herok and similar ones only accept it as such
+    DATABASE_URL = "postgres://zxsgeecl:mBkD29-8pubRvzxeI5IiOHfgnE-XDl12@batyr.db.elephantsql.com/zxsgeecl"  # needed for any database modules # its "URI" and not "URL" as herok and similar ones only accept it as such
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
