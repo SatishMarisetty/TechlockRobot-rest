@@ -57,7 +57,7 @@ async def hmm(_, message):
     global eren_chats
     if len(message.command) != 2:
         await message.reply_text(
-            "I only recognize `/chatbot on` and /chatbot `off only`"
+            "I only recognize `/chatbot on` and `/chatbot off` only`"
         )
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
@@ -283,7 +283,7 @@ async def inuka(client, message):
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
-    & ~filters.reply
+    & filters.reply
     & ~filters.channel
     & ~filters.edited
 )
