@@ -289,6 +289,8 @@ async def inuka(client, message):
     & ~filters.edited
 )
 async def inuka(client, message):
+    if message.chat.id not in eren_chats:
+        return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
