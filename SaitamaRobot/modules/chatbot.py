@@ -255,8 +255,7 @@ async def inuka(client, message):
             return
 
     # test = emoji.demojize(test.strip())
-
-    # Kang with the credits bitches @InukaASiTH
+    if chat_id in eren_chats:
     test = test.replace("Techlock", "Aco")
     test = test.replace("Techlock", "Aco")
 
