@@ -32,7 +32,7 @@ class Config(object):
     # RECOMMENDED
     DATABASE_URL = "postgres://zxsgeecl:mBkD29-8pubRvzxeI5IiOHfgnE-XDl12@batyr.db.elephantsql.com/zxsgeecl"  # needed for any database modules # its "URI" and not "URL" as herok and similar ones only accept it as such
     LOAD = []
-    NO_LOAD = ["rss", "cleaner", "connection", "math"]
+    NO_LOAD = ["rss", "cleaner", "math"]
     WEBHOOK = False
     INFOPIC = True
     URL = None
