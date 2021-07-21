@@ -85,7 +85,7 @@ async def hmm(_, message):
             en_chats.append(chat_id)
             await message.reply_text("English AI chat Enabled!")
             return
-        await message.reply_text("AI Chat Is Already Disabled.")
+        await message.reply_text("English AI Is Already Enabled.")
         message.continue_propagation()
     else:
         await message.reply_text(
@@ -285,6 +285,12 @@ async def inuka(client, message):
 async def inuka(client, message):
     if not get_session(int(message.chat.id)):
         return
+    if not message.reply_to_message:
+        return
+    if not message.reply_to_message.from_user:
+        return
+    if message.reply_to_message.from_user.id != 1476311937:
+        return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -305,7 +311,6 @@ async def inuka(client, message):
         hm = jm.split()
         rm = " ".join(filter(lambda x: x[0] != "/", hm))
     elif [(k) for k in u if k.startswith("@")]:
-
         rm = " ".join(filter(lambda x: x[0] != "@", u))
     elif [(k) for k in u if k.startswith("#")]:
         rm = " ".join(filter(lambda x: x[0] != "#", u))
