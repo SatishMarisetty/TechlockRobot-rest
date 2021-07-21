@@ -10,8 +10,7 @@ from PIL import Image, ImageDraw, ImageOps
 
 from SaitamaRobot.utils.conf import get_str_key
 
-RemoveBG_API = get_str_key("REM_BG_API_KEY", required=False)
-
+RemoveBG_API = "iYRkmtx3b9RPy7c48yDafKbL"
 
 async def rotate_90(client, message):
     try:
