@@ -14,27 +14,28 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID =  3898519 # integer value, dont use ""
-    API_HASH = "awoo"
-    TOKEN = "BOT_TOKEN"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 1352499461 # If you dont know, run the bot and do /id in your private chat with it, also an integer
-    OWNER_USERNAME = "ihaveenoughhate"
-    SUPPORT_CHAT = "foundingtitansupport"  # Your own group for support, do not add the @
+    API_ID =  5099305 # integer value, dont use ""
+    API_HASH = "01bbc17714f0bc7be8ae7649bd1e192c"
+    TOKEN = "1476311937:AAHjwyUrXY8Kv1vB-UkkG7ovkzAAfOTfkQw"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = 1060459378 # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    OWNER_USERNAME = "SatishMarisettyTG"
+    SUPPORT_CHAT = "techlockgram_bot"  # Your own group for support, do not add the @
     JOIN_LOGGER = (
-        -1001306188318
+        -1001497115469
     )  # Prints any new group the bot is added to, prints just the name and ID.
     EVENT_LOGS = (
-        -1001445585494
+        -1001399944384
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "something://somewhat:user@hosturl:port/databasename"  # needed for any database modules # its "URI" and not "URL" as herok and similar ones only accept it as such
+    DATABASE_URI = "postgres://zxsgeecl:mBkD29-8pubRvzxeI5IiOHfgnE-XDl12@batyr.db.elephantsql.com/zxsgeecl"  # needed for any database modules # its "URI" and not "URL" as herok and similar ones only accept it as such
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
     INFOPIC = True
+    ALLOW_EXCL = True
     URL = None
-    SPAMWATCH_API = ""  # go to support.spamwat.ch to get key
+    SPAMWATCH_API = "Rz_AQyrEv7IE8sCwEgKtrLqAhia~ICOPZIo2y_B_lXewOHodbg8O2jXwebllUUhV"  # go to support.spamwat.ch to get key
     SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
 
     # OPTIONAL
@@ -60,7 +61,7 @@ class Config(object):
     CASH_API_KEY = (
         "awoo"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
-    TIME_API_KEY = "awoo"  # Get your API key from https://timezonedb.com/api
+    TIME_API_KEY = "M53Y1JYT0JVT"  # Get your API key from https://timezonedb.com/api
     WALL_API = (
         "awoo"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
     )
