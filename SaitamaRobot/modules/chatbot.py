@@ -64,7 +64,7 @@ async def hmm(_, message):
     chat_id = message.chat.id
     if status == "ON" or status == "on" or status == "On":
         lel = await edit_or_reply(message, "`Processing...`")
-        lol = add_chat(int(message.chat.id))
+        lol = eren_chats.append(chat_id)
         if not lol:
             await lel.edit("AI Already Enabled In This Chat")
             return
