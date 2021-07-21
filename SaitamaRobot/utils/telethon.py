@@ -1,12 +1,13 @@
 from telethon import TelegramClient
 
 from SaitamaRobot.utils.conf import get_int_key, get_str_key
+from SaitamaRobot import TOKEN, APP_ID, APP_HASH
 
-TOKEN = get_str_key("TOKEN", required=True)
+
 NAME = TOKEN.split(":")[0]
 
 tbot = TelegramClient(
-    NAME, get_int_key("APP_ID", required=True), get_str_key("APP_HASH", required=True)
+    NAME, APP_ID, APP_HASH
 )
 
 # Telethon
