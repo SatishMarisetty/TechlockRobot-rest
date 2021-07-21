@@ -283,7 +283,7 @@ async def inuka(client, message):
     & ~filters.edited
 )
 async def inuka(client, message):
-    if not message.chat.id in get_all_chats:
+    if not get_session(int(message.chat.id)):
         return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
