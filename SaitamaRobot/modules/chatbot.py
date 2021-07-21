@@ -105,6 +105,8 @@ async def hmm(_, message):
     group=2,
 )
 async def hmm(client, message):
+    if message.chat.id not in eren_chats:
+        return
     if not get_session(int(message.chat.id)):
         return
     if not message.reply_to_message:
@@ -210,6 +212,8 @@ async def hmm(client, message):
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
 async def inuka(client, message):
+    if message.chat.id not in eren_chats:
+        return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -255,7 +259,6 @@ async def inuka(client, message):
             return
 
     # test = emoji.demojize(test.strip())
-    if chat_id in eren_chats:
     test = test.replace("Techlock", "Aco")
     test = test.replace("Techlock", "Aco")
 
