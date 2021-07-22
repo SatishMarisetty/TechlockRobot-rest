@@ -88,7 +88,7 @@ async def drawText(image_path, text):
 
     else:
 
-        fnt = "./SaitamaRobot/fonts/ArmWrestler.ttf"
+        fnt = "./SaitamaRobot/fonts/PRAGMBL.ttf"
 
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 
