@@ -1,3 +1,5 @@
+
+
 import emoji
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
@@ -10,7 +12,7 @@ from googletrans import Translator as google_translator
 from pyrogram import filters
 
 from SaitamaRobot import BOT_ID
-from SaitamaRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat, get_all_chats
+from SaitamaRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat
 from SaitamaRobot import arq
 from SaitamaRobot.utils.pluginhelp import admins_only, edit_or_reply
 from SaitamaRobot import pbot as eren
@@ -55,7 +57,7 @@ async def hmm(_, message):
     global eren_chats
     if len(message.command) != 2:
         await message.reply_text(
-            "I only recognize `/chatbot on` and `/chatbot off` only`"
+            "I only recognize `/chatbot on` and /chatbot `off only`"
         )
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
@@ -85,11 +87,11 @@ async def hmm(_, message):
             en_chats.append(chat_id)
             await message.reply_text("English AI chat Enabled!")
             return
-        await message.reply_text("English AI Is Already Enabled.")
+        await message.reply_text("AI Chat Is Already Disabled.")
         message.continue_propagation()
     else:
         await message.reply_text(
-            "I only recognize `/chatbot on` and /chatbot `off only`"
+            "I only recognize `/chatbot on` and `/chatbot off` only`"
         )
 
 
@@ -253,6 +255,8 @@ async def inuka(client, message):
             return
 
     # test = emoji.demojize(test.strip())
+
+    # Kang with the credits bitches @InukaASiTH
     test = test.replace("Techlock", "Aco")
     test = test.replace("Techlock", "Aco")
 
@@ -275,22 +279,15 @@ async def inuka(client, message):
 
 
 @eren.on_message(
-    filters.text
-    & filters.reply
+    filters.regex("techlock|robot|TECHLOCK|Techlock")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
+    & ~filters.reply
+    & ~filters.channel
     & ~filters.edited
 )
 async def inuka(client, message):
-    if not get_session(int(message.chat.id)):
-        return
-    if not message.reply_to_message:
-        return
-    if not message.reply_to_message.from_user:
-        return
-    if message.reply_to_message.from_user.id != 1476311937:
-        return
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -311,6 +308,7 @@ async def inuka(client, message):
         hm = jm.split()
         rm = " ".join(filter(lambda x: x[0] != "/", hm))
     elif [(k) for k in u if k.startswith("@")]:
+
         rm = " ".join(filter(lambda x: x[0] != "@", u))
     elif [(k) for k in u if k.startswith("#")]:
         rm = " ".join(filter(lambda x: x[0] != "#", u))
@@ -342,7 +340,7 @@ async def inuka(client, message):
     response = response.replace("Aco", "Techlock")
     response = response.replace("aco", "Techlock")
     response = response.replace("Luna", "Techlock")
-    response = response.replace("luna", "Techlock")
+    response = response.replace("Luna", "Techlock")
     response = response.replace("female", "")
 
     pro = response
