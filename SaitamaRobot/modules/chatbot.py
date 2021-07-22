@@ -341,6 +341,8 @@ async def inuka(client, message):
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
     response = response.replace("Aco", "Techlock")
     response = response.replace("aco", "Techlock")
+    response = response.replace("Luna", "Techlock")
+    response = response.replace("luna", "Techlock")
     response = response.replace("female", "")
 
     pro = response
