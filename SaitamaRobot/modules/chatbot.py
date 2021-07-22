@@ -11,11 +11,11 @@ import aiohttp
 from googletrans import Translator as google_translator
 from pyrogram import filters
 
-from SaitamaRobot import BOT_ID
-from SaitamaRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat
-from SaitamaRobot import arq
-from SaitamaRobot.utils.pluginhelp import admins_only, edit_or_reply
-from SaitamaRobot import pbot as eren
+from TechlockRobot import BOT_ID
+from TechlockRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat
+from TechlockRobot import arq
+from TechlockRobot.utils.pluginhelp import admins_only, edit_or_reply
+from TechlockRobot import pbot as eren
 
 translator = google_translator()
 

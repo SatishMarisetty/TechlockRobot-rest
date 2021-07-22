@@ -1,6 +1,6 @@
 import threading
 from sqlalchemy import Column, String
-from SaitamaRobot.modules.sql import BASE, SESSION
+from TechlockRobot.modules.sql import BASE, SESSION
 #   |----------------------------------|
 #   |  Test Module by @EverythingSuckz |
 #   |        Kang with Credits         |

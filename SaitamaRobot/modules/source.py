@@ -4,7 +4,7 @@ from telegram.ext import (
     CommandHandler,
     run_async,
 )
-from SaitamaRobot.modules.helper_funcs.string_handling import markdown_parser
+from TechlockRobot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -12,9 +12,9 @@ from telegram import (
     ParseMode,
     Update,
 )
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.helper_funcs.alternate import send_message
+from TechlockRobot.modules.disable import DisableAbleCommandHandler
+from TechlockRobot import dispatcher
+from TechlockRobot.modules.helper_funcs.alternate import send_message
 from telegram.utils.helpers import mention_html, mention_markdown
 
 @run_async

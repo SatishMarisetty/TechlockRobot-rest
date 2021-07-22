@@ -2,15 +2,15 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from telethon import events, functions
 from telethon.tl.types import ChatBannedRights
 
-from SaitamaRobot import BOT_ID
-from SaitamaRobot.utils.telethonbasics import is_admin
-from SaitamaRobot.modules.sql.night_mode_sql import (
+from TechlockRobot import BOT_ID
+from TechlockRobot.utils.telethonbasics import is_admin
+from TechlockRobot.modules.sql.night_mode_sql import (
     add_nightmode,
     get_all_chat_id,
     is_nightmode_indb,
     rmnightmode,
 )
-from SaitamaRobot import telethn as tbot
+from TechlockRobot import telethn as tbot
 
 CLEAN_GROUPS = False
 hehes = ChatBannedRights(

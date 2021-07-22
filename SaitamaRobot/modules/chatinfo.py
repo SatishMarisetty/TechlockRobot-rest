@@ -3,9 +3,9 @@ import os
 from pyrogram import filters
 from pyrogram.types import Message
 
-from SaitamaRobot import pbot as app
-from SaitamaRobot.utils.errors import capture_err
-from SaitamaRobot.modules.trust import get_spam_probability
+from TechlockRobot import pbot as app
+from TechlockRobot.utils.errors import capture_err
+from TechlockRobot.modules.trust import get_spam_probability
 
 
 async def get_chat_info(chat):

@@ -1,7 +1,7 @@
 import asyncio, time, os, asyncio, json
 from telethon.tl.types import DocumentAttributeAudio
-from SaitamaRobot.events import register
-from SaitamaRobot.utils import progress
+from TechlockRobot.events import register
+from TechlockRobot.utils import progress
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
 

@@ -1,6 +1,6 @@
 from telethon.tl.types import InputMediaDice
 
-from SaitamaRobot.events import register
+from TechlockRobot.events import register
 
 
 @register(pattern="^/dice(?: |$)(.*)")

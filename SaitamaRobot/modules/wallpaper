@@ -1,9 +1,9 @@
 from random import randint
 
 import requests as r
-from SaitamaRobot import SUPPORT_CHAT, WALL_API, dispatcher
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot import arq
+from TechlockRobot import SUPPORT_CHAT, WALL_API, dispatcher
+from TechlockRobot.modules.disable import DisableAbleCommandHandler
+from TechlockRobot import arq
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 

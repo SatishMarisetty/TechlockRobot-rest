@@ -25,9 +25,9 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from SaitamaRobot.conf import get_str_key
-from SaitamaRobot.events import register
-from SaitamaRobot.utils.telethon import tbot
+from TechlockRobot.conf import get_str_key
+from TechlockRobot.events import register
+from TechlockRobot.utils.telethon import tbot
 
 REM_BG_API_KEY = "iYRkmtx3b9RPy7c48yDafKbL"
 TEMP_DOWNLOAD_DIRECTORY = "./"

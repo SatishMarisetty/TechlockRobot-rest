@@ -15,7 +15,7 @@ from youtube_dl import YoutubeDL
 
 
 from pyrogram import filters
-from SaitamaRobot import pbot
+from TechlockRobot import pbot
 from youtube_search import YoutubeSearch
 
 

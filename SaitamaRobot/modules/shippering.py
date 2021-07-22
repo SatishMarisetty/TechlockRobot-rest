@@ -1,6 +1,6 @@
-from SaitamaRobot import pbot as app
-from SaitamaRobot.utils.errors import capture_err
-from SaitamaRobot.utils.dbfunctions import get_couple, save_couple
+from TechlockRobot import pbot as app
+from TechlockRobot.utils.errors import capture_err
+from TechlockRobot.utils.dbfunctions import get_couple, save_couple
 from pyrogram import filters
 import random
 from datetime import datetime

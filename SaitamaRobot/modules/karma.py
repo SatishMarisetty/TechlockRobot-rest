@@ -1,12 +1,12 @@
 import asyncio
 import re
 
-from SaitamaRobot import pbot as EREN
-from SaitamaRobot.utils.permissions import adminsOnly
-from SaitamaRobot.utils.errors import capture_err
-from SaitamaRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas, is_karma_on, karma_off, karma_on,
+from TechlockRobot import pbot as EREN
+from TechlockRobot.utils.permissions import adminsOnly
+from TechlockRobot.utils.errors import capture_err
+from TechlockRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas, is_karma_on, karma_off, karma_on,
                                    int_to_alpha, alpha_to_int)
-from SaitamaRobot.utils.filter_groups import karma_positive_group, karma_negative_group
+from TechlockRobot.utils.filter_groups import karma_positive_group, karma_negative_group
 from pyrogram import filters
 
 

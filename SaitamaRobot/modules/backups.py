@@ -5,23 +5,23 @@ from telegram import ParseMode, Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-import SaitamaRobot.modules.sql.notes_sql as sql
-from SaitamaRobot import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
-from SaitamaRobot.__main__ import DATA_IMPORT
-from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
-from SaitamaRobot.modules.helper_funcs.alternate import typing_action
+import TechlockRobot.modules.sql.notes_sql as sql
+from TechlockRobot import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
+from TechlockRobot.__main__ import DATA_IMPORT
+from TechlockRobot.modules.helper_funcs.chat_status import user_admin
+from TechlockRobot.modules.helper_funcs.alternate import typing_action
 
-# from SaitamaRobot.modules.rules import get_rules
-import SaitamaRobot.modules.sql.rules_sql as rulessql
+# from TechlockRobot.modules.rules import get_rules
+import TechlockRobot.modules.sql.rules_sql as rulessql
 
-# from SaitamaRobot.modules.sql import warns_sql as warnssql
-import SaitamaRobot.modules.sql.blacklist_sql as blacklistsql
-from SaitamaRobot.modules.sql import disable_sql as disabledsql
+# from TechlockRobot.modules.sql import warns_sql as warnssql
+import TechlockRobot.modules.sql.blacklist_sql as blacklistsql
+from TechlockRobot.modules.sql import disable_sql as disabledsql
 
-# from SaitamaRobot.modules.sql import cust_filters_sql as filtersql
-# import SaitamaRobot.modules.sql.welcome_sql as welcsql
-import SaitamaRobot.modules.sql.locks_sql as locksql
-from SaitamaRobot.modules.connection import connected
+# from TechlockRobot.modules.sql import cust_filters_sql as filtersql
+# import TechlockRobot.modules.sql.welcome_sql as welcsql
+import TechlockRobot.modules.sql.locks_sql as locksql
+from TechlockRobot.modules.connection import connected
 
 
 @run_async

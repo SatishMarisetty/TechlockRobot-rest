@@ -4,13 +4,13 @@ import textwrap
 
 import os
 
-from SaitamaRobot.events import register
+from TechlockRobot.events import register
 
-from SaitamaRobot import LOGGER
-from SaitamaRobot import TEMP_DOWNLOAD_DIRECTORY
+from TechlockRobot import LOGGER
+from TechlockRobot import TEMP_DOWNLOAD_DIRECTORY
 
 
-from SaitamaRobot import telethn as bot
+from TechlockRobot import telethn as bot
 
 
 Credit = "This Plugin Made by Kittu (@A_viyu), if you're using this code in your bot. there is no issue but don't remove this line" 
@@ -88,7 +88,7 @@ async def drawText(image_path, text):
 
     else:
 
-        fnt = "./SaitamaRobot/fonts/PRAGMBL.ttf"
+        fnt = "./TechlockRobot/fonts/PRAGMBL.ttf"
 
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 

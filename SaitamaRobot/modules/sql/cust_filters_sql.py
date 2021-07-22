@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from SaitamaRobot.modules.helper_funcs.msg_types import Types
-from SaitamaRobot.modules.sql import BASE, SESSION
+from TechlockRobot.modules.helper_funcs.msg_types import Types
+from TechlockRobot.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):

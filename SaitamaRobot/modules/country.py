@@ -1,7 +1,7 @@
 from countryinfo import CountryInfo
 
-from SaitamaRobot.events import register
-from SaitamaRobot import telethn as borg
+from TechlockRobot.events import register
+from TechlockRobot import telethn as borg
 
 
 @register(pattern="^/country (.*)")

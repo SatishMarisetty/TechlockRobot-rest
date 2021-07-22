@@ -1,7 +1,7 @@
 from pyrogram import filters
 
-from SaitamaRobot import pbot as app
-from SaitamaRobot.utils.errors import capture_err
+from TechlockRobot import pbot as app
+from TechlockRobot.utils.errors import capture_err
 
 __mod_name__ = "WEBSS"
 __help__ = """

@@ -1,8 +1,8 @@
 import time
 from telethon import events
 
-from SaitamaRobot import telethn
-from SaitamaRobot.modules.helper_funcs.telethn.chatstatus import (
+from TechlockRobot import telethn
+from TechlockRobot.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )

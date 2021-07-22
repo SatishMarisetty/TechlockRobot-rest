@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, Integer
 
-from SaitamaRobot.modules.sql import BASE, SESSION
+from TechlockRobot.modules.sql import BASE, SESSION
 
 
 class Approvals(BASE):

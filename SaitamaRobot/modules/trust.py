@@ -3,10 +3,10 @@ from asyncio import Lock
 from pyrogram import filters
 from pyrogram.types import Message
 
-from SaitamaRobot import pbot as app
-from SaitamaRobot import arq 
-from SaitamaRobot.utils.dbfunctions import get_trust_db, update_trust_db
-from SaitamaRobot.utils.filter_groups import trust_group
+from TechlockRobot import pbot as app
+from TechlockRobot import arq 
+from TechlockRobot.utils.dbfunctions import get_trust_db, update_trust_db
+from TechlockRobot.utils.filter_groups import trust_group
 
 spam_db = {}
 

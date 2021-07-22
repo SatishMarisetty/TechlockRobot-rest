@@ -30,11 +30,11 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
-from SaitamaRobot import pbot as app
-from SaitamaRobot import arq
-from SaitamaRobot.utils.errors import capture_err
-from SaitamaRobot.utils.formatter import convert_seconds_to_minutes as timeFormat
-from SaitamaRobot.utils.functions import downloader
+from TechlockRobot import pbot as app
+from TechlockRobot import arq
+from TechlockRobot.utils.errors import capture_err
+from TechlockRobot.utils.formatter import convert_seconds_to_minutes as timeFormat
+from TechlockRobot.utils.functions import downloader
 
 __help__ = """
 • /ytdl <video link> - Download a youtube video.

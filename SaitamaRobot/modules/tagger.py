@@ -9,8 +9,8 @@
 
 from pyrogram import filters
 
-from SaitamaRobot.pluginhelper import admins_only, get_text
-from SaitamaRobot import pbot
+from TechlockRobot.pluginhelper import admins_only, get_text
+from TechlockRobot import pbot
 
 
 @pbot.on_message(filters.command("tagger") & ~filters.edited & ~filters.bot)

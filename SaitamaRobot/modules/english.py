@@ -1,9 +1,9 @@
-from SaitamaRobot import telethn as tbot
+from TechlockRobot import telethn as tbot
 import json
 import os
 os.system("pip installPyDictionary")
 import requests
-from SaitamaRobot.events import register
+from TechlockRobot.events import register
 from telethon import *
 from telethon.tl import functions
 import os

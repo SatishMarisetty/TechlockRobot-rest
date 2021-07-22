@@ -10,15 +10,15 @@ from telegram.ext import CallbackContext, run_async
 
 from telegram.error import BadRequest
 
-import SaitamaRobot.modules.animequotes_strings as animequotes_strings
+import TechlockRobot.modules.animequotes_strings as animequotes_strings
 
-from SaitamaRobot import dispatcher
+from TechlockRobot import dispatcher
 
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from TechlockRobot.modules.disable import DisableAbleCommandHandler
 
-from SaitamaRobot.modules.helper_funcs.chat_status import (is_user_admin)
+from TechlockRobot.modules.helper_funcs.chat_status import (is_user_admin)
 
-from SaitamaRobot.modules.helper_funcs.extraction import extract_user
+from TechlockRobot.modules.helper_funcs.extraction import extract_user
 
 @run_async
 

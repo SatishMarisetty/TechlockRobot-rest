@@ -12,10 +12,10 @@ from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
-from SaitamaRobot import dispatcher
-from SaitamaRobot.__main__ import STATS
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.modules.helper_funcs.extraction import extract_user
+from TechlockRobot import dispatcher
+from TechlockRobot.__main__ import STATS
+from TechlockRobot.modules.disable import DisableAbleCommandHandler
+from TechlockRobot.modules.helper_funcs.extraction import extract_user
 
 def tts(update, context):
     args = context.args

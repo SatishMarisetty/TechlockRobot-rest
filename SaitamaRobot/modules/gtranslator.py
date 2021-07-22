@@ -4,9 +4,9 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 from googletrans import Translator
 
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.events import register
+from TechlockRobot import dispatcher
+from TechlockRobot.modules.disable import DisableAbleCommandHandler
+from TechlockRobot.events import register
 
 
 @register(pattern="^/tl ?(.*)")

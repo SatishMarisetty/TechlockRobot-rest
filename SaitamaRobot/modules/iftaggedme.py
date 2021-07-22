@@ -6,7 +6,7 @@ from telegram.ext import (
     Filters,
     MessageHandler,
 )
-from SaitamaRobot.modules.helper_funcs.string_handling import markdown_parser
+from TechlockRobot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -14,16 +14,16 @@ from telegram import (
     ParseMode,
     Update,
 )
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.helper_funcs.alternate import send_message
+from TechlockRobot.modules.disable import DisableAbleCommandHandler
+from TechlockRobot import dispatcher
+from TechlockRobot.modules.helper_funcs.alternate import send_message
 from telegram.utils.helpers import mention_html, mention_markdown
 
 @run_async
 def me(update: Update, context: CallbackContext):
  if update.effective_chat.type != "private":
     update.effective_message.reply_document(
-                document=open(f"./SaitamaRobot/shit/sticker.webp", "rb"),
+                document=open(f"./TechlockRobot/shit/sticker.webp", "rb"),
                 parse_mode=ParseMode.HTML,
             )
 

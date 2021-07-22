@@ -13,12 +13,12 @@ import requests
 from gtts import gTTS, gTTSError
 from telethon.tl import functions, types
 from telegram.ext import CommandHandler, run_async, Filters
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from TechlockRobot import dispatcher
+from TechlockRobot.modules.disable import DisableAbleCommandHandler
 
-from SaitamaRobot.conf import get_str_key
-from SaitamaRobot.events import register
-from SaitamaRobot import telethn as tbot
+from TechlockRobot.conf import get_str_key
+from TechlockRobot.events import register
+from TechlockRobot import telethn as tbot
 
 IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
 IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"

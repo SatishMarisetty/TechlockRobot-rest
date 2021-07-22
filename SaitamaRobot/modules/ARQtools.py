@@ -1,7 +1,7 @@
-from SaitamaRobot import pbot as app
-from SaitamaRobot import arq
-from SaitamaRobot.utils.functions import downloader
-from SaitamaRobot.utils.errors import capture_err
+from TechlockRobot import pbot as app
+from TechlockRobot import arq
+from TechlockRobot.utils.functions import downloader
+from TechlockRobot.utils.errors import capture_err
 from pyrogram import filters
 from telegram import ParseMode
 import random

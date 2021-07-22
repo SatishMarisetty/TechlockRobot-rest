@@ -23,8 +23,8 @@ from datetime import datetime
 from requests import get, post
 from telethon.tl import functions, types
 
-from SaitamaRobot.events import register
-from SaitamaRobot.utils.telethon import tbot as client
+from TechlockRobot.events import register
+from TechlockRobot.utils.telethon import tbot as client
 
 
 def progress(current, total):

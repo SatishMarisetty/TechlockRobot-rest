@@ -11,26 +11,26 @@ from google_trans_new import google_translator
 from telethon import events
 from telethon.tl.types import ChatBannedRights
 
-from SaitamaRobot import BOT_ID
-from SaitamaRobot.conf import get_int_key, get_str_key
-from SaitamaRobot import MONGO_URI 
+from TechlockRobot import BOT_ID
+from TechlockRobot.conf import get_int_key, get_str_key
+from TechlockRobot import MONGO_URI 
 from pymongo import MongoClient
 
-from SaitamaRobot.db.mongohelper.nsfw import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
-from SaitamaRobot.utils.telethonbasics import is_admin
-from SaitamaRobot.events import register
+from TechlockRobot.db.mongohelper.nsfw import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
+from TechlockRobot.utils.telethonbasics import is_admin
+from TechlockRobot.events import register
 
 client = MongoClient()
 client = MongoClient(MONGO_URI)
 db = client["yonerobot"]
 
-from SaitamaRobot.modules.sql.nsfw_watch_sql import (
+from TechlockRobot.modules.sql.nsfw_watch_sql import (
     add_nsfwatch,
     get_all_nsfw_enabled_chat,
     is_nsfwatch_indb,
     rmnsfwatch,
 )
-from SaitamaRobot import telethn as tbot
+from TechlockRobot import telethn as tbot
 
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)

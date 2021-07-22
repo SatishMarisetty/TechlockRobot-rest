@@ -4,8 +4,8 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, ChatPermissions, Message
 
-from SaitamaRobot import pbot as app
-from SaitamaRobot.utils.errors import capture_err
+from TechlockRobot import pbot as app
+from TechlockRobot.utils.errors import capture_err
 
 
 

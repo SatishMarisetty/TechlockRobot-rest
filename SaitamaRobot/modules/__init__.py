@@ -1,4 +1,4 @@
-from SaitamaRobot import LOAD, LOGGER, NO_LOAD
+from TechlockRobot import LOAD, LOGGER, NO_LOAD
 import sys
 
 

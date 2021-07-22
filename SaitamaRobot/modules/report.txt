@@ -1,10 +1,10 @@
-from SaitamaRobot.events import register
-from SaitamaRobot.helper_extra.mongo import db
+from TechlockRobot.events import register
+from TechlockRobot.helper_extra.mongo import db
 
-from SaitamaRobot.modules.helper_funcs.connections import chat_connection
-from SaitamaRobot.modules.helper_funcs.disable import disableable_dec
-from SaitamaRobot.modules.helper_funcs.language import get_strings_dec
-from SaitamaRobot.modules.helper_funcs.user_details import get_admins_rights, get_user_link, is_user_admin
+from TechlockRobot.modules.helper_funcs.connections import chat_connection
+from TechlockRobot.modules.helper_funcs.disable import disableable_dec
+from TechlockRobot.modules.helper_funcs.language import get_strings_dec
+from TechlockRobot.modules.helper_funcs.user_details import get_admins_rights, get_user_link, is_user_admin
 
 
 @register(regexp="^@admin$")
