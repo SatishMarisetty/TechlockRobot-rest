@@ -41,7 +41,7 @@ class Config(object):
     WEBHOOK = False
     INFOPIC = True
     URL = None
-    MONGO_DB = "TechlockRobot"
+    MONGO_DB = "SaitamaRobot"
     MONGO_DB_URI = "mongodb+srv://SATISH:SATISH123@cluster0.3haan.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     MONGO_PORT = 27017
     REDIS_URL = "redis://SATISH1234:Satish1234$@redis-10438.c10.us-east-1-3.ec2.cloud.redislabs.com:10438/SATISH1234"
