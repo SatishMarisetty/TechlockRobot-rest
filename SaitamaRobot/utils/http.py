@@ -1,6 +1,6 @@
 from asyncio import gather
 
-from SaitamaRobot import aiohttpsession as session
+from TechlockRobot import aiohttpsession as session
 
 
 async def get(url: str, *args, **kwargs):

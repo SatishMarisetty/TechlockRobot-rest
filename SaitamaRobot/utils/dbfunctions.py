@@ -1,4 +1,4 @@
-from SaitamaRobot import db
+from TechlockRobot import db
 from typing import Dict, List, Union
 
 coupledb = db.couple

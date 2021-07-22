@@ -8,7 +8,7 @@ import numpy as np
 import requests
 from PIL import Image, ImageDraw, ImageOps
 
-from SaitamaRobot.utils.conf import get_str_key
+from TechlockRobot.utils.conf import get_str_key
 
 RemoveBG_API = "iYRkmtx3b9RPy7c48yDafKbL"
 

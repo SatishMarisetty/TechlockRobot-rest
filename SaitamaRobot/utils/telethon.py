@@ -1,7 +1,7 @@
 from telethon import TelegramClient
 
-from SaitamaRobot.utils.conf import get_int_key, get_str_key
-from SaitamaRobot import TOKEN, APP_ID, APP_HASH
+from TechlockRobot.utils.conf import get_int_key, get_str_key
+from TechlockRobot import TOKEN, APP_ID, APP_HASH
 
 
 NAME = TOKEN.split(":")[0]

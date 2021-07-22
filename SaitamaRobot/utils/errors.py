@@ -1,7 +1,7 @@
 import sys
 import traceback
 from functools import wraps
-from SaitamaRobot import pbot, EVENT_LOGS
+from TechlockRobot import pbot, EVENT_LOGS
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
 

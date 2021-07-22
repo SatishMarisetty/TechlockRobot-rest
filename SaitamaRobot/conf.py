@@ -1,5 +1,5 @@
 from envparse import env
-from SaitamaRobot import LOGGER
+from TechlockRobot import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,

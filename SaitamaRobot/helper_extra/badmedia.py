@@ -1,4 +1,4 @@
-from SaitamaRobot import telethn as tbot
+from TechlockRobot import telethn as tbot
 import requests
 import time
 

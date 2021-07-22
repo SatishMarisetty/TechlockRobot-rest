@@ -38,10 +38,10 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
 from wget import download
 
-from SaitamaRobot import aiohttpsession as aiosession
-from SaitamaRobot import arq
-from SaitamaRobot.utils import aiodownloader
-from SaitamaRobot.utils.http import get
+from TechlockRobot import aiohttpsession as aiosession
+from TechlockRobot import arq
+from TechlockRobot.utils import aiodownloader
+from TechlockRobot.utils.http import get
 
 """
 Just import 'downloader' anywhere and do downloader.download() to
