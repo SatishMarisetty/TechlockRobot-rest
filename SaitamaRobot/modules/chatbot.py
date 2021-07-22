@@ -130,7 +130,7 @@ async def hmm(client, message):
         response = response.replace("aco", "techlock")
         response = response.replace("Luna", "Techlock")
         response = response.replace("Luna", "Techlock")
-        response = response.replace("female", "")
+        response = response.replace("female", "AI")
 
         pro = response
         try:
@@ -191,7 +191,7 @@ async def hmm(client, message):
         response = response.replace("aco", "Techlock")
         response = response.replace("Luna", "Techlock")
         response = response.replace("Luna", "Techlock")
-        response = response.replace("female", "")
+        response = response.replace("female", "AI")
         pro = response
         if not "en" in lan and not lan == "":
             try:
@@ -265,7 +265,7 @@ async def inuka(client, message):
     response = response.replace("aco", "Techlock")
     response = response.replace("Luna", "Techlock")
     response = response.replace("Luna", "Techlock")
-    response = response.replace("female", "")
+    response = response.replace("female", "AI")
 
     pro = response
     if not "en" in lan and not lan == "":
@@ -341,7 +341,7 @@ async def inuka(client, message):
     response = response.replace("aco", "Techlock")
     response = response.replace("Luna", "Techlock")
     response = response.replace("Luna", "Techlock")
-    response = response.replace("female", "")
+    response = response.replace("female", "AI")
 
     pro = response
     if not "en" in lan and not lan == "":
