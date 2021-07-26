@@ -1,3 +1,3 @@
 @echo off
-TITLE Saitama Robot
-env\scripts\activate.bat && py -m SaitamaRobot
+TITLE Techlock Robot
+env\scripts\activate.bat && py -m TechlockRobot
