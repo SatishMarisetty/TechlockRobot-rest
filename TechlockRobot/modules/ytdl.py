@@ -36,10 +36,6 @@ from TechlockRobot.utils.errors import capture_err
 from TechlockRobot.utils.formatter import convert_seconds_to_minutes as timeFormat
 from TechlockRobot.utils.functions import downloader
 
-__help__ = """
-• /ytdl <video link> - Download a youtube video.
-• /search <text> - Searches Given text on YouTube."""
-__mod_name__ = "YOUTUBE"
 
 
 VIDEO_DATA = {}
