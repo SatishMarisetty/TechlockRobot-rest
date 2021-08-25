@@ -400,9 +400,3 @@ def connection_status(func):
             return func(update, context, *args, **kwargs)
 
     return connected_status
-
-
-# Workaround for circular import with connection.py
-from TechlockRobot.modules import connection
-
-connected = connection.connected
