@@ -355,14 +355,3 @@ async def inuka(client, message):
         await message.reply_text(pro)
     except CFError:
         return
-
-
-__help__ = """
-Chatbot utilizes the Brainshop's API and allows TECHLOCK to talk and provides a more interactive group chat experience.
- *Admins Only Commands*:
- • `/chatbot [ON/OFF]`: Enables and disables Chatbot mode in the chat.
- • `/chatbot EN` : Enables English only Chatbot mode in the chat.
- *Powered by Brainshop* (brainshop.ai)
-"""
-
-__mod_name__ = "CHATBOT"
