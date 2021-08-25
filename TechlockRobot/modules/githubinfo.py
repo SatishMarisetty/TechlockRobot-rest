@@ -46,9 +46,3 @@ async def github(_, message):
                 pass
     await message.reply_photo(photo=avatar_url, caption=caption)
 
-
-__help__ = """
- /gitinfo :- <github profile username>
-Get info of any github profile.
-"""
-__mod_name__ = "GITHUB"
