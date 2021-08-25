@@ -3,11 +3,6 @@ from pyrogram import filters
 from TechlockRobot import pbot as app
 from TechlockRobot.utils.errors import capture_err
 
-__mod_name__ = "WEBSS"
-__help__ = """
-• `/webss` [URL] - Take A Screenshot Of A Webpage"""
-
-
 @app.on_message(filters.command("webss"))
 @capture_err
 async def take_ss(_, message):
