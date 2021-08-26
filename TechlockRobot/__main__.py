@@ -690,7 +690,7 @@ def main():
     settings_handler = CommandHandler("settingss", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    data_callback_handler = CallbackQueryHandler(eren_data_callback, pattern=r"eren_")
+    data_callback_handler = CallbackQueryHandler(erenn_data_callback, pattern=r"eren_")
     donate_handler = CommandHandler("donatee", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
