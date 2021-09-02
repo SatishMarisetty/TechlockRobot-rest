@@ -64,8 +64,6 @@ async def hmm(client, message):
      return await message.reply_text(
             "You haven't enough rights to manage this"
         )
-   else:
-       pass
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
