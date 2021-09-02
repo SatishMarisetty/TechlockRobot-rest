@@ -15,7 +15,7 @@ from TechlockRobot import BOT_ID
 from TechlockRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat
 from TechlockRobot import arq
 from TechlockRobot.utils.pluginhelp import admins_only, edit_or_reply
-from TechlockRobot import pbot as eren
+from pyrogram import Client as eren
 
 translator = google_translator()
 
