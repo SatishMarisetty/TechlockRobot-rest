@@ -8,7 +8,7 @@ import tempfile
 from urllib.parse import quote as urlencode
 from decimal import Decimal
 from datetime import timedelta
-from pyrogram import filters
+from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram import Client as pbot
 
