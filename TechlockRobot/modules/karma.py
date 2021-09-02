@@ -138,7 +138,6 @@ async def command_karma(_, message):
 
 
 @EREN.on_message(filters.command("karmas") & ~filters.private)
-@adminsOnly("can_change_info")
 async def captcha_state(_, message):
     usage = "**Usage:**\n/karmas [on/off]"
     if len(message.command) != 2:
