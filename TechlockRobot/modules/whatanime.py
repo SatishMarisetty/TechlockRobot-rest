@@ -8,9 +8,9 @@ import tempfile
 from urllib.parse import quote as urlencode
 from decimal import Decimal
 from datetime import timedelta
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import Message
-from TechlockRobot import pbot
+from pyrogram import Client as pbot
 
 session = aiohttp.ClientSession()
 progress_callback_data = {}
