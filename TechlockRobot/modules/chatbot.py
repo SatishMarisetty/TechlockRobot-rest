@@ -1,3 +1,5 @@
+
+
 import emoji
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
@@ -134,7 +136,7 @@ async def hmm(client, message):
         try:
             await eren.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
-        except:
+        except CFError:
             return
 
     else:
@@ -200,7 +202,7 @@ async def hmm(client, message):
         try:
             await eren.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
-        except:
+        except CFError:
             return
 
 
@@ -272,7 +274,7 @@ async def inuka(client, message):
     try:
         await eren.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
-    except:
+    except CFError:
         return
 
 
@@ -351,5 +353,5 @@ async def inuka(client, message):
     try:
         await eren.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
-    except:
+    except CFError:
         return
