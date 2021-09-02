@@ -94,8 +94,6 @@ async def command_karma(_, message):
         if not karma:
             await m.edit("No karma in DB for this chat.")
             return
-        msg = f"**Karma list of {message.chat.title}:- **\n"
-        limit = 10
         karma_dicc = {}
         for i in karma:
             user_id = await alpha_to_int(i)
@@ -123,8 +121,7 @@ async def command_karma(_, message):
             if not first_name:
                 continue
             username = user.username
-            msg += f"`{(first_name)}` - {karma_count} \n"
-            limit += 1
+            msg = f"**Karma list of {message.chat.title}:- **\n`{(first_name)}` — {karma_count} \n"
         await m.edit(msg)
     else:
         user_id = message.reply_to_message.from_user.id
@@ -139,6 +136,17 @@ async def command_karma(_, message):
 
 @EREN.on_message(filters.command("karmas") & ~filters.private)
 async def captcha_state(_, message):
+    chatt_id = message.chat.id
+    user_id = message.from_user.id
+
+    if (
+            not client.get_chat_member(chatt_id, user_id).status
+            in ("administrator", "creator")
+        ):
+     await message.reply_text(
+            "You haven't enough rights to manage this"
+        )
+     return
     usage = "**Usage:**\n/karmas [on/off]"
     if len(message.command) != 2:
         return await message.reply_text(usage)
