@@ -38,6 +38,7 @@ en_chats = []
 )
 @admins_only
 async def hmm(_, message):
+    global eren_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
