@@ -110,8 +110,6 @@ async def command_karma(_, message):
             await m.edit("No karma in DB for this chat.")
             return
         for user_idd, karma_count in karma_arranged.items():
-            if limit > 9:
-                break
             try:
                 user = await EREN.get_users(int(user_idd))
                 await asyncio.sleep(0.8)
@@ -135,7 +133,7 @@ async def command_karma(_, message):
 
 
 @EREN.on_message(filters.command("karmas") & ~filters.private)
-async def captcha_state(_, message):
+async def captcha_state(client, message):
     chatt_id = message.chat.id
     user_id = message.from_user.id
 
