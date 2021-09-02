@@ -1,7 +1,7 @@
 import asyncio
 import re
 
-from TechlockRobot import pbot as EREN
+from pyrogram import Client as EREN
 from TechlockRobot.utils.permissions import adminsOnly
 from TechlockRobot.utils.errors import capture_err
 from TechlockRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas, is_karma_on, karma_off, karma_on,
