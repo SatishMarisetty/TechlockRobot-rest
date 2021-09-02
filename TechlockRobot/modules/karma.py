@@ -3,7 +3,6 @@ import re
 
 from pyrogram import Client as EREN
 from TechlockRobot.utils.permissions import adminsOnly
-from TechlockRobot.utils.errors import capture_err
 from TechlockRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas, is_karma_on, karma_off, karma_on,
                                    int_to_alpha, alpha_to_int)
 from TechlockRobot.utils.filter_groups import karma_positive_group, karma_negative_group
@@ -25,7 +24,6 @@ regex_downvote = r"^(\-|\-\-|\-1|👎|noob|Noob|gross|fuck off)$"
     & ~filters.edited,
     group=karma_positive_group
 )
-@capture_err
 async def upvote(_, message):
     if not await is_karma_on(message.chat.id):
         return
@@ -60,7 +58,6 @@ async def upvote(_, message):
     & ~filters.edited,
     group=karma_negative_group
 )
-@capture_err
 async def downvote(_, message):
     if not await is_karma_on(message.chat.id):
         return
@@ -87,7 +84,6 @@ async def downvote(_, message):
 
 
 @EREN.on_message(filters.command("karma") & filters.group)
-@capture_err
 async def command_karma(_, message):
     chat_id = message.chat.id
     if not message.reply_to_message:
