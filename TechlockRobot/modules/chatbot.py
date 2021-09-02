@@ -28,21 +28,6 @@ def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
 
-async def fetch(url):
-    try:
-        async with aiohttp.Timeout(10.0):
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url) as resp:
-                    try:
-                        data = await resp.json()
-                    except:
-                        data = await resp.text()
-            return data
-    except:
-        print("AI response Timeout")
-        return
-
-
 eren_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
@@ -51,6 +36,7 @@ en_chats = []
 @eren.on_message(
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
+@admins_only
 
 async def hmm(_, message):
     global eren_chats
@@ -134,7 +120,6 @@ async def hmm(client, message):
 
         pro = response
         try:
-            await eren.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -200,7 +185,6 @@ async def hmm(client, message):
             except:
                 return
         try:
-            await eren.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -272,7 +256,6 @@ async def inuka(client, message):
         pro = translator.translate(pro, dest=lan)
         pro = pro.text
     try:
-        await eren.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
@@ -351,7 +334,6 @@ async def inuka(client, message):
         except Exception:
             return
     try:
-        await eren.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
