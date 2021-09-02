@@ -1,5 +1,3 @@
-
-
 import emoji
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
@@ -52,13 +50,26 @@ en_chats = []
 @eren.on_message(
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
-@admins_only
-async def hmm(_, message):
+
+async def hmm(client, message):
     global eren_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
         )
+
+    chatt_id = message.chat.id
+    user_id = message.from_user.id
+
+    if (
+            not client.get_chat_member(chatt_id, user_id).status
+            in ("administrator", "creator")
+            and not user_id in SUDO_USERS
+        ):
+     return await message.reply_text(
+            "You haven't enough rights to use this"
+        )
+
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
     chat_id = message.chat.id
