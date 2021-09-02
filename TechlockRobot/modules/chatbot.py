@@ -8,6 +8,7 @@ import aiohttp
 # from google_trans_new import google_translator
 from googletrans import Translator as google_translator
 from pyrogram import filters
+from coffeehouse.exception import CoffeeHouseError as CFError
 
 from TechlockRobot import BOT_ID
 from TechlockRobot.Chatbot.chatbotdb import add_chat, get_session, remove_chat
@@ -51,14 +52,14 @@ en_chats = []
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
 
-async def hmm(client, message):
+async def hmm(_, message):
     global eren_chats
 
     chatt_id = message.chat.id
     user_id = message.from_user.id
 
     if (
-            not client.get_chat_member(chatt_id, user_id).status
+            not _.get_chat_member(chatt_id, user_id).status
             in ("administrator", "creator")
         ):
      await message.reply_text(
