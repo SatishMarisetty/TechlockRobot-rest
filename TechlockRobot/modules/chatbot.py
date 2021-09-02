@@ -61,7 +61,7 @@ async def hmm(_, message):
         )
         message.continue_propagation()
     status = message.text.split(None, 1)[1]
-    chat_id = get_chat_id(message.chat)
+    chat_id = message.chat.id
     if status == "ON" or status == "on" or status == "On":
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
@@ -116,7 +116,7 @@ async def hmm(client, message):
     if senderr != BOT_ID:
         return
     msg = message.text
-    chat_id = get_chat_id(message.chat)
+    chat_id = message.chat.id
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
     if chat_id in en_chats:
