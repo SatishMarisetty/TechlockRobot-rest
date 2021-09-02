@@ -54,18 +54,6 @@ en_chats = []
 
 async def hmm(_, message):
     global eren_chats
-
-    chatt_id = message.chat.id
-    user_id = message.from_user.id
-
-    if (
-            not _.get_chat_member(chatt_id, user_id).status
-            in ("administrator", "creator")
-        ):
-     await message.reply_text(
-            "You haven't enough rights to manage this"
-        )
-     return 
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
