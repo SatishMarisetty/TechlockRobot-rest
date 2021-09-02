@@ -1,7 +1,7 @@
 
 import aiohttp
 from pyrogram import filters
-from TechlockRobot import pbot
+from pyrogram import Client as pbot
 from TechlockRobot.utils.errors import capture_err
 
 @pbot.on_message(filters.command('gitinfo'))
