@@ -13,7 +13,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
 from TechlockRobot import DEV_USERS as SUDO_USERS
-from TechlockRobot import pbot
+from pyrogram import Client as pbot
 from TechlockRobot.modules.sql import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
