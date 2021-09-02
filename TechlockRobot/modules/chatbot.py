@@ -53,10 +53,6 @@ en_chats = []
 
 async def hmm(client, message):
     global eren_chats
-    if len(message.command) != 2:
-        await message.reply_text(
-            "I only recognize `/chatbot on` and /chatbot `off only`"
-        )
 
     chatt_id = message.chat.id
     user_id = message.from_user.id
@@ -64,10 +60,15 @@ async def hmm(client, message):
     if (
             not client.get_chat_member(chatt_id, user_id).status
             in ("administrator", "creator")
-            and not user_id in SUDO_USERS
         ):
      return await message.reply_text(
-            "You haven't enough rights to use this"
+            "You haven't enough rights to manage this"
+        )
+   else:
+       pass
+    if len(message.command) != 2:
+        await message.reply_text(
+            "I only recognize `/chatbot on` and /chatbot `off only`"
         )
 
         message.continue_propagation()
