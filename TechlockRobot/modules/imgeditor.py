@@ -56,7 +56,7 @@ from TechlockRobot.utils.ImageEditor.edit_5 import (  # pylint:disable=import-er
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from TechlockRobot import pbot as Client
+from pyrogram import Client
 
 lel = 00000000
 # pylint:disable=import-error
