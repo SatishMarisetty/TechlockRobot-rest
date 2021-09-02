@@ -1,4 +1,4 @@
-from TechlockRobot import pbot as app
+from pyrogram import Client as app
 from TechlockRobot import arq
 from TechlockRobot.utils.functions import downloader
 from TechlockRobot.utils.errors import capture_err
