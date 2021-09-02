@@ -1,6 +1,6 @@
 from pyrogram import filters
 
-from TechlockRobot import pbot as app
+from pyrogram import Client as app
 from TechlockRobot.utils.errors import capture_err
 
 @app.on_message(filters.command("webss"))
