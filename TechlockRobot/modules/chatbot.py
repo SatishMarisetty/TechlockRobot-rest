@@ -61,9 +61,10 @@ async def hmm(client, message):
             not client.get_chat_member(chatt_id, user_id).status
             in ("administrator", "creator")
         ):
-     return await message.reply_text(
+     await message.reply_text(
             "You haven't enough rights to manage this"
         )
+     return 
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
