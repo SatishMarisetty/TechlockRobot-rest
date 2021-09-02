@@ -38,7 +38,6 @@ en_chats = []
 )
 @admins_only
 async def hmm(_, message):
-    global eren_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -239,10 +238,8 @@ async def inuka(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    # Kang with the credits bitches @InukaASiTH
     test = test.replace("Techlock", "Aco")
     test = test.replace("Techlock", "Aco")
-
     response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
     response = response.replace("Aco", "Techlock")
     response = response.replace("aco", "Techlock")
@@ -252,8 +249,11 @@ async def inuka(client, message):
 
     pro = response
     if not "en" in lan and not lan == "":
-        pro = translator.translate(pro, dest=lan)
-        pro = pro.text
+        try:
+            pro = translator.translate(pro, dest=lan)
+            pro = pro.text
+        except Exception:
+            return
     try:
         await message.reply_text(pro)
     except CFError:
