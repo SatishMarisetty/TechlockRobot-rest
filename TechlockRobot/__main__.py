@@ -199,9 +199,9 @@ def start(update: Update, context: CallbackContext):
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
         if len(args) >= 1:
-            if args[0].lower() == "help":
+            if args[0].lower() == "helpp":
                 send_help(update.effective_chat.id, HELP_STRINGS)
-            elif args[0].lower().startswith("ghelp_"):
+            elif args[0].lower().startswith("ghelpp_"):
                 mod = args[0].lower().split("_", 1)[1]
                 if not HELPABLE.get(mod, False):
                     return
@@ -209,7 +209,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="Back", callback_data="helpp_back")]]
                     ),
                 )
 
@@ -302,12 +302,12 @@ def error_callback(update: Update, context: CallbackContext):
 
 
 @run_async
-def help_button(update, context):
+def helpp_button(update, context):
     query = update.callback_query
-    mod_match = re.match(r"help_module\((.+?)\)", query.data)
-    prev_match = re.match(r"help_prev\((.+?)\)", query.data)
-    next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
+    mod_match = re.match(r"helpp_module\((.+?)\)", query.data)
+    prev_match = re.match(r"helpp_prev\((.+?)\)", query.data)
+    next_match = re.match(r"helpp_next\((.+?)\)", query.data)
+    back_match = re.match(r"helpp_back", query.data)
 
     print(query.message.chat.id)
 
@@ -447,7 +447,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="🔙", callback_data="helpp_back")]]
             ),
         )
 
@@ -501,10 +501,10 @@ def settings_button(update: Update, context: CallbackContext):
     query = update.callback_query
     user = update.effective_user
     bot = context.bot
-    mod_match = re.match(r"stngs_module\((.+?),(.+?)\)", query.data)
-    prev_match = re.match(r"stngs_prev\((.+?),(.+?)\)", query.data)
-    next_match = re.match(r"stngs_next\((.+?),(.+?)\)", query.data)
-    back_match = re.match(r"stngs_back\((.+?)\)", query.data)
+    mod_match = re.match(r"stnggs_module\((.+?),(.+?)\)", query.data)
+    prev_match = re.match(r"stnggs_prev\((.+?),(.+?)\)", query.data)
+    next_match = re.match(r"stnggs_next\((.+?),(.+?)\)", query.data)
+    back_match = re.match(r"stnggs_back\((.+?)\)", query.data)
     try:
         if mod_match:
             chat_id = mod_match.group(1)
@@ -521,7 +521,7 @@ def settings_button(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="Back",
-                                callback_data="stngs_back({})".format(chat_id),
+                                callback_data="stnggs_back({})".format(chat_id),
                             )
                         ]
                     ]
@@ -537,7 +537,7 @@ def settings_button(update: Update, context: CallbackContext):
                 "you're interested in.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
-                        curr_page - 1, CHAT_SETTINGS, "stngs", chat=chat_id
+                        curr_page - 1, CHAT_SETTINGS, "stnggs", chat=chat_id
                     )
                 ),
             )
@@ -551,7 +551,7 @@ def settings_button(update: Update, context: CallbackContext):
                 "you're interested in.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
-                        next_page + 1, CHAT_SETTINGS, "stngs", chat=chat_id
+                        next_page + 1, CHAT_SETTINGS, "stnggs", chat=chat_id
                     )
                 ),
             )
