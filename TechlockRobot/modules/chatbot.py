@@ -37,7 +37,6 @@ en_chats = []
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @admins_only
-
 async def hmm(_, message):
     global eren_chats
     if len(message.command) != 2:
