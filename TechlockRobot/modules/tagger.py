@@ -10,7 +10,7 @@
 from pyrogram import filters
 
 from TechlockRobot.pluginhelper import admins_only, get_text
-from TechlockRobot import pbot
+from pyrogram import Client as pbot
 
 
 @pbot.on_message(filters.command("tagger") & ~filters.edited & ~filters.bot)
