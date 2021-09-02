@@ -2,7 +2,7 @@ import asyncio
 import re
 
 from pyrogram import Client as EREN
-from TechlockRobot.utils.permissions import adminsOnly
+from TechlockRobot.utils.pluginhelp import admins_only
 from TechlockRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas, is_karma_on, karma_off, karma_on,
                                    int_to_alpha, alpha_to_int)
 from TechlockRobot.utils.filter_groups import karma_positive_group, karma_negative_group
@@ -138,18 +138,8 @@ async def command_karma(_, message):
 
 
 @EREN.on_message(filters.command("karmas") & ~filters.private)
+@admins_only
 async def captcha_state(_, message):
-    chatt_id = message.chat.id
-    user_id = message.from_user.id
-
-    if (
-            not _.get_chat_member(chatt_id, user_id).status
-            in ("administrator", "creator")
-        ):
-     await message.reply_text(
-            "You haven't enough rights to manage this"
-        )
-     return
     usage = "**Usage:**\n/karmas [on/off]"
     if len(message.command) != 2:
         return await message.reply_text(usage)
