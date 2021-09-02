@@ -14,7 +14,8 @@ from youtubesearchpython import SearchVideos
 
 from TechlockRobot.utils.conf import get_str_key
 from TechlockRobot.utils.pluginhelp import get_text, progress
-from TechlockRobot import pbot, arq
+from TechlockRobot import arq
+from pyrogram import Client as pbot
 
 GENIUS = get_str_key("GENIUS_API_TOKEN", None)
 
