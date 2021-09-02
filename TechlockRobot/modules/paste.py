@@ -8,7 +8,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
 from TechlockRobot import aiohttpsession as session
-from TechlockRobot import pbot
+from pyrogram import Client as pbot
 from TechlockRobot.utils.errors import capture_err
 from TechlockRobot.utils.pastebin import paste
 
