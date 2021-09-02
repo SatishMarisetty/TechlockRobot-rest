@@ -1,4 +1,4 @@
-from TechlockRobot import pbot as app
+from pyrogram import Client as app
 from TechlockRobot.utils.errors import capture_err
 from TechlockRobot.utils.dbfunctions import get_couple, save_couple
 from pyrogram import filters
