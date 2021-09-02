@@ -30,7 +30,7 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
-from TechlockRobot import pbot as app
+from pyrogram import Client as app
 from TechlockRobot import arq
 from TechlockRobot.utils.errors import capture_err
 from TechlockRobot.utils.formatter import convert_seconds_to_minutes as timeFormat
