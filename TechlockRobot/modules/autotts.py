@@ -22,6 +22,8 @@ def convert(text):
 
 @app.on_message(filters.command("tts"))
 async def text_to_speech(_, message: Message):
+    if message.text[len("/tts ") :]:
+        return
     if not message.reply_to_message:
         return await message.reply_text("Reply to some text ffs.")
     if not message.reply_to_message.text:
