@@ -1,7 +1,7 @@
 import requests
 from pyrogram import Client as Bot
 from TechlockRobot import API_HASH, API_ID, TOKEN
-from TechlockRobot.run import run
+from TechlockRobot.utils.pyrogram import pbot
 
 bot = Bot(
     ":memory:",
@@ -12,4 +12,4 @@ bot = Bot(
 )
 
 bot.start()
-run()
+pbot()
