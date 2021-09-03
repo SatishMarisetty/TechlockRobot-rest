@@ -1,6 +1,8 @@
 from pyrogram import Client
 
-from TechlockRobot import API_ID, API_HASH
+from TechlockRobot import API_ID, API_HASH, TOKEN
 
-client = Client("AQCLLkwqiTCdPv0r2Hk0GxWUQ7u1pzzI7bksdFuCAbq1pTu3f9Nwcqxs6bKO2kwH9fShW9eIk2cMnKya8lZyhaixTBpYLZ_IgzNipSbyxWmc4j3LDi2Q9gcpRY1-qRQWk_k6eeWlDP0rZAfQ0m6pDWYF8VT0KtvEenSwFBoE1SKzS8pnS_s4T57xwdmFBmpdEYvdQN4Pvi9eM0gCngFwhNYovfRi1Fkfej00xuZkzTPZZYHeuhZNhLkuxjhkqihW-_WwZpwpk93l-67DpfczYLk3hYoPVMUmaCd6FF7z8p9ceTMfnfFCMVG7AF1pL_IJjFFucDLnpx9tRntJ_0K4_mS5ZdlAaAA", API_ID, API_HASH)
+
+session_name = TOKEN.split(":")[0]
+client = Client(session_name, API_ID, API_HASH)
 run = client.run
