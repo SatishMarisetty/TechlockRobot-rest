@@ -12,7 +12,7 @@ async def ascii_func(_, e):
         return await e.reply_text("`Reply to image.`")
     m = await e.reply_text("`Converting to html...`")
     media = e.reply_to_message.photo
-    img = await (media).download_media()
+    img = await download_media(media)
     converter = Img2HTMLConverter(char="■")
     html = converter.convert(img)
     with open("html.html", "w") as t:
