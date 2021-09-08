@@ -20,8 +20,7 @@ async def ascii_func(_, e):
         return
     m = await e.reply_text("`Converting to html...`")
     img = await (await media.download_media()
-    char = ■
-    converter = Img2HTMLConverter(char=char)
+    converter = Img2HTMLConverter(char=■)
     html = converter.convert(img)
     with open("html.html", "w") as t:
         t.write(html)
