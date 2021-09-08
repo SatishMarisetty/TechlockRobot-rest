@@ -8,7 +8,7 @@ from img2html.converter import Img2HTMLConverter
 
 @pbot.on_message(filters.command("ascii") & ~filters.edited)
 async def ascii_func(_, e):
-    if not e.reply_to_msg_id:
+    if not e.reply_to_message:
         return await e.reply_text(e, "`Reply to image.`")
     m = await e.reply_text(e, "`Converting to html...`")
     img = await (await e.get_reply_message()).download_media()
