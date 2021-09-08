@@ -11,7 +11,7 @@ async def ascii_func(_, e):
     if not e.reply_to_message:
         return await e.reply_text("`Reply to image.`")
     m = await e.reply_text("`Converting to html...`")
-    img = await (await e.get_reply_message()).download_media()
+    img = await (await e.reply.photo()).download_media()
     char = "■" if not e.pattern_match.group(1) else e.pattern_match.group(1)
     converter = Img2HTMLConverter(char=char)
     html = converter.convert(img)
