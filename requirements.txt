@@ -46,6 +46,7 @@ pytube
 youtube-search-python
 pymongo
 motor
+img2html
 dnspython
 redis
 gtts
