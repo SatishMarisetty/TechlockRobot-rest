@@ -3,9 +3,8 @@ import os
 from pyrogram import filters
 from pyrogram.types import Message
 
-from TechlockRobot import pbot as app
-from TechlockRobot.utils.errors import capture_err
-from TechlockRobot.modules.trust import get_spam_probability
+from pyrogram import Client as app
+# from TechlockRobot.modules.trust import get_spam_probability
 
 
 async def get_chat_info(chat):
@@ -31,7 +30,6 @@ async def get_chat_info(chat):
 
 
 @app.on_message(filters.command("chatinfo"))
-@capture_err
 async def chat_info_func(_, message: Message):
     try:
         if len(message.command) > 2:
