@@ -48,8 +48,9 @@ async def wall(_, message):
     results = results.result[(n)-1:n]
 
     for i in results:
+        return await message.reply_text("Sending.... ") 
     wallp = wget.download(i.url_image)
-       await message.reply_document(
+            await message.reply_document(
                 document=wallp, caption=i.url_image
             )
 
