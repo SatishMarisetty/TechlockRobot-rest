@@ -5,6 +5,7 @@ from TechlockRobot.utils.errors import capture_err
 from pyrogram import filters
 from telegram import ParseMode
 import random
+import wget
 
 
 @app.on_message(filters.command("tr") & ~filters.edited)
@@ -47,4 +48,11 @@ async def wall(_, message):
     results = results.result[(n)-1:n]
 
     for i in results:
-            await message.reply_text(i.url_image)
+    wallp = wget.download(i.url_image)
+            await message.reply_document(
+                document=wallp, caption=i.url_image
+            )
+
+    for files in (wallp):
+        if files and os.path.exists(files):
+            os.remove(files)
