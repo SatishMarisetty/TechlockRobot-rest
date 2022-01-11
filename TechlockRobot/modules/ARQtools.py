@@ -50,9 +50,7 @@ async def wall(_, message):
     for i in results:
         return await message.reply_text("Sending.... ") 
     wallp = wget.download(i.url_image)
-            await message.reply_document(
-                document=wallp, caption=i.url_image
-            )
+    await message.reply_document(document=wallp, caption=i.url_image)
 
     for files in (wallp):
         if files and os.path.exists(files):
