@@ -46,7 +46,7 @@ async def wall(_, message):
     n = random.randint(0,m)
     if n > 0:
         results = results.result[(n)-1:n]
-   else:
+    else:
         results = results.result[n:n]
     for i in results:
             await message.reply_text(i.url_image)
